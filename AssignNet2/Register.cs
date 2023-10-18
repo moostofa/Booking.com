@@ -97,5 +97,10 @@ namespace Booking.com
                 e.Handled = true;
             }
         }
+
+        private void cancel_click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
