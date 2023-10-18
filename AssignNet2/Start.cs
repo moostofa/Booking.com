@@ -26,17 +26,21 @@ namespace Booking.com
             {
                 MessageBox.Show("Please enter a valid email and password");
             }
-            else if (FileManager.checkLoginCredentials(email, password))
-            {
-                MessageBox.Show("success");
-            }
             else
             {
-                MessageBox.Show("Incorrect Email or Password. Please try again");
-                tb_email.Text = string.Empty;
-                tb_password.Text = string.Empty;
+                User user = FileManager.checkLoginCredentials(email, password);
+                if (user == null)
+                {
+                    MessageBox.Show("Incorrect Email or Password. Please try again");
+                    tb_email.Text = string.Empty;
+                    tb_password.Text = string.Empty;
+                }
+                else
+                {
+                    CustomerView customerView = new CustomerView((Customer)user, this);
+                    this.Hide();
+                }
             }
-
         }
 
         private void register_click(object sender, EventArgs e)

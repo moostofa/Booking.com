@@ -7,6 +7,7 @@ using System.IO;
 using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Windows.Forms;
 using System.Xml;
 
 
@@ -38,7 +39,6 @@ public class FileManager
         }
         return null;
     }
-
 
     public static List<User> getCustomersList()
     {
@@ -93,6 +93,27 @@ public class FileManager
         }
     }
 
+    public static void UpdateCustomerDetails(Customer customer, string[] properties)
+    {
+        users = readUsersFromFile();
+        int index = users.FindIndex(user => user.Email == customer.Email);
+        if (index == -1)
+        {
+            MessageBox.Show("Error: Customer not found in file");
+        }
+        else
+        {
+            users[index].Email = properties[0];
+            users[index].Password = properties[1];
+            users[index].FirstName = properties[2];
+            users[index].LastName = properties[3];
+            users[index].Phone = properties[4];
+            users[index].Address = properties[5];
+            writeUsersToFile();
+            MessageBox.Show("Account Details Successfully Changed");
+        }
+    }
+
     private static void writeUsersToFile()
     {
         JsonSerializerOptions options = new JsonSerializerOptions
@@ -131,7 +152,7 @@ public class FileManager
         }
     }
 
-    public static bool checkLoginCredentials(string email, string password)
+    public static User checkLoginCredentials(string email, string password)
     {
         List<User> userList = readUsersFromFile();
         if (userList != null)
@@ -142,16 +163,16 @@ public class FileManager
                 {
                     if (user.Password == password)
                     {
-                        return true;
+                        return user;
                     }
                     else
                     {
-                        return false;
+                        return null;
                     }
                 }
             }
         }
-        return false;
+        return null;
     }
 }
 
@@ -185,8 +206,8 @@ public class UserConverter : JsonConverter<User>
         writer.WriteStartObject();
         writer.WriteString("Email", value.Email);
         writer.WriteString("Password", value.Password);
-        writer.WriteString("First Name", value.FirstName);
-        writer.WriteString("Last Name", value.LastName);
+        writer.WriteString("FirstName", value.FirstName);
+        writer.WriteString("LastName", value.LastName);
         writer.WriteString("Phone", value.Phone);
         writer.WriteString("Address", value.Address);
         writer.WriteNumber("Type", (int)value.Type);

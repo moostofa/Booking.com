@@ -2,8 +2,8 @@
   {
     "Email": "test@sample.com",
     "Password": "12345678",
-    "First Name": "test",
-    "Last Name": "sample",
+    "FirstName": "test",
+    "LastName": "sample",
     "Phone": "0412312312",
     "Address": "123 sample st sydney nsw",
     "Type": 1,
