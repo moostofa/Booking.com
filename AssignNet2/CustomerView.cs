@@ -25,8 +25,8 @@ namespace Booking.com
 
         private void logout_click(object sender, EventArgs e)
         {
-            this.Hide();
             start.Show();
+            this.Close();
         }
 
         private void changedetails_click(object sender, EventArgs e)

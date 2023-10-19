@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AssignNet2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,16 +29,25 @@ namespace Booking.com
             }
             else
             {
-                User user = FileManager.checkLoginCredentials(email, password);
+                User user = UserFileManager.checkLoginCredentials(email, password);
                 if (user == null)
                 {
                     MessageBox.Show("Incorrect Email or Password. Please try again");
                     tb_email.Text = string.Empty;
                     tb_password.Text = string.Empty;
                 }
+                if (user.Type == USER_TYPE.Admin)
+                {
+                    AdminView adminView = new AdminView((Admin)user, this);
+                    tb_email.Text = string.Empty;
+                    tb_password.Text = string.Empty;
+                    this.Hide();
+                }
                 else
                 {
                     CustomerView customerView = new CustomerView((Customer)user, this);
+                    tb_email.Text = string.Empty;
+                    tb_password.Text = string.Empty;
                     this.Hide();
                 }
             }

@@ -13,7 +13,7 @@ using System.Xml;
 
 // This class manages serialization and deserialization of user account details (name, email, password etc.) to a txt file
 // We will eventually need another class that communicates with an actual DB such as Postgres (for bonus marks by introducing external DB with LINQ).
-public class FileManager
+public class UserFileManager
 {
     private static string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "user_details.txt");
     private static List<User> users = new List<User>();

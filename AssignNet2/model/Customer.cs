@@ -52,7 +52,7 @@ public class Customer : User
         }
         else
         {
-            FileManager.UpdateCustomerDetails(this, properties);
+            UserFileManager.UpdateCustomerDetails(this, properties);
             this.Email = properties[0];
             this.Password = properties[1]; 
             this.FirstName = properties[2];

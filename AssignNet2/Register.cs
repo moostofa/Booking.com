@@ -76,7 +76,7 @@ namespace Booking.com
             {
                 String address = tb_streetaddress.Text + " " + tb_suburb.Text + " " + tb_postcode.Text + " " + cb_state.SelectedItem.ToString();
                 User customer = new Customer(email, password, firstName, lastName, phone, address);
-                FileManager.addUser(customer);
+                UserFileManager.addUser(customer);
                 MessageBox.Show("Successfully added User. Welcome, " + firstName);
                 this.Hide();
             }

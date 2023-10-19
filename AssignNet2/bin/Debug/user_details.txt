@@ -8,5 +8,15 @@
     "Address": "123 sample st sydney nsw",
     "Type": 1,
     "Bookings": {}
+  },
+  {
+    "Email": "admin@booking.com",
+    "Password": "12345678",
+    "FirstName": "admin",
+    "LastName": "test",
+    "Phone": "0412312312",
+    "Address": "123 sample st sydney nsw",
+    "Type": 0,
+    "Bookings": {}
   }
 ]

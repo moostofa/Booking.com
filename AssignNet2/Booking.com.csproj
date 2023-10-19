@@ -74,6 +74,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminView.Designer.cs">
+      <DependentUpon>AdminView.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,12 @@
     <Compile Include="CustomerChangeDetailsView.Designer.cs">
       <DependentUpon>CustomerChangeDetailsView.cs</DependentUpon>
     </Compile>
+    <Compile Include="model\Booking.cs" />
+    <Compile Include="model\Airfare.cs" />
+    <Compile Include="model\HotelFileManager.cs" />
+    <Compile Include="model\HotelManager.cs" />
+    <Compile Include="model\Room.cs" />
+    <Compile Include="model\Hotel.cs" />
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,10 +112,13 @@
     </Compile>
     <Compile Include="model\Admin.cs" />
     <Compile Include="model\Customer.cs" />
-    <Compile Include="model\FileManager.cs" />
+    <Compile Include="model\UserFileManager.cs" />
     <Compile Include="model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminView.resx">
+      <DependentUpon>AdminView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerChangeDetailsView.resx">
       <DependentUpon>CustomerChangeDetailsView.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +155,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\hotel_details.txt" />
     <Content Include="bin\Debug\user_details.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
