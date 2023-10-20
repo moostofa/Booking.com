@@ -34,5 +34,12 @@ namespace Booking.com
             editHotelView.Show();
             this.Hide();
         }
+
+        private void button_addairline_Click(object sender, EventArgs e)
+        {
+            AddAirfare addAirfareView = new AddAirfare(admin);
+            this.Hide();
+            addAirfareView.Show();
+        }
     }
 }

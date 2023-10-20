@@ -104,6 +104,14 @@
     <Compile Include="EditDeleteHotelDetails.Designer.cs">
       <DependentUpon>EditDeleteHotelDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddAirfare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAirfare.Designer.cs">
+      <DependentUpon>AddAirfare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="model\AirfareFileManager.cs" />
+    <Compile Include="model\CompanyEntity.cs" />
     <Compile Include="ViewHotel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +147,9 @@
     <Compile Include="model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddAirfare.resx">
+      <DependentUpon>AddAirfare.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddHotel.resx">
       <DependentUpon>AddHotel.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +202,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\hotel_details.txt" />
+    <Content Include="bin\Debug\airline_details.txt" />
     <Content Include="bin\Debug\user_details.txt" />
   </ItemGroup>
   <ItemGroup>

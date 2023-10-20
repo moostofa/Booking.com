@@ -151,10 +151,6 @@ public class HotelFileManager
             }
         }
 
-
-
-
-        
     }
 
     private static void writeHotelsToFile()

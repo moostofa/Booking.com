@@ -35,3 +35,4 @@ C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\Booking.co
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\Booking.com.EditViewHotel.resources
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\Booking.com.AddHotel.resources
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\Booking.com.EditDeleteHotelDetails.resources
+C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\Booking.com.AddAirfare.resources

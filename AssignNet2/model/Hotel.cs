@@ -1,18 +1,13 @@
-﻿using System;
+﻿using Booking.com;
+using System;
 
 
-    public class Hotel
+    public class Hotel : CompanyEntity
     {
-        public int Id { get; set; }
-        public String Name { get; set; }
-        public String Location {  get; set; }
         public double PricePerNight { get; set; }
 
-        public Hotel(string name, string location, int id, double pricePerNight)
+        public Hotel(string name, string location, int id, double pricePerNight) : base(name, location, id)
         {
-            this.Name = name;
-            this.Location = location;
-            this.Id = id;
             this.PricePerNight = pricePerNight;
         }
 

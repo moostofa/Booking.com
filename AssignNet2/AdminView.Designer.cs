@@ -31,6 +31,7 @@
             this.button_addhotel = new System.Windows.Forms.Button();
             this.button_editviewhotel = new System.Windows.Forms.Button();
             this.button_logout = new System.Windows.Forms.Button();
+            this.button_addairline = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_addhotel
@@ -63,11 +64,22 @@
             this.button_logout.UseVisualStyleBackColor = true;
             this.button_logout.Click += new System.EventHandler(this.logout_click);
             // 
+            // button_addairline
+            // 
+            this.button_addairline.Location = new System.Drawing.Point(222, 274);
+            this.button_addairline.Name = "button_addairline";
+            this.button_addairline.Size = new System.Drawing.Size(127, 23);
+            this.button_addairline.TabIndex = 6;
+            this.button_addairline.Text = "Add Airfare";
+            this.button_addairline.UseVisualStyleBackColor = true;
+            this.button_addairline.Click += new System.EventHandler(this.button_addairline_Click);
+            // 
             // AdminView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 758);
+            this.Controls.Add(this.button_addairline);
             this.Controls.Add(this.button_logout);
             this.Controls.Add(this.button_editviewhotel);
             this.Controls.Add(this.button_addhotel);
@@ -82,5 +94,6 @@
         private System.Windows.Forms.Button button_addhotel;
         private System.Windows.Forms.Button button_editviewhotel;
         private System.Windows.Forms.Button button_logout;
+        private System.Windows.Forms.Button button_addairline;
     }
 }
