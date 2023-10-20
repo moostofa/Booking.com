@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace AssignNet2.model
 {
-    public partial class AddHotelView : Form
+    public partial class AddHotel : Form
     {
         Form previousView;
-        public AddHotelView(Form previousView)
+        public AddHotel(Form previousView)
         {
             InitializeComponent();
             this.previousView = previousView;

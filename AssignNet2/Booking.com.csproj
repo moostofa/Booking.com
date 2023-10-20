@@ -86,19 +86,31 @@
     <Compile Include="CustomerView.Designer.cs">
       <DependentUpon>CustomerView.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerChangeDetailsView.cs">
+    <Compile Include="CustomerChangeDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerChangeDetailsView.Designer.cs">
-      <DependentUpon>CustomerChangeDetailsView.cs</DependentUpon>
+    <Compile Include="CustomerChangeDetails.Designer.cs">
+      <DependentUpon>CustomerChangeDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditHotel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditHotel.Designer.cs">
+      <DependentUpon>EditHotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewHotel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewHotel.Designer.cs">
+      <DependentUpon>ViewHotel.cs</DependentUpon>
     </Compile>
     <Compile Include="model\Booking.cs" />
     <Compile Include="model\Airfare.cs" />
-    <Compile Include="AddHotelView.cs">
+    <Compile Include="AddHotel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddHotelView.Designer.cs">
-      <DependentUpon>AddHotelView.cs</DependentUpon>
+    <Compile Include="AddHotel.Designer.cs">
+      <DependentUpon>AddHotel.cs</DependentUpon>
     </Compile>
     <Compile Include="model\HotelFileManager.cs" />
     <Compile Include="model\Room.cs" />
@@ -121,14 +133,20 @@
     <Compile Include="model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddHotelView.resx">
-      <DependentUpon>AddHotelView.cs</DependentUpon>
+    <EmbeddedResource Include="AddHotel.resx">
+      <DependentUpon>AddHotel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminView.resx">
       <DependentUpon>AdminView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerChangeDetailsView.resx">
-      <DependentUpon>CustomerChangeDetailsView.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerChangeDetails.resx">
+      <DependentUpon>CustomerChangeDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditHotel.resx">
+      <DependentUpon>EditHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewHotel.resx">
+      <DependentUpon>ViewHotel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
@@ -165,6 +183,9 @@
   <ItemGroup>
     <Content Include="bin\Debug\hotel_details.txt" />
     <Content Include="bin\Debug\user_details.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="controller\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

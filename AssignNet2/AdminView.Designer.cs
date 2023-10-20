@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.button_addhotel = new System.Windows.Forms.Button();
-            this.button_edithotel = new System.Windows.Forms.Button();
-            this.button_searchhotel = new System.Windows.Forms.Button();
+            this.button_editviewhotel = new System.Windows.Forms.Button();
             this.button_logout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -38,29 +37,21 @@
             // 
             this.button_addhotel.Location = new System.Drawing.Point(57, 274);
             this.button_addhotel.Name = "button_addhotel";
-            this.button_addhotel.Size = new System.Drawing.Size(108, 23);
+            this.button_addhotel.Size = new System.Drawing.Size(127, 23);
             this.button_addhotel.TabIndex = 2;
             this.button_addhotel.Text = "Add Hotel";
             this.button_addhotel.UseVisualStyleBackColor = true;
             this.button_addhotel.Click += new System.EventHandler(this.addhotel_click);
             // 
-            // button_edithotel
+            // button_editviewhotel
             // 
-            this.button_edithotel.Location = new System.Drawing.Point(57, 318);
-            this.button_edithotel.Name = "button_edithotel";
-            this.button_edithotel.Size = new System.Drawing.Size(108, 23);
-            this.button_edithotel.TabIndex = 3;
-            this.button_edithotel.Text = "Edit Hotel Details";
-            this.button_edithotel.UseVisualStyleBackColor = true;
-            // 
-            // button_searchhotel
-            // 
-            this.button_searchhotel.Location = new System.Drawing.Point(57, 364);
-            this.button_searchhotel.Name = "button_searchhotel";
-            this.button_searchhotel.Size = new System.Drawing.Size(108, 23);
-            this.button_searchhotel.TabIndex = 4;
-            this.button_searchhotel.Text = "Search Hotel";
-            this.button_searchhotel.UseVisualStyleBackColor = true;
+            this.button_editviewhotel.Location = new System.Drawing.Point(57, 317);
+            this.button_editviewhotel.Name = "button_editviewhotel";
+            this.button_editviewhotel.Size = new System.Drawing.Size(127, 23);
+            this.button_editviewhotel.TabIndex = 3;
+            this.button_editviewhotel.Text = "View/Edit Hotel Details";
+            this.button_editviewhotel.UseVisualStyleBackColor = true;
+            this.button_editviewhotel.Click += new System.EventHandler(this.button_editviewhotel_Click);
             // 
             // button_logout
             // 
@@ -78,8 +69,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 758);
             this.Controls.Add(this.button_logout);
-            this.Controls.Add(this.button_searchhotel);
-            this.Controls.Add(this.button_edithotel);
+            this.Controls.Add(this.button_editviewhotel);
             this.Controls.Add(this.button_addhotel);
             this.Name = "AdminView";
             this.Text = "Admin";
@@ -90,8 +80,7 @@
         #endregion
 
         private System.Windows.Forms.Button button_addhotel;
-        private System.Windows.Forms.Button button_edithotel;
-        private System.Windows.Forms.Button button_searchhotel;
+        private System.Windows.Forms.Button button_editviewhotel;
         private System.Windows.Forms.Button button_logout;
     }
 }

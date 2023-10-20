@@ -25,8 +25,15 @@ namespace Booking.com
 
         private void addhotel_click(object sender, EventArgs e)
         {
-            AddHotelView addHotelView = new AddHotelView(this);
+            AddHotel addHotelView = new AddHotel(this);
             addHotelView.Show();
+            this.Hide();
+        }
+
+        private void button_editviewhotel_Click(object sender, EventArgs e)
+        {
+            EditHotel editHotelView = new EditHotel(this);
+            editHotelView.Show();
             this.Hide();
         }
     }

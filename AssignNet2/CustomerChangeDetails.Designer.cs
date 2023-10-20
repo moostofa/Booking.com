@@ -1,6 +1,6 @@
 ﻿namespace AssignNet2
 {
-    partial class CustomerChangeDetailsView
+    partial class CustomerChangeDetails
     {
         /// <summary>
         /// Required designer variable.

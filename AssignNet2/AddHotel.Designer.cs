@@ -1,6 +1,6 @@
 ﻿namespace AssignNet2.model
 {
-    partial class AddHotelView
+    partial class AddHotel
     {
         /// <summary>
         /// Required designer variable.

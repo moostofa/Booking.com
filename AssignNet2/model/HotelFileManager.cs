@@ -41,14 +41,20 @@ public class HotelFileManager
         return null;
     }
 
-    public static Hotel searchHotel(string name)
+    // Specific search method for ViewHotel class
+    public static Hotel searchHotel(string nameLocation)
     {
         hotelList = readHotelsFromFile();
+        string[] details = nameLocation.Split(new string[] { ", " }, StringSplitOptions.None);
+
         foreach (Hotel hotel in hotelList)
         {
-            if (hotel.Name.ToLower() == name.ToLower())
+            if (hotel.Name.ToLower() == details[0].ToLower())
             {
-                return hotel;
+                if (hotel.Location.ToLower() == details[1].ToLower())
+                {
+                    return hotel;
+                }
             }
         }
         return null;
@@ -80,6 +86,12 @@ public class HotelFileManager
         {
             return hotelList.Count + 1;
         }
+    }
+
+    public static List<Hotel> getHotelList()
+    {
+        hotelList = readHotelsFromFile();
+        return hotelList;
     }
 
     public static void UpdateHotelDetails(Hotel result, string[] properties)

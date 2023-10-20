@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace AssignNet2
 {
-    public partial class CustomerChangeDetailsView : Form
+    public partial class CustomerChangeDetails : Form
     {
         Customer customer;
-        public CustomerChangeDetailsView(Customer customer)
+        public CustomerChangeDetails(Customer customer)
         {
             InitializeComponent();
             this.customer = customer;
