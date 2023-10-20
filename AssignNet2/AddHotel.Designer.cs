@@ -1,4 +1,4 @@
-﻿namespace AssignNet2.model
+﻿namespace Booking.com
 {
     partial class AddHotel
     {

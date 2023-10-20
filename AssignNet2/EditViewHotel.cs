@@ -11,15 +11,15 @@ using System.Windows.Forms;
 
 namespace Booking.com 
 {
-    public partial class EditHotel : Form
+    public partial class EditViewHotel : Form
     {
         ListBox hotelList;
-        Form previousView;
-        public EditHotel(Form prevView)
+        Admin admin;
+        public EditViewHotel(Admin admin)
         {
             InitializeComponent();
+            this.admin = admin;            
             hotelList = listbox_hotellist;
-            previousView = prevView;
             listHotels();
         }
 
@@ -35,8 +35,9 @@ namespace Booking.com
 
         private void button_cancel_Click(object sender, EventArgs e)
         {
+            AdminView adminView = new AdminView(admin);
+            adminView.Show();
             this.Hide();
-            previousView.Show();
         }
 
         private void button_view_Click(object sender, EventArgs e)
@@ -59,6 +60,21 @@ namespace Booking.com
 
         private void button_editdetails_Click(object sender, EventArgs e)
         {
+            if (listbox_hotellist.SelectedItems[0] != null)
+            {
+                Hotel hotel = HotelFileManager.searchHotel(listbox_hotellist.SelectedItems[0].ToString());
+                if (hotel != null)
+                {
+                    EditDeleteHotelDetails editDeleteHotel = new EditDeleteHotelDetails(hotel, admin);
+                    editDeleteHotel.Show();
+                    this.Hide();
+
+                }
+                else
+                {
+                    MessageBox.Show("cannot find hotel"); // split working incorrectly in HotelFileManager
+                }
+            }
 
         }
     }

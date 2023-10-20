@@ -92,11 +92,17 @@
     <Compile Include="CustomerChangeDetails.Designer.cs">
       <DependentUpon>CustomerChangeDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditHotel.cs">
+    <Compile Include="EditViewHotel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditHotel.Designer.cs">
-      <DependentUpon>EditHotel.cs</DependentUpon>
+    <Compile Include="EditViewHotel.Designer.cs">
+      <DependentUpon>EditViewHotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditDeleteHotelDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditDeleteHotelDetails.Designer.cs">
+      <DependentUpon>EditDeleteHotelDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewHotel.cs">
       <SubType>Form</SubType>
@@ -142,8 +148,11 @@
     <EmbeddedResource Include="CustomerChangeDetails.resx">
       <DependentUpon>CustomerChangeDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditHotel.resx">
-      <DependentUpon>EditHotel.cs</DependentUpon>
+    <EmbeddedResource Include="EditViewHotel.resx">
+      <DependentUpon>EditViewHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditDeleteHotelDetails.resx">
+      <DependentUpon>EditDeleteHotelDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewHotel.resx">
       <DependentUpon>ViewHotel.cs</DependentUpon>

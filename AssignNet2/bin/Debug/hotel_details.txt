@@ -6,15 +6,9 @@
     "PricePerNight": 1234.56
   },
   {
-    "Id": 2,
-    "Name": "Marriott",
-    "Location": "Sydney",
-    "PricePerNight": 1234.56
-  },
-  {
     "Id": 3,
     "Name": "Family Inn",
-    "Location": "Melbourne",
+    "Location": "Brisbane",
     "PricePerNight": 123.34
   }
 ]

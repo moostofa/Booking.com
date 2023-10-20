@@ -8,15 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AssignNet2.model
+namespace Booking.com
 {
     public partial class AddHotel : Form
     {
-        Form previousView;
-        public AddHotel(Form previousView)
+        AdminView adminView;
+        Admin admin;
+        public AddHotel(Admin admin)
         {
             InitializeComponent();
-            this.previousView = previousView;
+            this.admin = admin;
+            adminView = new AdminView(admin);
         }
 
         private void buttonadd_Click(object sender, EventArgs e)
@@ -45,7 +47,7 @@ namespace AssignNet2.model
                     HotelFileManager.addHotel(name, location, pricePerNight);
                     MessageBox.Show("Hotel Added Successfully");
                     this.Hide();
-                    previousView.Show();
+                    adminView.Show();
                 }
                 catch (Exception ex)
                 {
@@ -70,7 +72,7 @@ namespace AssignNet2.model
         private void button_cancel_Click(object sender, EventArgs e)
         {
             this.Hide();
-            previousView.Show();
+            adminView.Show();
         }
     }
 }

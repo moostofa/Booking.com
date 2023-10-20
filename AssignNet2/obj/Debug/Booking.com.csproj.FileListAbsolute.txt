@@ -30,7 +30,8 @@ C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\Booking.co
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\Booking.com.csproj.CopyComplete
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\AssignNet2.exe
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\AssignNet2.pdb
-C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\AssignNet2.model.AddHotel.resources
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\AssignNet2.CustomerChangeDetails.resources
-C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\Booking.com.EditHotel.resources
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\Booking.com.ViewHotel.resources
+C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\Booking.com.EditViewHotel.resources
+C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\Booking.com.AddHotel.resources
+C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\Booking.com.EditDeleteHotelDetails.resources

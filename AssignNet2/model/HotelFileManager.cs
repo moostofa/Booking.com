@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel.Design;
 using System.Diagnostics;
 using System.Dynamic;
@@ -60,6 +61,21 @@ public class HotelFileManager
         return null;
     }
 
+    public static Hotel searchHotel(string name, string location)
+    {
+        hotelList = readHotelsFromFile();
+        foreach (Hotel hotel in hotelList)
+        {
+            if (hotel.Name.ToLower() == name.ToLower())
+            {
+                if (location.ToLower() == location.ToLower())
+                {
+                    return hotel;
+                }
+            }
+        }
+        return null;
+    }
 
     public static void addHotel(Hotel hotel)
     {
@@ -94,20 +110,51 @@ public class HotelFileManager
         return hotelList;
     }
 
-    public static void UpdateHotelDetails(Hotel result, string[] properties)
+    public static void UpdateHotelDetails(Hotel result, ArrayList properties)
     {
         hotelList = readHotelsFromFile();
-        int index = hotelList.FindIndex(hotel => hotel.Name == result.Name);
+        int index = hotelList.FindIndex(hotel => hotel.Name == result.Name && hotel.Location == result.Location);
         if (index == -1)
         {
             MessageBox.Show("Error: Hotel not found in file");
         }
         else
         {
+            hotelList[index].Name = (string)properties[0];
+            hotelList[index].Location = (string)properties[1];
+            hotelList[index].PricePerNight = (double)properties[2];
 
             writeHotelsToFile();
             MessageBox.Show("Account Details Successfully Changed");
         }
+    }
+
+    public static void deleteHotel(Hotel result)
+    {
+        hotelList = readHotelsFromFile();
+        int index = hotelList.FindIndex(hotel => hotel.Name == result.Name && hotel.Location == result.Location);
+        if (index == -1)
+        {
+            MessageBox.Show("Error: Hotel not found in file");
+        }
+        else
+        {
+            try
+            {
+                hotelList.RemoveAt(index);
+                writeHotelsToFile();
+                MessageBox.Show("Hotel has been deleted");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+
+
+        
     }
 
     private static void writeHotelsToFile()

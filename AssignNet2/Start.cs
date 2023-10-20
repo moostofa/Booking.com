@@ -38,7 +38,8 @@ namespace Booking.com
                 }
                 if (user.Type == USER_TYPE.Admin)
                 {
-                    AdminView adminView = new AdminView((Admin)user, this);
+                    AdminView adminView = new AdminView((Admin)user);
+                    adminView.Show();
                     tb_email.Text = string.Empty;
                     tb_password.Text = string.Empty;
                     this.Hide();

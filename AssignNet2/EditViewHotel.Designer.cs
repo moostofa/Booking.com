@@ -1,6 +1,6 @@
 ﻿namespace Booking.com
 {
-    partial class EditHotel
+    partial class EditViewHotel
     {
         /// <summary>
         /// Required designer variable.
