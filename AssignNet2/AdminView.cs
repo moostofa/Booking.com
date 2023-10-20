@@ -41,5 +41,11 @@ namespace Booking.com
             this.Hide();
             addAirfareView.Show();
         }
+
+        private void button_registercustomer_Click(object sender, EventArgs e)
+        {
+            Register register = new Register();
+            register.ShowDialog();
+        }
     }
 }
