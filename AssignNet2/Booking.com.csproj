@@ -94,8 +94,13 @@
     </Compile>
     <Compile Include="model\Booking.cs" />
     <Compile Include="model\Airfare.cs" />
+    <Compile Include="AddHotelView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddHotelView.Designer.cs">
+      <DependentUpon>AddHotelView.cs</DependentUpon>
+    </Compile>
     <Compile Include="model\HotelFileManager.cs" />
-    <Compile Include="model\HotelManager.cs" />
     <Compile Include="model\Room.cs" />
     <Compile Include="model\Hotel.cs" />
     <Compile Include="Register.cs">
@@ -116,6 +121,9 @@
     <Compile Include="model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddHotelView.resx">
+      <DependentUpon>AddHotelView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminView.resx">
       <DependentUpon>AdminView.cs</DependentUpon>
     </EmbeddedResource>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AssignNet2.model;
+using System;
 using System.Windows.Forms;
 
 namespace Booking.com
@@ -19,6 +20,13 @@ namespace Booking.com
         private void logout_click(object sender, EventArgs e)
         {
             start.Show();
+            this.Hide();
+        }
+
+        private void addhotel_click(object sender, EventArgs e)
+        {
+            AddHotelView addHotelView = new AddHotelView(this);
+            addHotelView.Show();
             this.Hide();
         }
     }

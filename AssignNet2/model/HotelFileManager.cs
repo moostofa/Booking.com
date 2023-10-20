@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Dynamic;
 using System.IO;
 using System.Reflection;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Windows.Forms;
@@ -59,6 +60,26 @@ public class HotelFileManager
         hotelList = readHotelsFromFile();
         hotelList.Add(hotel);
         writeHotelsToFile();
+    }
+
+    public static void addHotel(string name, string location, double pricePerNight)
+    {
+        hotelList = readHotelsFromFile();
+        Hotel hotel = new Hotel(name, location, generateHotelId(), pricePerNight);
+        hotelList.Add(hotel);
+        writeHotelsToFile();
+    }
+
+    public static int generateHotelId()
+    {
+        if (hotelList.Count == 0)
+        {
+            return 1;
+        }
+        else
+        {
+            return hotelList.Count + 1;
+        }
     }
 
     public static void UpdateHotelDetails(Hotel result, string[] properties)

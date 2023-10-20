@@ -16,5 +16,7 @@
             this.PricePerNight = pricePerNight;
         }
 
+
+
     }
 
