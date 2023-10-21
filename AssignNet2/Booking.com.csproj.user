@@ -3,4 +3,48 @@
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\Admin\AddAirfare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\Admin\AddHotel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\Admin\AdminView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\Admin\EditDeleteCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\Admin\EditDeleteHotelDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\Admin\EditViewHotel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\Admin\SearchCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\Admin\ViewAllCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\Admin\ViewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\Admin\ViewHotelDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\Customer\CustomerChangeDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\Customer\CustomerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\Register.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>
