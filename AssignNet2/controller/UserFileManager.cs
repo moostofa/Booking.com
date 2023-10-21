@@ -51,28 +51,6 @@ public class UserFileManager
         return customerList;
     }
 
-    public static Customer searchCustomer(string email)
-    {
-        foreach (Customer customer in getCustomersList())
-        {
-            if (customer.Email == email)
-                return customer;
-        }
-        return null;
-    }
-
-    public static Customer searchCustomer(int bookingNumber)
-    {
-        foreach (Customer customer in getCustomersList())
-        {
-            if (customer.Bookings.ContainsKey(bookingNumber))
-            {
-                return customer;
-            }
-        }
-        return null;
-    }
-
     public static void addUser(User user)
     {
         users = readUsersFromFile();
@@ -82,21 +60,6 @@ public class UserFileManager
 
     // for changing account details e.g 'First Name'
     // NOT FOR Updating Booking - Check BookingManager.UpdateBooking(...)
-    public static void UpdateCustomerDetails<T>(Customer customer, string accountDetail, T change) where T : struct
-    {
-        List<User> users = readUsersFromFile();
-        int i = users.IndexOf((User)customer);
-        PropertyInfo prop = typeof(User).GetProperty(accountDetail);
-        if (prop != null && prop.CanWrite)
-        {
-            prop.SetValue(users[i], change);
-        }
-        else
-        {
-            Console.WriteLine("Update Customer Method: property (accountDetail) is null - check typo");
-        }
-    }
-
     public static void UpdateCustomerDetails(Customer customer, string[] properties)
     {
         users = readUsersFromFile();
