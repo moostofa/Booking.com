@@ -22,6 +22,10 @@ public class Customer : User
 
     public Dictionary<int, string> Bookings { get { return bookings; } }
 
+    public override string ToString()
+    {
+        return FirstName + " " + LastName;
+    }
 
 
     public string changeAccountDetails(string[] properties)

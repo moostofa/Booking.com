@@ -110,6 +110,30 @@
     <Compile Include="AddAirfare.Designer.cs">
       <DependentUpon>AddAirfare.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditDeleteCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditDeleteCustomer.Designer.cs">
+      <DependentUpon>EditDeleteCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewCustomer.Designer.cs">
+      <DependentUpon>ViewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAllCustomers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAllCustomers.Designer.cs">
+      <DependentUpon>ViewAllCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchCustomer.Designer.cs">
+      <DependentUpon>SearchCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="model\AirfareFileManager.cs" />
     <Compile Include="model\CompanyEntity.cs" />
     <Compile Include="ViewHotel.cs">
@@ -159,11 +183,23 @@
     <EmbeddedResource Include="CustomerChangeDetails.resx">
       <DependentUpon>CustomerChangeDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditDeleteCustomer.resx">
+      <DependentUpon>EditDeleteCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditViewHotel.resx">
       <DependentUpon>EditViewHotel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditDeleteHotelDetails.resx">
       <DependentUpon>EditDeleteHotelDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewCustomer.resx">
+      <DependentUpon>ViewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAllCustomers.resx">
+      <DependentUpon>ViewAllCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchCustomer.resx">
+      <DependentUpon>SearchCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewHotel.resx">
       <DependentUpon>ViewHotel.cs</DependentUpon>

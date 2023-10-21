@@ -35,6 +35,7 @@
             this.button_vieweditairfare = new System.Windows.Forms.Button();
             this.button_registercustomer = new System.Windows.Forms.Button();
             this.button_searchcustomer = new System.Windows.Forms.Button();
+            this.button_viewallcustomers = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_addhotel
@@ -104,12 +105,24 @@
             this.button_searchcustomer.TabIndex = 9;
             this.button_searchcustomer.Text = "Search Customer";
             this.button_searchcustomer.UseVisualStyleBackColor = true;
+            this.button_searchcustomer.Click += new System.EventHandler(this.button_searchcustomer_Click);
+            // 
+            // button_viewallcustomers
+            // 
+            this.button_viewallcustomers.Location = new System.Drawing.Point(404, 331);
+            this.button_viewallcustomers.Name = "button_viewallcustomers";
+            this.button_viewallcustomers.Size = new System.Drawing.Size(143, 23);
+            this.button_viewallcustomers.TabIndex = 10;
+            this.button_viewallcustomers.Text = "View All Customers";
+            this.button_viewallcustomers.UseVisualStyleBackColor = true;
+            this.button_viewallcustomers.Click += new System.EventHandler(this.button_viewallcustomers_Click);
             // 
             // AdminView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 366);
+            this.ClientSize = new System.Drawing.Size(768, 431);
+            this.Controls.Add(this.button_viewallcustomers);
             this.Controls.Add(this.button_searchcustomer);
             this.Controls.Add(this.button_registercustomer);
             this.Controls.Add(this.button_vieweditairfare);
@@ -132,5 +145,6 @@
         private System.Windows.Forms.Button button_vieweditairfare;
         private System.Windows.Forms.Button button_registercustomer;
         private System.Windows.Forms.Button button_searchcustomer;
+        private System.Windows.Forms.Button button_viewallcustomers;
     }
 }

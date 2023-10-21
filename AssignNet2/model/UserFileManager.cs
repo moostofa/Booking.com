@@ -1,9 +1,11 @@
-﻿using System;
+﻿using AssignNet2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Diagnostics;
 using System.Dynamic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -40,10 +42,10 @@ public class UserFileManager
         return null;
     }
 
-    public static List<User> getCustomersList()
+    public static List<Customer> getCustomersList()
     {
         List<User> userList = readUsersFromFile();
-        List<User> customerList = userList.FindAll(user => user.Type == USER_TYPE.Customer);
+        List<Customer> customerList = userList.OfType<Customer>().ToList();
         return customerList;
     }
 
@@ -51,7 +53,7 @@ public class UserFileManager
     {
         foreach (Customer customer in getCustomersList())
         {
-            if (customer.Email == email) 
+            if (customer.Email == email)
                 return customer;
         }
         return null;
@@ -141,7 +143,7 @@ public class UserFileManager
                 {
                     // something is wrong since bookings dictionary can be empty, but should never be null (bookings was deleted or nullified, or not written properly to the file)
                     // if this happens, you can initialise bookings and add bookingID for quick fix, but root issue should be investigated
-                    Console.WriteLine("Check addBooking Method in FileManager - bookings list is null"); 
+                    Console.WriteLine("Check addBooking Method in FileManager - bookings list is null");
                 }
             }
             writeUsersToFile();
@@ -173,6 +175,24 @@ public class UserFileManager
             }
         }
         return null;
+    }
+
+    public static void deleteCustomer(Customer customer)
+    {
+        users = readUsersFromFile();
+        try
+        {
+            int index = users.FindIndex(user => user.Email == customer.Email);
+            users.RemoveAt(index);
+            writeUsersToFile();
+
+
+            MessageBox.Show("Customer Successfully Deleted");
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
     }
 }
 

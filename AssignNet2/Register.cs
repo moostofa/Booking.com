@@ -40,7 +40,7 @@ namespace Booking.com
             {
                 label_errormessage.Text = "Please enter a valid email address";
             }
-            else if (string.IsNullOrEmpty(password) || password.Count() < 8)
+            else if (string.IsNullOrEmpty(password) || password.Count() >= 8)
             {
                 label_errormessage.Text = "Please enter a valid password (at least 8 characters)";
             }
@@ -52,7 +52,7 @@ namespace Booking.com
             {
                 label_errormessage.Text = "Please enter a Last Name";
             }
-            else if (string.IsNullOrEmpty(phone) || phone.Count() < 8)
+            else if (string.IsNullOrEmpty(phone) || phone.Count() >= 8)
             {
                 label_errormessage.Text = "Please enter a valid phone number (at least 8 digits)";
             }

@@ -49,6 +49,7 @@
             this.button_register = new System.Windows.Forms.Button();
             this.button_cancel = new System.Windows.Forms.Button();
             this.label_errormessage = new System.Windows.Forms.Label();
+            this.label_title = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tb_email
@@ -227,11 +228,21 @@
             this.label_errormessage.Size = new System.Drawing.Size(0, 13);
             this.label_errormessage.TabIndex = 20;
             // 
+            // label_title
+            // 
+            this.label_title.AutoSize = true;
+            this.label_title.Location = new System.Drawing.Point(198, 119);
+            this.label_title.Name = "label_title";
+            this.label_title.Size = new System.Drawing.Size(89, 13);
+            this.label_title.TabIndex = 21;
+            this.label_title.Text = "Registration Form";
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(520, 763);
+            this.Controls.Add(this.label_title);
             this.Controls.Add(this.label_errormessage);
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.button_register);
@@ -283,5 +294,6 @@
         private System.Windows.Forms.Button button_register;
         private System.Windows.Forms.Button button_cancel;
         private System.Windows.Forms.Label label_errormessage;
+        private System.Windows.Forms.Label label_title;
     }
 }

@@ -47,5 +47,17 @@ namespace Booking.com
             Register register = new Register();
             register.ShowDialog();
         }
+
+        private void button_searchcustomer_Click(object sender, EventArgs e)
+        {
+            SearchCustomer searchCustomerView = new SearchCustomer();
+            searchCustomerView.ShowDialog();
+        }
+
+        private void button_viewallcustomers_Click(object sender, EventArgs e)
+        {
+            ViewAllCustomers viewAllCustomers = new ViewAllCustomers(admin);
+            viewAllCustomers.ShowDialog();
+        }
     }
 }

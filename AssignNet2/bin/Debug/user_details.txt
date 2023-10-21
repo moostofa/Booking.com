@@ -16,7 +16,6 @@
     "LastName": "test",
     "Phone": "0412312312",
     "Address": "123 sample st sydney nsw",
-    "Type": 0,
-    "Bookings": {}
+    "Type": 0
   }
 ]
