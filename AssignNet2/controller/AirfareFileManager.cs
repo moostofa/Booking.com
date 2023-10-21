@@ -37,14 +37,6 @@
             }
             return null;
         }  
-
-        public static void addAirfare(Airfare airfare)
-        {
-            airfareList = readAirfaresFromFile();
-            airfareList.Add(airfare);
-            writeAirfaresToFile();
-        }
-
         public static bool addAirfare(string[] properties)
         {
             bool validAirfare = CheckForm.addEditAirfare(properties);

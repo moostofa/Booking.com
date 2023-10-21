@@ -1,18 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections;
-using System.ComponentModel.Design;
-using System.Diagnostics;
-using System.Dynamic;
 using System.IO;
-using System.Reflection;
-using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Windows.Forms;
-using System.Xml;
 using Booking.com;
-using System.Runtime.Remoting.Messaging;
 
 
 // This class manages serialization and deserialization of hotel details (name,  etc.) to a txt file
