@@ -13,18 +13,17 @@ namespace Booking.com
 {
     public partial class CustomerView : Form
     {
-        Start start;
         Customer customer;
-        public CustomerView(Customer customer, Start start)
+        public CustomerView(Customer customer)
         {
             InitializeComponent();
-            this.start = start;
             this.customer = customer;
             this.Show();
         }
 
         private void logout_click(object sender, EventArgs e)
         {
+            Start start = new Start();
             start.Show();
             this.Close();
         }

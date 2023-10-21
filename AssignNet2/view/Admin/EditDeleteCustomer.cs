@@ -43,12 +43,11 @@ namespace AssignNet2
         private void button_save_Click(object sender, EventArgs e)
         {
             string[] properties = new string[] { tb_email.Text, tb_password.Text, tb_firstname.Text, tb_lastname.Text, tb_phone.Text, tb_address.Text };
-            string message = customer.changeAccountDetails(properties);
-            if (message == "success")
+            bool detailsChanged = customer.changeAccountDetails(properties);
+            if (detailsChanged)
             {
                 back();
             }
-            else label_error.Text = message;
         }
 
         private void button_cancel_Click(object sender, EventArgs e)

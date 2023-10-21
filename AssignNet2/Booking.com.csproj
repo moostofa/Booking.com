@@ -74,89 +74,90 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminView.cs">
+    <Compile Include="controller\CheckForm.cs" />
+    <Compile Include="view\Admin\AdminView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminView.Designer.cs">
+    <Compile Include="view\Admin\AdminView.Designer.cs">
       <DependentUpon>AdminView.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerView.cs">
+    <Compile Include="view\Customer\CustomerView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerView.Designer.cs">
+    <Compile Include="view\Customer\CustomerView.Designer.cs">
       <DependentUpon>CustomerView.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerChangeDetails.cs">
+    <Compile Include="view\Customer\CustomerChangeDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerChangeDetails.Designer.cs">
+    <Compile Include="view\Customer\CustomerChangeDetails.Designer.cs">
       <DependentUpon>CustomerChangeDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditViewHotel.cs">
+    <Compile Include="view\Admin\EditViewHotel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditViewHotel.Designer.cs">
+    <Compile Include="view\Admin\EditViewHotel.Designer.cs">
       <DependentUpon>EditViewHotel.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditDeleteHotelDetails.cs">
+    <Compile Include="view\Admin\EditDeleteHotelDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditDeleteHotelDetails.Designer.cs">
+    <Compile Include="view\Admin\EditDeleteHotelDetails.Designer.cs">
       <DependentUpon>EditDeleteHotelDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddAirfare.cs">
+    <Compile Include="view\Admin\AddAirfare.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddAirfare.Designer.cs">
+    <Compile Include="view\Admin\AddAirfare.Designer.cs">
       <DependentUpon>AddAirfare.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditDeleteCustomer.cs">
+    <Compile Include="view\Admin\EditDeleteCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditDeleteCustomer.Designer.cs">
+    <Compile Include="view\Admin\EditDeleteCustomer.Designer.cs">
       <DependentUpon>EditDeleteCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewCustomer.cs">
+    <Compile Include="view\Admin\ViewCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewCustomer.Designer.cs">
+    <Compile Include="view\Admin\ViewCustomer.Designer.cs">
       <DependentUpon>ViewCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewAllCustomers.cs">
+    <Compile Include="view\Admin\ViewAllCustomers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewAllCustomers.Designer.cs">
+    <Compile Include="view\Admin\ViewAllCustomers.Designer.cs">
       <DependentUpon>ViewAllCustomers.cs</DependentUpon>
     </Compile>
-    <Compile Include="SearchCustomer.cs">
+    <Compile Include="view\Admin\SearchCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SearchCustomer.Designer.cs">
+    <Compile Include="view\Admin\SearchCustomer.Designer.cs">
       <DependentUpon>SearchCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="model\AirfareFileManager.cs" />
+    <Compile Include="controller\AirfareFileManager.cs" />
     <Compile Include="model\CompanyEntity.cs" />
-    <Compile Include="ViewHotel.cs">
+    <Compile Include="view\Admin\ViewHotel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewHotel.Designer.cs">
+    <Compile Include="view\Admin\ViewHotel.Designer.cs">
       <DependentUpon>ViewHotel.cs</DependentUpon>
     </Compile>
     <Compile Include="model\Booking.cs" />
     <Compile Include="model\Airfare.cs" />
-    <Compile Include="AddHotel.cs">
+    <Compile Include="view\Admin\AddHotel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddHotel.Designer.cs">
+    <Compile Include="view\Admin\AddHotel.Designer.cs">
       <DependentUpon>AddHotel.cs</DependentUpon>
     </Compile>
-    <Compile Include="model\HotelFileManager.cs" />
+    <Compile Include="controller\HotelFileManager.cs" />
     <Compile Include="model\Room.cs" />
     <Compile Include="model\Hotel.cs" />
-    <Compile Include="Register.cs">
+    <Compile Include="view\Register.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Register.Designer.cs">
+    <Compile Include="view\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Start.cs">
@@ -167,44 +168,44 @@
     </Compile>
     <Compile Include="model\Admin.cs" />
     <Compile Include="model\Customer.cs" />
-    <Compile Include="model\UserFileManager.cs" />
+    <Compile Include="controller\UserFileManager.cs" />
     <Compile Include="model\User.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="view\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddAirfare.resx">
+    <EmbeddedResource Include="view\Admin\AddAirfare.resx">
       <DependentUpon>AddAirfare.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddHotel.resx">
+    <EmbeddedResource Include="view\Admin\AddHotel.resx">
       <DependentUpon>AddHotel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminView.resx">
+    <EmbeddedResource Include="view\Admin\AdminView.resx">
       <DependentUpon>AdminView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerChangeDetails.resx">
+    <EmbeddedResource Include="view\Customer\CustomerChangeDetails.resx">
       <DependentUpon>CustomerChangeDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditDeleteCustomer.resx">
+    <EmbeddedResource Include="view\Admin\EditDeleteCustomer.resx">
       <DependentUpon>EditDeleteCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditViewHotel.resx">
+    <EmbeddedResource Include="view\Admin\EditViewHotel.resx">
       <DependentUpon>EditViewHotel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditDeleteHotelDetails.resx">
+    <EmbeddedResource Include="view\Admin\EditDeleteHotelDetails.resx">
       <DependentUpon>EditDeleteHotelDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewCustomer.resx">
+    <EmbeddedResource Include="view\Admin\ViewCustomer.resx">
       <DependentUpon>ViewCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewAllCustomers.resx">
+    <EmbeddedResource Include="view\Admin\ViewAllCustomers.resx">
       <DependentUpon>ViewAllCustomers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SearchCustomer.resx">
+    <EmbeddedResource Include="view\Admin\SearchCustomer.resx">
       <DependentUpon>SearchCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewHotel.resx">
+    <EmbeddedResource Include="view\Admin\ViewHotel.resx">
       <DependentUpon>ViewHotel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Register.resx">
+    <EmbeddedResource Include="view\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Start.resx">
@@ -219,10 +220,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CustomerView.resx">
+    <EmbeddedResource Include="view\Customer\CustomerView.resx">
       <DependentUpon>CustomerView.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <None Include="view\packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -234,15 +235,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="view\App.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\hotel_details.txt" />
     <Content Include="bin\Debug\airline_details.txt" />
     <Content Include="bin\Debug\user_details.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

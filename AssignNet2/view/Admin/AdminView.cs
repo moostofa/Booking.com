@@ -7,7 +7,6 @@ namespace Booking.com
     public partial class AdminView : Form
     {
         Admin admin;
-
         public AdminView(Admin admin)
         {
             InitializeComponent();

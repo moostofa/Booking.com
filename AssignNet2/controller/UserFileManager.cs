@@ -1,4 +1,5 @@
 ﻿using AssignNet2;
+using Booking.com;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -11,6 +12,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Windows.Forms;
 using System.Xml;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 
 // This class manages serialization and deserialization of user account details (name, email, password etc.) to a txt file
@@ -154,7 +156,20 @@ public class UserFileManager
         }
     }
 
-    public static User checkLoginCredentials(string email, string password)
+    public static User checkLoginValidDetails(string email, string password)
+    {
+        bool validLogin = (CheckForm.loginValidation(email, password));
+        if (validLogin) {
+            User user = UserFileManager.checkLoginCredentials(email, password);
+            if (user != null)
+            {
+                return user;
+            }
+        }
+        MessageBox.Show("Incorrect Email or Password. Please try again");
+        return null;
+    }
+    private static User checkLoginCredentials(string email, string password)
     {
         List<User> userList = readUsersFromFile();
         if (userList != null)

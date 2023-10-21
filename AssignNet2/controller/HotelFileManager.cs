@@ -84,8 +84,24 @@ public class HotelFileManager
         writeHotelsToFile();
     }
 
-    public static void addHotel(string name, string location, double pricePerNight)
+    public static void addHotel(string name, string location, string price)
     {
+        double pricePerNight;
+        try
+        {
+            pricePerNight = Convert.ToDouble(price);
+        }
+        catch (FormatException)
+        {
+            MessageBox.Show("Invalid PricePerNight Format");
+            return;
+        }
+        catch (OverflowException)
+        {
+            MessageBox.Show("PricePerNight too large");
+            return;
+        }
+
         hotelList = readHotelsFromFile();
         Hotel hotel = new Hotel(name, location, generateHotelId(), pricePerNight);
         hotelList.Add(hotel);

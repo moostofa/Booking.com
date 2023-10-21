@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AssignNet2
+namespace Booking.com
 {
     public partial class CustomerChangeDetails : Form
     {
@@ -30,12 +30,11 @@ namespace AssignNet2
         private void changedetails_click(object sender, EventArgs e)
         {
             string[] properties = new string[] {tb_email.Text, tb_password.Text, tb_firstname.Text, tb_lastname.Text,  tb_phonenumber.Text, tb_address.Text};
-            string message = customer.changeAccountDetails(properties);
-            if (message == "success")
+            bool detailsChanged = customer.changeAccountDetails(properties);
+            if (detailsChanged)
             {
-                this.Hide();
+                this.Close();
             }
-            else label_errormessage.Text = message;
         }
 
         private void phone_keypress(object sender, KeyPressEventArgs e)
