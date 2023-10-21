@@ -30,7 +30,8 @@ namespace Booking.com
             string name = tb_name.Text;
             string location = tb_location.Text;
             string price = tb_price.Text;
-            bool validForm = CheckForm.addHotel(name, location, price);
+            string[] properties = new string[] { name, location, price };
+            bool validForm = CheckForm.addEditHotel(properties);
             if (validForm)
             {
                 HotelFileManager.addHotel(name, location, price);

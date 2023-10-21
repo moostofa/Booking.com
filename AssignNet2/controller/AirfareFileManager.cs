@@ -2,9 +2,11 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.IO;
     using System.Text.Json;
     using System.Text.Json.Serialization;
+    using System.Windows.Forms;
 
 
     // This class manages serialization and deserialization of airfare details (name,  etc.) to a txt file
@@ -43,12 +45,35 @@
             writeAirfaresToFile();
         }
 
-        public static void addAirfare(string name, string location, string destination, double price)
+        public static bool addAirfare(string[] properties)
         {
-            //airfareList = readAirfaresFromFile();
-            Airfare airfare = new Airfare(name, location, generateAirlineId(), destination, price);
-            airfareList.Add(airfare);
-            writeAirfaresToFile();
+            bool validAirfare = CheckForm.addEditAirfare(properties);
+            double price;
+            if (validAirfare)
+            {
+                try
+                {
+                    price = Convert.ToDouble(properties[3]);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Invalid Price Format");
+                    return false;
+                }
+                catch (OverflowException)
+                {
+                    MessageBox.Show("Price too large");
+                    return false;
+                }
+
+                airfareList = readAirfaresFromFile();
+                Airfare airfare = new Airfare(properties[0], properties[1], generateAirlineId(), properties[2], price);
+                airfareList.Add(airfare);
+                writeAirfaresToFile();
+                MessageBox.Show("Airfare Added Successfully");
+                return true;
+            }
+            return false;    
         }
 
         public static int generateAirlineId()

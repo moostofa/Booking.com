@@ -11,6 +11,8 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Windows.Forms;
 using System.Xml;
+using Booking.com;
+using System.Runtime.Remoting.Messaging;
 
 
 // This class manages serialization and deserialization of hotel details (name,  etc.) to a txt file
@@ -126,32 +128,37 @@ public class HotelFileManager
         return hotelList;
     }
 
-    public static void UpdateHotelDetails(Hotel result, ArrayList properties)
+    public static bool UpdateHotelDetails(Hotel hotel, string[] properties)
     {
+        bool hotelDetailsValid = CheckForm.addEditHotel(properties);
+
         hotelList = readHotelsFromFile();
-        int index = hotelList.FindIndex(hotel => hotel.Name == result.Name && hotel.Location == result.Location);
+        int index = hotelList.FindIndex(res => res.Id == hotel.Id);
         if (index == -1)
         {
             MessageBox.Show("Error: Hotel not found in file");
+            return false;
         }
         else
         {
             hotelList[index].Name = (string)properties[0];
             hotelList[index].Location = (string)properties[1];
-            hotelList[index].PricePerNight = (double)properties[2];
+            hotelList[index].PricePerNight = double.Parse(properties[2]);
 
             writeHotelsToFile();
             MessageBox.Show("Account Details Successfully Changed");
+            return true;
         }
     }
 
-    public static void deleteHotel(Hotel result)
+    public static bool deleteHotel(Hotel result)
     {
         hotelList = readHotelsFromFile();
         int index = hotelList.FindIndex(hotel => hotel.Name == result.Name && hotel.Location == result.Location);
         if (index == -1)
         {
             MessageBox.Show("Error: Hotel not found in file");
+            return false;
         }
         else
         {
@@ -160,11 +167,13 @@ public class HotelFileManager
                 hotelList.RemoveAt(index);
                 writeHotelsToFile();
                 MessageBox.Show("Hotel has been deleted");
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            return false;
         }
 
     }

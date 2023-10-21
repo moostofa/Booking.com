@@ -33,7 +33,7 @@
             this.label_pricepernight = new System.Windows.Forms.Label();
             this.tb_name = new System.Windows.Forms.TextBox();
             this.tb_location = new System.Windows.Forms.TextBox();
-            this.tb_pricepernight = new System.Windows.Forms.TextBox();
+            this.tb_price = new System.Windows.Forms.TextBox();
             this.button_back = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
             this.button_save = new System.Windows.Forms.Button();
@@ -81,12 +81,12 @@
             this.tb_location.Size = new System.Drawing.Size(130, 20);
             this.tb_location.TabIndex = 4;
             // 
-            // tb_pricepernight
+            // tb_price
             // 
-            this.tb_pricepernight.Location = new System.Drawing.Point(158, 232);
-            this.tb_pricepernight.Name = "tb_pricepernight";
-            this.tb_pricepernight.Size = new System.Drawing.Size(130, 20);
-            this.tb_pricepernight.TabIndex = 5;
+            this.tb_price.Location = new System.Drawing.Point(158, 232);
+            this.tb_price.Name = "tb_price";
+            this.tb_price.Size = new System.Drawing.Size(130, 20);
+            this.tb_price.TabIndex = 5;
             // 
             // button_back
             // 
@@ -136,7 +136,7 @@
             this.Controls.Add(this.button_save);
             this.Controls.Add(this.button_delete);
             this.Controls.Add(this.button_back);
-            this.Controls.Add(this.tb_pricepernight);
+            this.Controls.Add(this.tb_price);
             this.Controls.Add(this.tb_location);
             this.Controls.Add(this.tb_name);
             this.Controls.Add(this.label_pricepernight);
@@ -156,7 +156,7 @@
         private System.Windows.Forms.Label label_pricepernight;
         private System.Windows.Forms.TextBox tb_name;
         private System.Windows.Forms.TextBox tb_location;
-        private System.Windows.Forms.TextBox tb_pricepernight;
+        private System.Windows.Forms.TextBox tb_price;
         private System.Windows.Forms.Button button_back;
         private System.Windows.Forms.Button button_delete;
         private System.Windows.Forms.Button button_save;

@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listbox_hotellist = new System.Windows.Forms.ListBox();
+            this.lb_hotellist = new System.Windows.Forms.ListBox();
             this.button_view = new System.Windows.Forms.Button();
             this.button_editdetails = new System.Windows.Forms.Button();
             this.button_cancel = new System.Windows.Forms.Button();
             this.label_title = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // listbox_hotellist
+            // lb_hotellist
             // 
-            this.listbox_hotellist.ColumnWidth = 2;
-            this.listbox_hotellist.FormattingEnabled = true;
-            this.listbox_hotellist.Location = new System.Drawing.Point(33, 74);
-            this.listbox_hotellist.Name = "listbox_hotellist";
-            this.listbox_hotellist.Size = new System.Drawing.Size(200, 420);
-            this.listbox_hotellist.TabIndex = 0;
+            this.lb_hotellist.ColumnWidth = 2;
+            this.lb_hotellist.FormattingEnabled = true;
+            this.lb_hotellist.Location = new System.Drawing.Point(33, 74);
+            this.lb_hotellist.Name = "lb_hotellist";
+            this.lb_hotellist.Size = new System.Drawing.Size(200, 420);
+            this.lb_hotellist.TabIndex = 0;
             // 
             // button_view
             // 
@@ -92,7 +92,7 @@
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.button_editdetails);
             this.Controls.Add(this.button_view);
-            this.Controls.Add(this.listbox_hotellist);
+            this.Controls.Add(this.lb_hotellist);
             this.Name = "EditHotelView";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -102,7 +102,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listbox_hotellist;
+        private System.Windows.Forms.ListBox lb_hotellist;
         private System.Windows.Forms.Button button_view;
         private System.Windows.Forms.Button button_editdetails;
         private System.Windows.Forms.Button button_cancel;

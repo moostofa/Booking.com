@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Booking.com
 {
-    public partial class ViewHotel : Form
+    public partial class ViewHotelDetails : Form
     {
         Hotel hotel;
-        public ViewHotel(Hotel hotel)
+        public ViewHotelDetails(Hotel hotel)
         {
             InitializeComponent();
             this.hotel = hotel;

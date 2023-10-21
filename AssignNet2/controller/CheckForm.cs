@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Booking.com
 {
@@ -62,21 +64,46 @@ namespace Booking.com
             return true;
         }
 
-        public static bool addHotel(string name, string location, string price)
+        public static bool addEditHotel(string[] properties)
         {
-            if (string.IsNullOrEmpty(name))
+            if (string.IsNullOrEmpty(properties[0]))
             {
-                MessageBox.Show("Please enter a valid hotel name");
+                MessageBox.Show("Please enter a valid name");
                 return false;
             }
-            else if (string.IsNullOrEmpty(location))
+            else if (string.IsNullOrEmpty(properties[1]))
             {
                 MessageBox.Show("Please enter a valid location");
                 return false;
             }
-            else if (string.IsNullOrEmpty(price))
+            else if (string.IsNullOrEmpty(properties[2]))
             {
                 MessageBox.Show("Please enter a valid price per night");
+                return false;
+            }
+            return true;
+        }
+
+        public static bool addEditAirfare(string[] properties)
+        {
+            if (string.IsNullOrEmpty(properties[0]))
+            {
+                MessageBox.Show("Please enter a valid Airline name");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(properties[1]))
+            {
+                MessageBox.Show("Please enter a valid location");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(properties[2]))
+            {
+                MessageBox.Show("Please enter a valid destination");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(properties[3]))
+            {
+                MessageBox.Show("Please enter a valid price");
                 return false;
             }
             return true;

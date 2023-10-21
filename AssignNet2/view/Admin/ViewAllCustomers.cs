@@ -30,6 +30,12 @@ namespace Booking.com
             }
         }
 
+        private void back()
+        {
+            AdminView adminView = new AdminView(admin);
+            adminView.Show();
+            this.Hide();
+        }
         private void button_viewdetails_Click(object sender, EventArgs e)
         {
             Customer customer = (Customer)lb_customers.SelectedItem;
@@ -47,7 +53,7 @@ namespace Booking.com
 
         private void button_close_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            back();
         }
     }
 }

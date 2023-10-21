@@ -13,14 +13,19 @@ namespace Booking.com
 {
     public partial class EditViewHotel : Form
     {
-        ListBox hotelList;
         Admin admin;
         public EditViewHotel(Admin admin)
         {
             InitializeComponent();
             this.admin = admin;            
-            hotelList = listbox_hotellist;
             listHotels();
+        }
+
+        private void back()
+        {
+            AdminView adminView = new AdminView(admin);
+            adminView.Show();
+            this.Hide();
         }
 
         private void listHotels()
@@ -29,53 +34,34 @@ namespace Booking.com
 
             foreach (Hotel hotel in hotels)
             {
-                hotelList.Items.Add($"{hotel.Name}, {hotel.Location}");
+                lb_hotellist.Items.Add(hotel);
             }
         }
 
         private void button_cancel_Click(object sender, EventArgs e)
         {
-            AdminView adminView = new AdminView(admin);
-            adminView.Show();
-            this.Hide();
+            back();
         }
 
         private void button_view_Click(object sender, EventArgs e)
         {
-            if (listbox_hotellist.SelectedItems[0] != null)
+            Hotel hotel = (Hotel)lb_hotellist.SelectedItem;
+            if (hotel != null)
             {
-                Hotel hotel = HotelFileManager.searchHotel(listbox_hotellist.SelectedItems[0].ToString());
-                if (hotel != null)
-                {
-                    ViewHotel viewHotel = new ViewHotel(hotel);
-                    viewHotel.ShowDialog();
-
-                }
-                else
-                {
-                    MessageBox.Show("cannot find hotel"); // split working incorrectly in HotelFileManager
-                }
+                ViewHotelDetails viewHotel = new ViewHotelDetails(hotel);
+                viewHotel.ShowDialog();
             }
         }
 
         private void button_editdetails_Click(object sender, EventArgs e)
         {
-            if (listbox_hotellist.SelectedItems[0] != null)
+            Hotel hotel = (Hotel)lb_hotellist.SelectedItem;
+            if (hotel != null)
             {
-                Hotel hotel = HotelFileManager.searchHotel(listbox_hotellist.SelectedItems[0].ToString());
-                if (hotel != null)
-                {
-                    EditDeleteHotelDetails editDeleteHotel = new EditDeleteHotelDetails(hotel, admin);
-                    editDeleteHotel.Show();
-                    this.Hide();
-
-                }
-                else
-                {
-                    MessageBox.Show("cannot find hotel"); // split working incorrectly in HotelFileManager
-                }
+                EditDeleteHotelDetails editDeleteHotel = new EditDeleteHotelDetails(hotel, admin);
+                editDeleteHotel.Show();
+                this.Hide();
             }
-
         }
     }
 }

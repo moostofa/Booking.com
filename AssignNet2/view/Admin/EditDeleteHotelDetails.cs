@@ -19,68 +19,52 @@ namespace Booking.com
         {
             InitializeComponent();
             this.hotel = hotel;
-            fillDetails();
             this.admin = admin;
+            fillDetails();
+            
         }
 
-        public void fillDetails()
+        private void fillDetails()
         {
             tb_name.Text = hotel.Name;
             tb_location.Text = hotel.Location;
             string price = hotel.PricePerNight.ToString();
-            tb_pricepernight.Text = price;
+            tb_price.Text = price;
+        }
+
+        private void back()
+        {
+            EditViewHotel editViewHotel = new EditViewHotel(admin);
+            editViewHotel.Show();
+            this.Hide();
         }
 
         private void button_save_Click(object sender, EventArgs e)
         {
             string name = tb_name.Text;
             string location = tb_location.Text;
-            string price = tb_pricepernight.Text;
+            string price = tb_price.Text;
 
-            if (string.IsNullOrEmpty(name) )
+            string[] properties = new string[] { name, location, price };
+            bool hotelUpdated = HotelFileManager.UpdateHotelDetails(hotel, properties);
+            if (hotelUpdated)
             {
-                MessageBox.Show("Please enter a valid name");
-            }
-            else if (string.IsNullOrEmpty(location) )
-            {
-                MessageBox.Show("Please enter a valid location");
-            }
-            else if (string.IsNullOrEmpty(price) )
-            {
-                MessageBox.Show("Please enter a valid price");
-            }
-            else
-            {
-                try
-                {
-                    double pricePerNight = double.Parse(price);
-                    ArrayList properties = new ArrayList { name, location, pricePerNight };
-                    HotelFileManager.UpdateHotelDetails(hotel, properties);
-                    this.Hide();
-                    EditViewHotel editViewHotel = new EditViewHotel(admin);
-                    editViewHotel.Show();
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
+                back();
             }
         }
 
         private void button_back_Click(object sender, EventArgs e)
         {
-            EditViewHotel editViewHotel = new EditViewHotel(admin);
-            editViewHotel.Show();
-            this.Hide();
+            back();
         }
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            HotelFileManager.deleteHotel(hotel);
-            this.Hide();
-            EditViewHotel editViewHotel = new EditViewHotel(admin);
-            editViewHotel.Show();
+            bool hotelDeleted = HotelFileManager.deleteHotel(hotel);
+            if (hotelDeleted)
+            {
+                back();
+            }
         }
     }
 }

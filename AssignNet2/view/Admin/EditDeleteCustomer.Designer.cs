@@ -1,4 +1,4 @@
-﻿namespace AssignNet2
+﻿namespace Booking.com
 {
     partial class EditDeleteCustomer
     {

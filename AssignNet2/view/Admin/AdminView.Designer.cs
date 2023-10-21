@@ -50,7 +50,7 @@
             // 
             // button_editviewhotel
             // 
-            this.button_editviewhotel.Location = new System.Drawing.Point(41, 287);
+            this.button_editviewhotel.Location = new System.Drawing.Point(222, 287);
             this.button_editviewhotel.Name = "button_editviewhotel";
             this.button_editviewhotel.Size = new System.Drawing.Size(143, 23);
             this.button_editviewhotel.TabIndex = 3;
@@ -80,7 +80,7 @@
             // 
             // button_vieweditairfare
             // 
-            this.button_vieweditairfare.Location = new System.Drawing.Point(222, 287);
+            this.button_vieweditairfare.Location = new System.Drawing.Point(41, 287);
             this.button_vieweditairfare.Name = "button_vieweditairfare";
             this.button_vieweditairfare.Size = new System.Drawing.Size(143, 23);
             this.button_vieweditairfare.TabIndex = 7;

@@ -137,11 +137,11 @@
     </Compile>
     <Compile Include="controller\AirfareFileManager.cs" />
     <Compile Include="model\CompanyEntity.cs" />
-    <Compile Include="view\Admin\ViewHotel.cs">
+    <Compile Include="view\Admin\ViewHotelDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\Admin\ViewHotel.Designer.cs">
-      <DependentUpon>ViewHotel.cs</DependentUpon>
+    <Compile Include="view\Admin\ViewHotelDetails.Designer.cs">
+      <DependentUpon>ViewHotelDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="model\Booking.cs" />
     <Compile Include="model\Airfare.cs" />
@@ -202,8 +202,8 @@
     <EmbeddedResource Include="view\Admin\SearchCustomer.resx">
       <DependentUpon>SearchCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\Admin\ViewHotel.resx">
-      <DependentUpon>ViewHotel.cs</DependentUpon>
+    <EmbeddedResource Include="view\Admin\ViewHotelDetails.resx">
+      <DependentUpon>ViewHotelDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>

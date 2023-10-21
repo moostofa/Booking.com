@@ -19,52 +19,30 @@ namespace Booking.com
             this.admin = admin;
         }
 
+        private void back()
+        {
+            this.Hide();
+            AdminView adminView = new AdminView(admin);
+            adminView.Show();
+        }
+
         private void button_addairfare_Click(object sender, EventArgs e)
         {
             string name = tb_airlinename.Text;
             string location = tb_location.Text;
             string destination = tb_destination.Text;
             string price = tb_price.Text;
-
-            if (string.IsNullOrEmpty(name))
+            string[] properties = new string[] { name, location, destination, price };
+            bool airfareAdded = AirfareFileManager.addAirfare(properties);
+            if (airfareAdded)
             {
-                MessageBox.Show("Please enter a valid Airline name");
-            }
-            else if (string.IsNullOrEmpty(location))
-            {
-                MessageBox.Show("Please enter a valid location");
-            }
-            else if (string.IsNullOrEmpty(destination))
-            {
-                MessageBox.Show("Please enter a valid destination");
-            }
-            else if (string.IsNullOrEmpty(price))
-            {
-                MessageBox.Show("Please enter a valid price");
-            }
-            else
-            {
-                try
-                {
-                    double priceperticket = double.Parse(price);
-                    AirfareFileManager.addAirfare(name, location, destination, priceperticket);       
-                    MessageBox.Show("Airfare Added Successfully");
-                    this.Hide();
-                    AdminView adminview = new AdminView(admin);
-                    adminview.Show();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                back();
             }
         }
 
         private void button_cancel_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AdminView adminView = new AdminView(admin);
-            adminView.Show();
+            back();
         }
 
         private void tb_price_KeyPress(object sender, KeyPressEventArgs e)

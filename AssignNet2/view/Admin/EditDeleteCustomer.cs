@@ -1,15 +1,7 @@
-﻿using Booking.com;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
-namespace AssignNet2
+namespace Booking.com
 {
     public partial class EditDeleteCustomer : Form
     {
@@ -21,6 +13,13 @@ namespace AssignNet2
             this.admin = admin;
             this.customer = customer;
             fillDetails();
+        }
+
+        private void back()
+        {
+            this.Hide();
+            ViewAllCustomers viewAllCustomersWindow = new ViewAllCustomers(admin);
+            viewAllCustomersWindow.Show();
         }
 
         private void fillDetails()
@@ -53,13 +52,6 @@ namespace AssignNet2
         private void button_cancel_Click(object sender, EventArgs e)
         {
             back();
-        }
-
-        private void back()
-        {
-            this.Hide();
-            ViewAllCustomers viewAllCustomersWindow = new ViewAllCustomers(admin);
-            viewAllCustomersWindow.Show();
         }
 
         private void button_delete_Click(object sender, EventArgs e)

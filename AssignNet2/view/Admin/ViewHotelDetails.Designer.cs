@@ -1,6 +1,6 @@
 ﻿namespace Booking.com
 {
-    partial class ViewHotel
+    partial class ViewHotelDetails
     {
         /// <summary>
         /// Required designer variable.
