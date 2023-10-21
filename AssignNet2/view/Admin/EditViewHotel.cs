@@ -25,7 +25,7 @@ namespace Booking.com
         {
             AdminView adminView = new AdminView(admin);
             adminView.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void listHotels()
@@ -60,7 +60,7 @@ namespace Booking.com
             {
                 EditDeleteHotelDetails editDeleteHotel = new EditDeleteHotelDetails(hotel, admin);
                 editDeleteHotel.Show();
-                this.Hide();
+                this.Close();
             }
         }
     }

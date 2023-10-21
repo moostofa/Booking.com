@@ -17,7 +17,7 @@ namespace Booking.com
 
         private void back()
         {
-            this.Hide();
+            this.Close();
             ViewAllCustomers viewAllCustomersWindow = new ViewAllCustomers(admin);
             viewAllCustomersWindow.Show();
         }

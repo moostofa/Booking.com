@@ -21,7 +21,7 @@ namespace Booking.com
 
         private void back()
         {
-            this.Hide();
+            this.Close();
             AdminView adminView = new AdminView(admin);
             adminView.Show();
         }

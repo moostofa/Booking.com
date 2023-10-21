@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Booking.com
 {
@@ -104,6 +105,56 @@ namespace Booking.com
             else if (string.IsNullOrEmpty(properties[3]))
             {
                 MessageBox.Show("Please enter a valid price");
+                return false;
+            }
+            return true;
+        }
+
+        public static bool registerCustomer(string[] properties)
+        {
+            if (string.IsNullOrEmpty(properties[0]) || !properties[0].Contains('@'))
+            {
+                MessageBox.Show("Please enter a valid email address");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(properties[1]) || properties[1].Length < 8)
+            {
+                MessageBox.Show("Please enter a valid password (at least 8 characters)");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(properties[2]))
+            {
+                MessageBox.Show("Please enter a First Name");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(properties[3]))
+            {
+                MessageBox.Show("Please enter a Last Name");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(properties[4]) || properties[4].Length < 8)
+            {
+                MessageBox.Show("Please enter a valid phone number (at least 8 digits)");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(properties[5]))
+            {
+                MessageBox.Show("Please enter a valid Street Address");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(properties[6]))
+            {
+                MessageBox.Show("Please enter a valid suburb");
+                return false;
+            }
+            else if (string.IsNullOrEmpty(properties[7]) || properties[7].Length < 4)
+            {
+                MessageBox.Show("Please enter a valid Postcode");
+                return false;
+            }
+            else if (properties[8] == null)
+            {
+                MessageBox.Show("Please select a State or Territory");
                 return false;
             }
             return true;

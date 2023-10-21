@@ -30,7 +30,7 @@ namespace Booking.com
 
         private void button_close_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
     }
 }

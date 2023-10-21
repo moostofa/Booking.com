@@ -34,7 +34,7 @@ namespace Booking.com
         {
             AdminView adminView = new AdminView(admin);
             adminView.Show();
-            this.Hide();
+            this.Close();
         }
         private void button_viewdetails_Click(object sender, EventArgs e)
         {

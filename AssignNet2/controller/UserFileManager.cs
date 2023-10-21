@@ -58,6 +58,18 @@ public class UserFileManager
         writeUsersToFile();
     }
 
+    public static bool addUser(string[] properties)
+    {
+        bool validUser = CheckForm.registerCustomer(properties);
+        if (validUser)
+        {
+            string address = properties[5] + " " + properties[6] + " " + properties[7] + " " + properties[8];
+            User customer = new Customer(properties[0], properties[1], properties[2], properties[3], properties[4], address);
+            return true;
+        }
+        return false;
+    }
+
     // for changing account details e.g 'First Name'
     // NOT FOR Updating Booking - Check BookingManager.UpdateBooking(...)
     public static void UpdateCustomerDetails(Customer customer, string[] properties)

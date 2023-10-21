@@ -81,7 +81,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(40, 274);
+            this.listBox1.Location = new System.Drawing.Point(42, 267);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(232, 186);
             this.listBox1.TabIndex = 4;
@@ -130,7 +130,7 @@
             // label_bookings
             // 
             this.label_bookings.AutoSize = true;
-            this.label_bookings.Location = new System.Drawing.Point(40, 255);
+            this.label_bookings.Location = new System.Drawing.Point(42, 248);
             this.label_bookings.Name = "label_bookings";
             this.label_bookings.Size = new System.Drawing.Size(54, 13);
             this.label_bookings.TabIndex = 10;
@@ -138,12 +138,13 @@
             // 
             // button_close
             // 
-            this.button_close.Location = new System.Drawing.Point(112, 483);
+            this.button_close.Location = new System.Drawing.Point(114, 476);
             this.button_close.Name = "button_close";
             this.button_close.Size = new System.Drawing.Size(75, 23);
             this.button_close.TabIndex = 11;
             this.button_close.Text = "Close";
             this.button_close.UseVisualStyleBackColor = true;
+            this.button_close.Click += new System.EventHandler(this.button_close_Click);
             // 
             // ViewCustomer
             // 

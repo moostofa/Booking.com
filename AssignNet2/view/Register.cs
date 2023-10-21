@@ -36,49 +36,13 @@ namespace Booking.com
             string suburb = tb_suburb.Text;
             string postcode = tb_postcode.Text;
 
-            if (string.IsNullOrEmpty(email) || !email.Contains('@'))
+            string[] properties = new string[] {email, password, firstName, lastName, phone, streetAddress, suburb, postcode, cb_state.SelectedText};
+            bool userAdded = UserFileManager.addUser(properties);
+
+            if (userAdded)
             {
-                label_errormessage.Text = "Please enter a valid email address";
-            }
-            else if (string.IsNullOrEmpty(password) || password.Count() >= 8)
-            {
-                label_errormessage.Text = "Please enter a valid password (at least 8 characters)";
-            }
-            else if (string.IsNullOrEmpty(firstName))
-            {
-                label_errormessage.Text = "Please enter a First Name";
-            }
-            else if (string.IsNullOrEmpty(lastName))
-            {
-                label_errormessage.Text = "Please enter a Last Name";
-            }
-            else if (string.IsNullOrEmpty(phone) || phone.Count() >= 8)
-            {
-                label_errormessage.Text = "Please enter a valid phone number (at least 8 digits)";
-            }
-            else if (string.IsNullOrEmpty(streetAddress))
-            {
-                label_errormessage.Text = "Please enter a valid Street Address";
-            }
-            else if (string.IsNullOrEmpty(suburb))
-            {
-                label_errormessage.Text = "Please enter a valid suburb";
-            }
-            else if (string.IsNullOrEmpty(postcode) || postcode.Count() < 4)
-            {
-                label_errormessage.Text = "Please enter a valid Postcode";
-            }
-            else if (cb_state.SelectedItem == null)
-            {
-                label_errormessage.Text = "Please select a State or Territory";
-            }
-            else
-            {
-                String address = tb_streetaddress.Text + " " + tb_suburb.Text + " " + tb_postcode.Text + " " + cb_state.SelectedItem.ToString();
-                User customer = new Customer(email, password, firstName, lastName, phone, address);
-                UserFileManager.addUser(customer);
                 MessageBox.Show("Successfully added User. Welcome, " + firstName);
-                this.Hide();
+                this.Close();
             }
         }
 
@@ -100,7 +64,7 @@ namespace Booking.com
 
         private void cancel_click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
     }
 }

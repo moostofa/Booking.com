@@ -17,27 +17,27 @@ namespace Booking.com
         {
             Start start = new Start();
             start.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void addhotel_click(object sender, EventArgs e)
         {
             AddHotel addHotelView = new AddHotel(admin);
             addHotelView.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void button_editviewhotel_Click(object sender, EventArgs e)
         {
             EditViewHotel editHotelView = new EditViewHotel(admin);
             editHotelView.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void button_addairline_Click(object sender, EventArgs e)
         {
             AddAirfare addAirfareView = new AddAirfare(admin);
-            this.Hide();
+            this.Close();
             addAirfareView.Show();
         }
 

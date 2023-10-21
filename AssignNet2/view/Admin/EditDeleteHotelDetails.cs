@@ -36,7 +36,7 @@ namespace Booking.com
         {
             EditViewHotel editViewHotel = new EditViewHotel(admin);
             editViewHotel.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void button_save_Click(object sender, EventArgs e)
