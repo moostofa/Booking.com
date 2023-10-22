@@ -4,7 +4,6 @@ C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\bin\Debug\net7.0-win
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\bin\Debug\net7.0-windows\AssignNet2.runtimeconfig.json
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\bin\Debug\net7.0-windows\AssignNet2.dll
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\bin\Debug\net7.0-windows\AssignNet2.pdb
-C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\AssignNet2.Properties.Resources.resources
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.Start.resources
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.AddAirfare.resources
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.AddHotel.resources
@@ -71,3 +70,4 @@ C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\bin\Debug\net7.0-win
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.csproj.AssemblyReference.cache
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.csproj.CopyComplete
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\bin\Debug\net7.0-windows\Enums.NET.dll
+C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.Properties.Resources.resources

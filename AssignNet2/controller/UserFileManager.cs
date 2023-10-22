@@ -141,7 +141,6 @@ public class UserFileManager
                 return user;
             }
         }
-        MessageBox.Show("Incorrect Email or Password. Please try again");
         return null;
     }
     private static User checkLoginCredentials(string email, string password)

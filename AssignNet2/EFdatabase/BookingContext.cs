@@ -1,5 +1,4 @@
-﻿
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +10,16 @@ namespace Booking.com
     public class BookingContext : DbContext
     {
         public DbSet<Booking> Bookings { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    => optionsBuilder.UseSqlite("Data Source=bookings_details.db");
+
+        public BookingContext() : base(GetOptions())
+        {
+
+        }
+
+        private static DbContextOptions<BookingContext> GetOptions()
+        {
+            return SqliteDbContextOptionsBuilderExtensions.UseSqlite(new DbContextOptionsBuilder<BookingContext>(), "Data Source=bookings_details.db").Options;
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -26,7 +33,7 @@ namespace Booking.com
                     CompanyType = 1,
                     CompanyId = 1,
                 }
-                );
+            );
         }
     }
 }

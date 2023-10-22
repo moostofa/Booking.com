@@ -2,16 +2,21 @@
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>AssignNet2</RootNamespace>
+    <RootNamespace>Booking.com</RootNamespace>
     <AssemblyName>AssignNet2</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\hotel_details.txt" />
-    <Content Include="bin\Debug\airline_details.txt" />
-    <Content Include="bin\Debug\user_details.txt" />
+    <Compile Remove="bin\**" />
+    <EmbeddedResource Remove="bin\**" />
+    <None Remove="bin\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\net7.0-windows\airline_details.txt" />
+    <None Include="bin\Debug\net7.0-windows\hotel_details.txt" />
+    <None Include="bin\Debug\net7.0-windows\user_details.txt" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Enums.NET" Version="4.0.1" />

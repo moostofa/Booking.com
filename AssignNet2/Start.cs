@@ -17,6 +17,12 @@ namespace Booking.com
             string password = tb_password.Text;
 
             User user = UserFileManager.checkLoginValidDetails(email, password);
+            if (user == null)
+            {
+                MessageBox.Show("Incorrect Email or Password. Try Again");
+                tb_password.Text = string.Empty;
+                return;
+            }
             if (user.Type == USER_TYPE.Admin)
             {
                 AdminView adminView = new AdminView((Admin)user);
