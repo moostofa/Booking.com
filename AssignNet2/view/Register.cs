@@ -27,21 +27,24 @@ namespace Booking.com
 
         private void register_click(object sender, EventArgs e)
         {
-            string email = tb_email.Text;
-            string password = tb_password.Text;
-            string firstName = tb_firstname.Text;
-            string lastName = tb_lastname.Text;
-            string phone = tb_phonenumber.Text;
-            string streetAddress = tb_streetaddress.Text;
-            string suburb = tb_suburb.Text;
-            string postcode = tb_postcode.Text;
+            Dictionary<string, string> properties = new Dictionary<string, string>
+            {
+                {"Email", tb_email.Text },
+                {"Password", tb_password.Text },
+                {"FirstName", tb_firstname.Text },
+                {"LastName", tb_lastname.Text},
+                {"Phone", tb_phonenumber.Text },
+                {"StreetAddress", tb_streetaddress.Text },
+                {"Suburb", tb_suburb.Text },
+                {"Postcode", tb_postcode.Text },
+                {"State", cb_state.SelectedText }
+            };
 
-            string[] properties = new string[] {email, password, firstName, lastName, phone, streetAddress, suburb, postcode, cb_state.SelectedText};
             bool userAdded = UserFileManager.addUser(properties);
 
             if (userAdded)
             {
-                MessageBox.Show("Successfully added User. Welcome, " + firstName);
+                MessageBox.Show("Successfully added User. Welcome, " + properties["FirstName"]);
                 this.Close();
             }
         }

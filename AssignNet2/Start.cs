@@ -9,6 +9,7 @@ namespace Booking.com
         public Start()
         {
             InitializeComponent();
+            BookingContext context = new BookingContext();
         }
 
         private void login_Click(object sender, EventArgs e)

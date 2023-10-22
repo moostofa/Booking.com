@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Collections;
 
 public class Customer : User
 {
@@ -29,17 +30,17 @@ public class Customer : User
     }
 
 
-    public bool changeAccountDetails(string[] properties)
+    public bool changeAccountDetails(Dictionary<string, string> properties)
     {
-        if (CheckForm.changeCustomerDetails(properties)) 
+        if (FormValidation.AreCustomerDetailsValid(properties)) 
         {
             UserFileManager.UpdateCustomerDetails(this, properties);
-            this.Email = properties[0];
-            this.Password = properties[1];
-            this.FirstName = properties[2];
-            this.LastName = properties[3];
-            this.Phone = properties[4];
-            this.Address = properties[5];
+            this.Email = properties["Email"];
+            this.Password = properties["Password"];
+            this.FirstName = properties["FirstName"];
+            this.LastName = properties["LastName"];
+            this.Phone = properties["Phone"];
+            this.Address = properties["Address"];
             MessageBox.Show("Successfully Changed Details");
             return true;
         }

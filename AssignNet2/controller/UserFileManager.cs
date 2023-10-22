@@ -58,13 +58,13 @@ public class UserFileManager
         writeUsersToFile();
     }
 
-    public static bool addUser(string[] properties)
+    public static bool addUser(Dictionary<string,string> properties)
     {
-        bool validUser = CheckForm.registerCustomer(properties);
+        bool validUser = FormValidation.AreCustomerRegistrationDetailsValid(properties);
         if (validUser)
         {
-            string address = properties[5] + " " + properties[6] + " " + properties[7] + " " + properties[8];
-            User customer = new Customer(properties[0], properties[1], properties[2], properties[3], properties[4], address);
+            string address = properties["StreetAddress"] + " " + properties["Suburb"] + " " + properties["State"] + " " + properties["Postcode"];
+            User customer = new Customer(properties["Email"], properties["Password"], properties["FirstName"], properties["LastName"], properties["Phone"], address);
             return true;
         }
         return false;
@@ -72,7 +72,7 @@ public class UserFileManager
 
     // for changing account details e.g 'First Name'
     // NOT FOR Updating Booking - Check BookingManager.UpdateBooking(...)
-    public static void UpdateCustomerDetails(Customer customer, string[] properties)
+    public static void UpdateCustomerDetails(Customer customer, Dictionary<string, string> properties)
     {
         users = readUsersFromFile();
         int index = users.FindIndex(user => user.Email == customer.Email);
@@ -82,12 +82,12 @@ public class UserFileManager
         }
         else
         {
-            users[index].Email = properties[0];
-            users[index].Password = properties[1];
-            users[index].FirstName = properties[2];
-            users[index].LastName = properties[3];
-            users[index].Phone = properties[4];
-            users[index].Address = properties[5];
+            users[index].Email = properties["Email"];
+            users[index].Password = properties["Password"];
+            users[index].FirstName = properties["FirstName"];
+            users[index].LastName = properties["LastName"];
+            users[index].Phone = properties["Phone"];
+            users[index].Address = properties["Address"];
             writeUsersToFile();
             MessageBox.Show("Account Details Successfully Changed");
         }
@@ -133,7 +133,7 @@ public class UserFileManager
 
     public static User checkLoginValidDetails(string email, string password)
     {
-        bool validLogin = (CheckForm.loginValidation(email, password));
+        bool validLogin = (FormValidation.AreLoginDetailsValid(email, password));
         if (validLogin) {
             User user = UserFileManager.checkLoginCredentials(email, password);
             if (user != null)

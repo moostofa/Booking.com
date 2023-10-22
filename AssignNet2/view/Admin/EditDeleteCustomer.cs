@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Booking.com
@@ -41,7 +43,16 @@ namespace Booking.com
 
         private void button_save_Click(object sender, EventArgs e)
         {
-            string[] properties = new string[] { tb_email.Text, tb_password.Text, tb_firstname.Text, tb_lastname.Text, tb_phone.Text, tb_address.Text };
+            Dictionary<string, string> properties = new Dictionary<string, string>
+            {
+                { "Email", tb_email.Text },
+                { "Password", tb_password.Text },
+                { "FirstName", tb_firstname.Text },
+                { "LastName", tb_lastname.Text },
+                { "Phone", tb_phone.Text },
+                { "Address", tb_address.Text }
+            };
+
             bool detailsChanged = customer.changeAccountDetails(properties);
             if (detailsChanged)
             {

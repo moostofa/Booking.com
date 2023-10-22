@@ -41,11 +41,13 @@ namespace Booking.com
 
         private void button_save_Click(object sender, EventArgs e)
         {
-            string name = tb_name.Text;
-            string location = tb_location.Text;
-            string price = tb_price.Text;
-
-            string[] properties = new string[] { name, location, price };
+            Dictionary<string, string> properties = new Dictionary<string, string>
+            {
+                { "Name", tb_name.Text },
+                { "Location", tb_location.Text },
+                { "Price", tb_price.Text }
+            };
+     
             bool hotelUpdated = HotelFileManager.UpdateHotelDetails(hotel, properties);
             if (hotelUpdated)
             {

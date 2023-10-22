@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using Booking.com;
 
 
@@ -78,28 +80,32 @@ public class HotelFileManager
         writeHotelsToFile();
     }
 
-    public static void addHotel(string name, string location, string price)
+    public static bool addHotel(Dictionary<string, string> properties)
     {
-        double pricePerNight;
-        try
+        bool areHotelDetailsValid = FormValidation.IsNewOrModifiedHotelValid(properties);
+        if (areHotelDetailsValid )
         {
-            pricePerNight = Convert.ToDouble(price);
+            double price;
+            try
+            {
+                price = Convert.ToDouble(properties["Price"]);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Invalid Price Format");
+                return false;
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("Price too large");
+                return false;
+            }
+            hotelList = readHotelsFromFile();
+            Hotel hotel = new Hotel(properties["Name"], properties["Location"], generateHotelId(), price);
+            hotelList.Add(hotel);
+            writeHotelsToFile();
         }
-        catch (FormatException)
-        {
-            MessageBox.Show("Invalid PricePerNight Format");
-            return;
-        }
-        catch (OverflowException)
-        {
-            MessageBox.Show("PricePerNight too large");
-            return;
-        }
-
-        hotelList = readHotelsFromFile();
-        Hotel hotel = new Hotel(name, location, generateHotelId(), pricePerNight);
-        hotelList.Add(hotel);
-        writeHotelsToFile();
+        return false;
     }
 
     public static int generateHotelId()
@@ -120,9 +126,9 @@ public class HotelFileManager
         return hotelList;
     }
 
-    public static bool UpdateHotelDetails(Hotel hotel, string[] properties)
+    public static bool UpdateHotelDetails(Hotel hotel, Dictionary<string, string> properties)
     {
-        bool hotelDetailsValid = CheckForm.addEditHotel(properties);
+        bool hotelDetailsValid = FormValidation.IsNewOrModifiedHotelValid(properties);
 
         hotelList = readHotelsFromFile();
         int index = hotelList.FindIndex(res => res.Id == hotel.Id);
@@ -133,10 +139,22 @@ public class HotelFileManager
         }
         else
         {
-            hotelList[index].Name = (string)properties[0];
-            hotelList[index].Location = (string)properties[1];
-            hotelList[index].PricePerNight = double.Parse(properties[2]);
-
+            try
+            {
+                hotelList[index].PricePerNight = double.Parse(properties["Price"]);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Invalid PricePerNight Format");
+                return false;
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("PricePerNight too large");
+                return false;
+            }
+            hotelList[index].Name = properties["Name"];
+            hotelList[index].Location = properties["Location"];
             writeHotelsToFile();
             MessageBox.Show("Account Details Successfully Changed");
             return true;

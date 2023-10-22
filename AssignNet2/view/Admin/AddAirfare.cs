@@ -28,11 +28,14 @@ namespace Booking.com
 
         private void button_addairfare_Click(object sender, EventArgs e)
         {
-            string name = tb_airlinename.Text;
-            string location = tb_location.Text;
-            string destination = tb_destination.Text;
-            string price = tb_price.Text;
-            string[] properties = new string[] { name, location, destination, price };
+            Dictionary<string, string> properties = new Dictionary<string, string>
+            {
+                {"Name", tb_airlinename.Text},
+                {"Location", tb_location.Text},
+                {"Destination", tb_location.Text},
+                {"Price", tb_price.Text}
+            };
+
             bool airfareAdded = AirfareFileManager.addAirfare(properties);
             if (airfareAdded)
             {

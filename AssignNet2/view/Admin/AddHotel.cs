@@ -27,14 +27,15 @@ namespace Booking.com
 
         private void buttonadd_Click(object sender, EventArgs e)
         {
-            string name = tb_name.Text;
-            string location = tb_location.Text;
-            string price = tb_price.Text;
-            string[] properties = new string[] { name, location, price };
-            bool validForm = CheckForm.addEditHotel(properties);
+            Dictionary<string, string> properties = new Dictionary<string, string>
+            {
+                { "Name", tb_name.Text },
+                { "Location", tb_location.Text },
+                { "Price", tb_price.Text }
+            };
+            bool validForm = HotelFileManager.addHotel(properties);
             if (validForm)
             {
-                HotelFileManager.addHotel(name, location, price);
                 MessageBox.Show("Hotel Added Successfully");
                 back();
             }

@@ -37,15 +37,15 @@
             }
             return null;
         }  
-        public static bool addAirfare(string[] properties)
+        public static bool addAirfare(Dictionary<string, string> properties)
         {
-            bool validAirfare = CheckForm.addEditAirfare(properties);
+            bool validAirfare = FormValidation.IsNewOrModifiedAirfareValid(properties);
             double price;
             if (validAirfare)
             {
                 try
                 {
-                    price = Convert.ToDouble(properties[3]);
+                    price = Convert.ToDouble(properties["Price"]);
                 }
                 catch (FormatException)
                 {
@@ -59,7 +59,7 @@
                 }
 
                 airfareList = readAirfaresFromFile();
-                Airfare airfare = new Airfare(properties[0], properties[1], generateAirlineId(), properties[2], price);
+                Airfare airfare = new Airfare(properties["Name"], properties["Location"], generateAirlineId(), properties["Destination"], price);
                 airfareList.Add(airfare);
                 writeAirfaresToFile();
                 MessageBox.Show("Airfare Added Successfully");
