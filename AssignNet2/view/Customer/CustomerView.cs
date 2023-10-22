@@ -33,5 +33,12 @@ namespace Booking.com
             CustomerChangeDetails customerChangeDetailsView = new CustomerChangeDetails(customer);
             customerChangeDetailsView.ShowDialog();
         }
+
+        private void button_bookHotel_Click(object sender, EventArgs e)
+        {
+            CustomerViewHotels customerViewHotels = new CustomerViewHotels(customer);
+            customerViewHotels.Show();
+            this.Close();
+        }
     }
 }

@@ -164,7 +164,7 @@
             this.Controls.Add(this.label_email);
             this.Controls.Add(this.label_name);
             this.Name = "ViewCustomer";
-            this.Text = "Form1";
+            this.Text = "BookHotel";
             this.ResumeLayout(false);
             this.PerformLayout();
 

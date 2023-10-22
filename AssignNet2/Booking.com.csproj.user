@@ -4,6 +4,9 @@
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="view\Customer\CustomerViewHotels.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Start.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -34,7 +37,10 @@
     <Compile Update="view\Admin\ViewCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="view\Admin\ViewHotelDetails.cs">
+    <Compile Update="view\Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\ViewHotelDetails.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="view\Customer\CustomerChangeDetails.cs">
@@ -43,10 +49,10 @@
     <Compile Update="view\Customer\CustomerView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="view\Register.cs">
+    <Compile Update="view\Customer\BookHotel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="view\Test.cs">
+    <Compile Update="view\Register.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

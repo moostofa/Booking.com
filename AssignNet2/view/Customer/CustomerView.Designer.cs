@@ -28,46 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_changecustomerdetails = new System.Windows.Forms.Button();
-            this.button_logout = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            button_changecustomerdetails = new System.Windows.Forms.Button();
+            button_logout = new System.Windows.Forms.Button();
+            button_bookHotel = new System.Windows.Forms.Button();
+            SuspendLayout();
             // 
             // button_changecustomerdetails
             // 
-            this.button_changecustomerdetails.Location = new System.Drawing.Point(648, 12);
-            this.button_changecustomerdetails.Name = "button_changecustomerdetails";
-            this.button_changecustomerdetails.Size = new System.Drawing.Size(129, 31);
-            this.button_changecustomerdetails.TabIndex = 0;
-            this.button_changecustomerdetails.Text = "Change My Details";
-            this.button_changecustomerdetails.UseVisualStyleBackColor = true;
-            this.button_changecustomerdetails.Click += new System.EventHandler(this.changedetails_click);
+            button_changecustomerdetails.Location = new System.Drawing.Point(482, 12);
+            button_changecustomerdetails.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            button_changecustomerdetails.Name = "button_changecustomerdetails";
+            button_changecustomerdetails.Size = new System.Drawing.Size(150, 36);
+            button_changecustomerdetails.TabIndex = 0;
+            button_changecustomerdetails.Text = "Change My Details";
+            button_changecustomerdetails.UseVisualStyleBackColor = true;
+            button_changecustomerdetails.Click += changedetails_click;
             // 
             // button_logout
             // 
-            this.button_logout.Location = new System.Drawing.Point(783, 12);
-            this.button_logout.Name = "button_logout";
-            this.button_logout.Size = new System.Drawing.Size(86, 31);
-            this.button_logout.TabIndex = 1;
-            this.button_logout.Text = "Logout";
-            this.button_logout.UseVisualStyleBackColor = true;
-            this.button_logout.Click += new System.EventHandler(this.logout_click);
+            button_logout.Location = new System.Drawing.Point(649, 12);
+            button_logout.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            button_logout.Name = "button_logout";
+            button_logout.Size = new System.Drawing.Size(100, 36);
+            button_logout.TabIndex = 1;
+            button_logout.Text = "Logout";
+            button_logout.UseVisualStyleBackColor = true;
+            button_logout.Click += logout_click;
             // 
-            // UserWindow
+            // button_bookHotel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 676);
-            this.Controls.Add(this.button_logout);
-            this.Controls.Add(this.button_changecustomerdetails);
-            this.Name = "UserWindow";
-            this.Text = "Form1";
-            this.ResumeLayout(false);
-
+            button_bookHotel.Location = new System.Drawing.Point(41, 415);
+            button_bookHotel.Name = "button_bookHotel";
+            button_bookHotel.Size = new System.Drawing.Size(150, 35);
+            button_bookHotel.TabIndex = 2;
+            button_bookHotel.Text = "Book Hotel";
+            button_bookHotel.UseVisualStyleBackColor = true;
+            button_bookHotel.Click += button_bookHotel_Click;
+            // 
+            // CustomerView
+            // 
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(762, 486);
+            Controls.Add(button_bookHotel);
+            Controls.Add(button_logout);
+            Controls.Add(button_changecustomerdetails);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "CustomerView";
+            Text = "BookHotel";
+            ResumeLayout(false);
         }
 
         #endregion
 
         private System.Windows.Forms.Button button_changecustomerdetails;
         private System.Windows.Forms.Button button_logout;
+        private System.Windows.Forms.Button button_bookHotel;
     }
 }

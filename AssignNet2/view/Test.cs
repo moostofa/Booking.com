@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ namespace Booking.com
 {
     public partial class Test : Form
     {
-        BookingContext? context;
+        BookingContext context;
         public Test()
         {
             InitializeComponent();
@@ -22,13 +23,9 @@ namespace Booking.com
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-
             this.context = new BookingContext();
             this.context.Database.EnsureCreated();
-            //test();
-
             this.context.Bookings.Load();
-
             this.bookingBindingSource.DataSource = context.Bookings.Local.ToBindingList();
         }
 

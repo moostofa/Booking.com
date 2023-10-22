@@ -132,7 +132,7 @@
             this.Controls.Add(this.text_name);
             this.Controls.Add(this.label_name);
             this.Name = "ViewHotel";
-            this.Text = "Form1";
+            this.Text = "BookHotel";
             this.ResumeLayout(false);
             this.PerformLayout();
 

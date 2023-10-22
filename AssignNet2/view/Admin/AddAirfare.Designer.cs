@@ -152,7 +152,7 @@
             this.Controls.Add(this.label_location);
             this.Controls.Add(this.label_airlinename);
             this.Name = "AddAirfare";
-            this.Text = "Form1";
+            this.Text = "BookHotel";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -190,7 +190,7 @@
             this.Controls.Add(this.tb_password);
             this.Controls.Add(this.tb_email);
             this.Name = "CustomerChangeDetailsView";
-            this.Text = "Form1";
+            this.Text = "BookHotel";
             this.ResumeLayout(false);
             this.PerformLayout();
 

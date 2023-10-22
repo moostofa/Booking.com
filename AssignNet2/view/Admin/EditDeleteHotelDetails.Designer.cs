@@ -143,7 +143,7 @@
             this.Controls.Add(this.label_location);
             this.Controls.Add(this.label_name);
             this.Name = "EditDeleteHotel";
-            this.Text = "Form1";
+            this.Text = "BookHotel";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -214,7 +214,7 @@
             this.Controls.Add(this.tb_lastname);
             this.Controls.Add(this.tb_firstname);
             this.Name = "EditDeleteCustomer";
-            this.Text = "Form1";
+            this.Text = "BookHotel";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -10,6 +10,7 @@ namespace Booking.com
         public Start()
         {
             InitializeComponent();
+            BookingsManager.createBookingsDbContext();
             Test test = new Test();
             test.Show();
         }

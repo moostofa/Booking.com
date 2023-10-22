@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -159,5 +160,14 @@ namespace Booking.com
             return true;
         }
 
+        public static bool AreHotelBookingDetailsValid(Hashtable properties)
+        {
+            if (!((DateTime)properties["CheckIn"] < (DateTime)properties["CheckOut"]))
+            {
+                MessageBox.Show("Cannot check-out before check-in. Please pick a valid date");
+                return false;
+            }
+            return true;
+        }
     }
 }

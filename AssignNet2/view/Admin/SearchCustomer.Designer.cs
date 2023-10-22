@@ -79,7 +79,7 @@
             this.Controls.Add(this.label_email);
             this.Controls.Add(this.textBox1);
             this.Name = "SearchCustomer";
-            this.Text = "Form1";
+            this.Text = "BookHotel";
             this.ResumeLayout(false);
             this.PerformLayout();
 

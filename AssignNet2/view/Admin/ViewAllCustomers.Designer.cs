@@ -93,7 +93,7 @@
             this.Controls.Add(this.lb_customers);
             this.Controls.Add(this.label_title);
             this.Name = "ViewAllCustomers";
-            this.Text = "Form1";
+            this.Text = "BookHotel";
             this.ResumeLayout(false);
             this.PerformLayout();
 

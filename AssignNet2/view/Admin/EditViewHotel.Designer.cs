@@ -94,7 +94,7 @@
             this.Controls.Add(this.button_view);
             this.Controls.Add(this.lb_hotellist);
             this.Name = "EditHotelView";
-            this.Text = "Form1";
+            this.Text = "BookHotel";
             this.ResumeLayout(false);
             this.PerformLayout();
 
