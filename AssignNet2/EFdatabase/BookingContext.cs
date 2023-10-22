@@ -3,6 +3,7 @@ using System;
 
 namespace Booking.com
 {
+    // Using Entity Framework Code First approach to generate the DB tables and store the bookings that were made by customers.
     public class BookingContext : DbContext
     {
         public DbSet<Booking> Bookings { get; set; }
@@ -19,6 +20,14 @@ namespace Booking.com
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Booking>(entity =>
+            {
+                entity.ToTable("Bookings");
+                entity.HasKey(b => b.BookingId);
+            });
+
             modelBuilder.Entity<Booking>().HasData(
                 new Booking
                 {
@@ -31,5 +40,6 @@ namespace Booking.com
                 }
             );
         }
+
     }
 }

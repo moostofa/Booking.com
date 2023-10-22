@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Booking.com
@@ -9,7 +10,8 @@ namespace Booking.com
         public Start()
         {
             InitializeComponent();
-            BookingContext context = new BookingContext();
+            Test test = new Test();
+            test.Show();
         }
 
         private void login_Click(object sender, EventArgs e)
