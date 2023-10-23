@@ -28,112 +28,132 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_addhotel = new System.Windows.Forms.Button();
-            this.button_editviewhotel = new System.Windows.Forms.Button();
-            this.button_logout = new System.Windows.Forms.Button();
-            this.button_addairline = new System.Windows.Forms.Button();
-            this.button_vieweditairfare = new System.Windows.Forms.Button();
-            this.button_registercustomer = new System.Windows.Forms.Button();
-            this.button_searchcustomer = new System.Windows.Forms.Button();
-            this.button_viewallcustomers = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            button_addhotel = new System.Windows.Forms.Button();
+            button_editviewhotel = new System.Windows.Forms.Button();
+            button_logout = new System.Windows.Forms.Button();
+            button_addairline = new System.Windows.Forms.Button();
+            button_vieweditairfare = new System.Windows.Forms.Button();
+            button_registercustomer = new System.Windows.Forms.Button();
+            button_searchcustomerbookings = new System.Windows.Forms.Button();
+            button_viewallcustomers = new System.Windows.Forms.Button();
+            button_searchbookings = new System.Windows.Forms.Button();
+            SuspendLayout();
             // 
             // button_addhotel
             // 
-            this.button_addhotel.Location = new System.Drawing.Point(222, 245);
-            this.button_addhotel.Name = "button_addhotel";
-            this.button_addhotel.Size = new System.Drawing.Size(143, 23);
-            this.button_addhotel.TabIndex = 2;
-            this.button_addhotel.Text = "Add Hotel";
-            this.button_addhotel.UseVisualStyleBackColor = true;
-            this.button_addhotel.Click += new System.EventHandler(this.addhotel_click);
+            button_addhotel.Location = new System.Drawing.Point(259, 283);
+            button_addhotel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            button_addhotel.Name = "button_addhotel";
+            button_addhotel.Size = new System.Drawing.Size(167, 27);
+            button_addhotel.TabIndex = 2;
+            button_addhotel.Text = "Add Hotel";
+            button_addhotel.UseVisualStyleBackColor = true;
+            button_addhotel.Click += addhotel_click;
             // 
             // button_editviewhotel
             // 
-            this.button_editviewhotel.Location = new System.Drawing.Point(222, 287);
-            this.button_editviewhotel.Name = "button_editviewhotel";
-            this.button_editviewhotel.Size = new System.Drawing.Size(143, 23);
-            this.button_editviewhotel.TabIndex = 3;
-            this.button_editviewhotel.Text = "View/Edit Hotel Details";
-            this.button_editviewhotel.UseVisualStyleBackColor = true;
-            this.button_editviewhotel.Click += new System.EventHandler(this.button_editviewhotel_Click);
+            button_editviewhotel.Location = new System.Drawing.Point(259, 331);
+            button_editviewhotel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            button_editviewhotel.Name = "button_editviewhotel";
+            button_editviewhotel.Size = new System.Drawing.Size(167, 27);
+            button_editviewhotel.TabIndex = 3;
+            button_editviewhotel.Text = "View/Edit Hotel Details";
+            button_editviewhotel.UseVisualStyleBackColor = true;
+            button_editviewhotel.Click += button_editviewhotel_Click;
             // 
             // button_logout
             // 
-            this.button_logout.Location = new System.Drawing.Point(679, 12);
-            this.button_logout.Name = "button_logout";
-            this.button_logout.Size = new System.Drawing.Size(75, 23);
-            this.button_logout.TabIndex = 5;
-            this.button_logout.Text = "Logout";
-            this.button_logout.UseVisualStyleBackColor = true;
-            this.button_logout.Click += new System.EventHandler(this.logout_click);
+            button_logout.Location = new System.Drawing.Point(792, 14);
+            button_logout.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            button_logout.Name = "button_logout";
+            button_logout.Size = new System.Drawing.Size(88, 27);
+            button_logout.TabIndex = 5;
+            button_logout.Text = "Logout";
+            button_logout.UseVisualStyleBackColor = true;
+            button_logout.Click += logout_click;
             // 
             // button_addairline
             // 
-            this.button_addairline.Location = new System.Drawing.Point(41, 245);
-            this.button_addairline.Name = "button_addairline";
-            this.button_addairline.Size = new System.Drawing.Size(143, 23);
-            this.button_addairline.TabIndex = 6;
-            this.button_addairline.Text = "Add Airfare";
-            this.button_addairline.UseVisualStyleBackColor = true;
-            this.button_addairline.Click += new System.EventHandler(this.button_addairline_Click);
+            button_addairline.Location = new System.Drawing.Point(48, 283);
+            button_addairline.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            button_addairline.Name = "button_addairline";
+            button_addairline.Size = new System.Drawing.Size(167, 27);
+            button_addairline.TabIndex = 6;
+            button_addairline.Text = "Add Airfare";
+            button_addairline.UseVisualStyleBackColor = true;
+            button_addairline.Click += button_addairline_Click;
             // 
             // button_vieweditairfare
             // 
-            this.button_vieweditairfare.Location = new System.Drawing.Point(41, 287);
-            this.button_vieweditairfare.Name = "button_vieweditairfare";
-            this.button_vieweditairfare.Size = new System.Drawing.Size(143, 23);
-            this.button_vieweditairfare.TabIndex = 7;
-            this.button_vieweditairfare.Text = "View/Edit Airfare Details";
-            this.button_vieweditairfare.UseVisualStyleBackColor = true;
+            button_vieweditairfare.Location = new System.Drawing.Point(48, 331);
+            button_vieweditairfare.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            button_vieweditairfare.Name = "button_vieweditairfare";
+            button_vieweditairfare.Size = new System.Drawing.Size(167, 27);
+            button_vieweditairfare.TabIndex = 7;
+            button_vieweditairfare.Text = "View/Edit Airfare Details";
+            button_vieweditairfare.UseVisualStyleBackColor = true;
             // 
             // button_registercustomer
             // 
-            this.button_registercustomer.Location = new System.Drawing.Point(404, 245);
-            this.button_registercustomer.Name = "button_registercustomer";
-            this.button_registercustomer.Size = new System.Drawing.Size(143, 23);
-            this.button_registercustomer.TabIndex = 8;
-            this.button_registercustomer.Text = "Register Customer";
-            this.button_registercustomer.UseVisualStyleBackColor = true;
-            this.button_registercustomer.Click += new System.EventHandler(this.button_registercustomer_Click);
+            button_registercustomer.Location = new System.Drawing.Point(471, 283);
+            button_registercustomer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            button_registercustomer.Name = "button_registercustomer";
+            button_registercustomer.Size = new System.Drawing.Size(167, 27);
+            button_registercustomer.TabIndex = 8;
+            button_registercustomer.Text = "Register Customer";
+            button_registercustomer.UseVisualStyleBackColor = true;
+            button_registercustomer.Click += button_registercustomer_Click;
             // 
-            // button_searchcustomer
+            // button_searchcustomerbookings
             // 
-            this.button_searchcustomer.Location = new System.Drawing.Point(404, 287);
-            this.button_searchcustomer.Name = "button_searchcustomer";
-            this.button_searchcustomer.Size = new System.Drawing.Size(143, 23);
-            this.button_searchcustomer.TabIndex = 9;
-            this.button_searchcustomer.Text = "Search Customer";
-            this.button_searchcustomer.UseVisualStyleBackColor = true;
-            this.button_searchcustomer.Click += new System.EventHandler(this.button_searchcustomer_Click);
+            button_searchcustomerbookings.Location = new System.Drawing.Point(684, 331);
+            button_searchcustomerbookings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            button_searchcustomerbookings.Name = "button_searchcustomerbookings";
+            button_searchcustomerbookings.Size = new System.Drawing.Size(167, 27);
+            button_searchcustomerbookings.TabIndex = 9;
+            button_searchcustomerbookings.Text = " Search Customer Bookings";
+            button_searchcustomerbookings.UseVisualStyleBackColor = true;
+            button_searchcustomerbookings.Click += button_searchcustomerbookings_Click;
             // 
             // button_viewallcustomers
             // 
-            this.button_viewallcustomers.Location = new System.Drawing.Point(404, 331);
-            this.button_viewallcustomers.Name = "button_viewallcustomers";
-            this.button_viewallcustomers.Size = new System.Drawing.Size(143, 23);
-            this.button_viewallcustomers.TabIndex = 10;
-            this.button_viewallcustomers.Text = "View All Customers";
-            this.button_viewallcustomers.UseVisualStyleBackColor = true;
-            this.button_viewallcustomers.Click += new System.EventHandler(this.button_viewallcustomers_Click);
+            button_viewallcustomers.Location = new System.Drawing.Point(471, 331);
+            button_viewallcustomers.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            button_viewallcustomers.Name = "button_viewallcustomers";
+            button_viewallcustomers.Size = new System.Drawing.Size(167, 27);
+            button_viewallcustomers.TabIndex = 10;
+            button_viewallcustomers.Text = "View All Customers";
+            button_viewallcustomers.UseVisualStyleBackColor = true;
+            button_viewallcustomers.Click += button_viewallcustomers_Click;
+            // 
+            // button_searchbookings
+            // 
+            button_searchbookings.Location = new System.Drawing.Point(684, 283);
+            button_searchbookings.Name = "button_searchbookings";
+            button_searchbookings.Size = new System.Drawing.Size(167, 27);
+            button_searchbookings.TabIndex = 11;
+            button_searchbookings.Text = "Search Bookings";
+            button_searchbookings.UseVisualStyleBackColor = true;
+            button_searchbookings.Click += button_searchbookings_Click;
             // 
             // AdminView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 431);
-            this.Controls.Add(this.button_viewallcustomers);
-            this.Controls.Add(this.button_searchcustomer);
-            this.Controls.Add(this.button_registercustomer);
-            this.Controls.Add(this.button_vieweditairfare);
-            this.Controls.Add(this.button_addairline);
-            this.Controls.Add(this.button_logout);
-            this.Controls.Add(this.button_editviewhotel);
-            this.Controls.Add(this.button_addhotel);
-            this.Name = "AdminView";
-            this.Text = "Admin";
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(896, 416);
+            Controls.Add(button_searchbookings);
+            Controls.Add(button_viewallcustomers);
+            Controls.Add(button_searchcustomerbookings);
+            Controls.Add(button_registercustomer);
+            Controls.Add(button_vieweditairfare);
+            Controls.Add(button_addairline);
+            Controls.Add(button_logout);
+            Controls.Add(button_editviewhotel);
+            Controls.Add(button_addhotel);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "AdminView";
+            Text = "Admin";
+            ResumeLayout(false);
         }
 
         #endregion
@@ -144,7 +164,8 @@
         private System.Windows.Forms.Button button_addairline;
         private System.Windows.Forms.Button button_vieweditairfare;
         private System.Windows.Forms.Button button_registercustomer;
-        private System.Windows.Forms.Button button_searchcustomer;
+        private System.Windows.Forms.Button button_searchcustomerbookings;
         private System.Windows.Forms.Button button_viewallcustomers;
+        private System.Windows.Forms.Button button_searchbookings;
     }
 }

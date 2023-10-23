@@ -5,5 +5,12 @@
     "Location": "Sydney",
     "Destination": "Melbourne",
     "Price": 100
+  },
+  {
+    "Id": 2,
+    "Name": "Virgin",
+    "Location": "New Zealand",
+    "Destination": "New Zealand",
+    "Price": 10
   }
 ]

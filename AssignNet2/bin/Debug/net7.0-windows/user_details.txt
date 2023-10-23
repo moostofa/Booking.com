@@ -6,8 +6,7 @@
     "LastName": "sample",
     "Phone": "0412312312",
     "Address": "123 sample st sydney nsw",
-    "Type": 1,
-    "Bookings": {}
+    "Type": 1
   },
   {
     "Email": "admin@booking.com",

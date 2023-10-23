@@ -22,7 +22,7 @@ namespace Booking.com
             }
         }
 
-        public static bool createBooking(Hashtable properties)
+        public static bool createHotelBooking(Hashtable properties)
         {
             bool validBooking = FormValidation.AreHotelBookingDetailsValid(properties);
             if (validBooking)
@@ -40,18 +40,14 @@ namespace Booking.com
                 return true;
             }
             return false;
-
         }
 
-        public static int calculateNights(DateTime checkIn, DateTime checkOut)
+        public static int calculateHotelNights(DateTime checkIn, DateTime checkOut)
         {
             TimeSpan nights = checkOut.Subtract(checkIn);
             return nights.Days;
         }
+
+
     }
 }
-        // CheckIn < CheckOut
-        // generate booking id
-        // time into 4 - if 3, add 0 to start
-        // take ceiling - calculate cost
-        // time (Airfare)

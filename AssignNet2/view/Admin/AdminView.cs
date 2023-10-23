@@ -47,7 +47,7 @@ namespace Booking.com
             register.ShowDialog();
         }
 
-        private void button_searchcustomer_Click(object sender, EventArgs e)
+        private void button_searchcustomerbookings_Click(object sender, EventArgs e)
         {
             SearchCustomer searchCustomerView = new SearchCustomer();
             searchCustomerView.ShowDialog();
@@ -58,5 +58,12 @@ namespace Booking.com
             ViewAllCustomers viewAllCustomers = new ViewAllCustomers(admin);
             viewAllCustomers.ShowDialog();
         }
+
+        private void button_searchbookings_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

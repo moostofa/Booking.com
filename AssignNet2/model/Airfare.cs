@@ -12,6 +12,9 @@ namespace Booking.com
         public string Destination {  get; set; }
         public double Price { get; set; }
 
+        public DateTime Departure { get; set; }
+        public DateTime Arrival { get; set; }
+
         public Airfare(string name, string location, int id, string destination, double price) : base(name, location, id) 
         {
             this.Destination = destination;

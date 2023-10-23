@@ -104,6 +104,7 @@ public class UserFileManager
         File.WriteAllText(filePath, writeUsers);
     }
 
+    /* Code written before Database - delete when ready
     public static void addBooking(Customer user, KeyValuePair<int, string> bookingID)
     {
         users = readUsersFromFile();
@@ -130,6 +131,7 @@ public class UserFileManager
             Console.WriteLine(ex.Message);
         }
     }
+    */
 
     public static User checkLoginValidDetails(string email, string password)
     {
@@ -221,6 +223,7 @@ public class UserConverter : JsonConverter<User>
         writer.WriteString("Address", value.Address);
         writer.WriteNumber("Type", (int)value.Type);
 
+        /* Code before DataBase created - delete when ready
         if (value is Customer customer && customer.Bookings != null)
         {
             writer.WriteStartObject("Bookings");
@@ -231,6 +234,7 @@ public class UserConverter : JsonConverter<User>
             }
             writer.WriteEndObject();
         }
+        */
         writer.WriteEndObject();
     }
 }
