@@ -28,7 +28,7 @@ namespace Booking.com
 
         private void listHotels()
         {
-            List<Hotel> hotels = HotelFileManager.getHotelList();
+            List<Hotel> hotels = Hotel.FileManager.GetListOfEntities();
 
             foreach (Hotel hotel in hotels)
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Booking.com.controller;
+using System;
 
 public abstract class User
 {
@@ -9,6 +10,8 @@ public abstract class User
     public string Phone { get; set; }
     public string Address { get; set; }
     public USER_TYPE Type { get; }
+
+    public static readonly UserFileManager FileManager = new UserFileManager();
 
     public User(string email, string password, string firstName, string lastName, string phone, string address, USER_TYPE type)
     {

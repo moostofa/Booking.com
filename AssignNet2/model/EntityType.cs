@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Booking.com
 {
-    public abstract class CompanyEntity
+    public abstract class BookingEntity
     {
         public int Id { get; set; }
         public String Name { get; set; }
         public String Location { get; set; }
 
 
-        public CompanyEntity(string name, string location, int id)
+        public BookingEntity(string name, string location, int id)
         {
             this.Name = name;
             this.Location = location;

@@ -33,11 +33,14 @@ namespace Booking.com
                 { "Location", tb_location.Text },
                 { "Price", tb_price.Text }
             };
-            bool validForm = HotelFileManager.addHotel(properties);
-            if (validForm)
+            try
             {
-                MessageBox.Show("Hotel Added Successfully");
+                Hotel.FileManager.AddNewEntity(properties);
                 back();
+            }
+            catch
+            {
+                // MessageBox handled in deeper exception level
             }
         }  
 

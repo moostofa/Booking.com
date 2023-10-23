@@ -47,12 +47,17 @@ namespace Booking.com
                 { "Location", tb_location.Text },
                 { "Price", tb_price.Text }
             };
-     
-            bool hotelUpdated = HotelFileManager.UpdateHotelDetails(hotel, properties);
-            if (hotelUpdated)
+
+            try
             {
+                Hotel.FileManager.UpdateDetails(hotel, properties);
                 back();
             }
+            catch
+            {
+                // MessageBox handled in deeoer level exception
+            }
+            
         }
 
         private void button_back_Click(object sender, EventArgs e)
@@ -62,11 +67,16 @@ namespace Booking.com
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            bool hotelDeleted = HotelFileManager.deleteHotel(hotel);
-            if (hotelDeleted)
+            try
             {
+                Hotel.FileManager.DeleteFromFile(hotel);
                 back();
             }
+            catch
+            {
+                // MessageBox handled in deeper level exception
+            }
+
         }
     }
 }

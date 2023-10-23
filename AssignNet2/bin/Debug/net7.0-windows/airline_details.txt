@@ -12,5 +12,19 @@
     "Location": "New Zealand",
     "Destination": "New Zealand",
     "Price": 10
+  },
+  {
+    "Id": 3,
+    "Name": "Qantas",
+    "Location": "New Zealand",
+    "Destination": "New Zealand",
+    "Price": 402.62
+  },
+  {
+    "Id": 4,
+    "Name": "YourMum",
+    "Location": "HerVag",
+    "Destination": "HerVag",
+    "Price": 1
   }
 ]

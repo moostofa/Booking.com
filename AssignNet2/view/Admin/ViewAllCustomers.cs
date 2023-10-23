@@ -1,12 +1,5 @@
-﻿using AssignNet2;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Booking.com
@@ -23,10 +16,13 @@ namespace Booking.com
 
         private void listCustomers()
         {
-            List<Customer> customers = UserFileManager.getCustomersList();
-            foreach (Customer customer in customers)
+            List<User> users = User.FileManager.GetListOfEntities();
+            foreach (User user in users)
             {
-                lb_customers.Items.Add(customer);
+                if (user.Type == USER_TYPE.Customer)
+                {
+                    lb_customers.Items.Add(user);
+                }
             }
         }
 

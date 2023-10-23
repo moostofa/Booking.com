@@ -53,7 +53,7 @@ namespace Booking.com
                 { "Address", tb_address.Text }
             };
 
-            bool detailsChanged = customer.changeAccountDetails(properties);
+            bool detailsChanged = customer.ChangeAccountDetails(properties);
             if (detailsChanged)
             {
                 back();
@@ -67,7 +67,7 @@ namespace Booking.com
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            UserFileManager.deleteCustomer(customer);
+            User.FileManager.DeleteFromFile(customer);
             back();
         }
     }

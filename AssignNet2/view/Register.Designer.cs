@@ -28,247 +28,269 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tb_email = new System.Windows.Forms.TextBox();
-            this.tb_password = new System.Windows.Forms.TextBox();
-            this.tb_firstname = new System.Windows.Forms.TextBox();
-            this.tb_streetaddress = new System.Windows.Forms.TextBox();
-            this.tb_phonenumber = new System.Windows.Forms.TextBox();
-            this.tb_lastname = new System.Windows.Forms.TextBox();
-            this.label_email = new System.Windows.Forms.Label();
-            this.label_password = new System.Windows.Forms.Label();
-            this.label_firstname = new System.Windows.Forms.Label();
-            this.label_lastname = new System.Windows.Forms.Label();
-            this.label_phonenumber = new System.Windows.Forms.Label();
-            this.label_streetaddress = new System.Windows.Forms.Label();
-            this.tb_suburb = new System.Windows.Forms.TextBox();
-            this.label_suburb = new System.Windows.Forms.Label();
-            this.tb_postcode = new System.Windows.Forms.TextBox();
-            this.label_postcode = new System.Windows.Forms.Label();
-            this.cb_state = new System.Windows.Forms.ComboBox();
-            this.label_state = new System.Windows.Forms.Label();
-            this.button_register = new System.Windows.Forms.Button();
-            this.button_cancel = new System.Windows.Forms.Button();
-            this.label_errormessage = new System.Windows.Forms.Label();
-            this.label_title = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            tb_email = new System.Windows.Forms.TextBox();
+            tb_password = new System.Windows.Forms.TextBox();
+            tb_firstname = new System.Windows.Forms.TextBox();
+            tb_streetaddress = new System.Windows.Forms.TextBox();
+            tb_phonenumber = new System.Windows.Forms.TextBox();
+            tb_lastname = new System.Windows.Forms.TextBox();
+            label_email = new System.Windows.Forms.Label();
+            label_password = new System.Windows.Forms.Label();
+            label_firstname = new System.Windows.Forms.Label();
+            label_lastname = new System.Windows.Forms.Label();
+            label_phonenumber = new System.Windows.Forms.Label();
+            label_streetaddress = new System.Windows.Forms.Label();
+            tb_suburb = new System.Windows.Forms.TextBox();
+            label_suburb = new System.Windows.Forms.Label();
+            tb_postcode = new System.Windows.Forms.TextBox();
+            label_postcode = new System.Windows.Forms.Label();
+            cb_state = new System.Windows.Forms.ComboBox();
+            label_state = new System.Windows.Forms.Label();
+            button_register = new System.Windows.Forms.Button();
+            button_cancel = new System.Windows.Forms.Button();
+            label_errormessage = new System.Windows.Forms.Label();
+            label_title = new System.Windows.Forms.Label();
+            SuspendLayout();
             // 
             // tb_email
             // 
-            this.tb_email.Location = new System.Drawing.Point(180, 161);
-            this.tb_email.Name = "tb_email";
-            this.tb_email.Size = new System.Drawing.Size(231, 20);
-            this.tb_email.TabIndex = 0;
+            tb_email.Location = new System.Drawing.Point(210, 186);
+            tb_email.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            tb_email.Name = "tb_email";
+            tb_email.Size = new System.Drawing.Size(269, 23);
+            tb_email.TabIndex = 0;
             // 
             // tb_password
             // 
-            this.tb_password.Location = new System.Drawing.Point(180, 209);
-            this.tb_password.Name = "tb_password";
-            this.tb_password.Size = new System.Drawing.Size(231, 20);
-            this.tb_password.TabIndex = 1;
-            this.tb_password.UseSystemPasswordChar = true;
+            tb_password.Location = new System.Drawing.Point(210, 241);
+            tb_password.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            tb_password.Name = "tb_password";
+            tb_password.Size = new System.Drawing.Size(269, 23);
+            tb_password.TabIndex = 1;
+            tb_password.UseSystemPasswordChar = true;
             // 
             // tb_firstname
             // 
-            this.tb_firstname.Location = new System.Drawing.Point(180, 264);
-            this.tb_firstname.Name = "tb_firstname";
-            this.tb_firstname.Size = new System.Drawing.Size(231, 20);
-            this.tb_firstname.TabIndex = 2;
+            tb_firstname.Location = new System.Drawing.Point(210, 305);
+            tb_firstname.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            tb_firstname.Name = "tb_firstname";
+            tb_firstname.Size = new System.Drawing.Size(269, 23);
+            tb_firstname.TabIndex = 2;
             // 
             // tb_streetaddress
             // 
-            this.tb_streetaddress.Location = new System.Drawing.Point(180, 420);
-            this.tb_streetaddress.Name = "tb_streetaddress";
-            this.tb_streetaddress.Size = new System.Drawing.Size(231, 20);
-            this.tb_streetaddress.TabIndex = 5;
+            tb_streetaddress.Location = new System.Drawing.Point(210, 485);
+            tb_streetaddress.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            tb_streetaddress.Name = "tb_streetaddress";
+            tb_streetaddress.Size = new System.Drawing.Size(269, 23);
+            tb_streetaddress.TabIndex = 5;
             // 
             // tb_phonenumber
             // 
-            this.tb_phonenumber.Location = new System.Drawing.Point(180, 368);
-            this.tb_phonenumber.Name = "tb_phonenumber";
-            this.tb_phonenumber.Size = new System.Drawing.Size(231, 20);
-            this.tb_phonenumber.TabIndex = 4;
-            this.tb_phonenumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phone_keypress);
+            tb_phonenumber.Location = new System.Drawing.Point(210, 425);
+            tb_phonenumber.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            tb_phonenumber.Name = "tb_phonenumber";
+            tb_phonenumber.Size = new System.Drawing.Size(269, 23);
+            tb_phonenumber.TabIndex = 4;
+            tb_phonenumber.KeyPress += phone_keypress;
             // 
             // tb_lastname
             // 
-            this.tb_lastname.Location = new System.Drawing.Point(180, 314);
-            this.tb_lastname.Name = "tb_lastname";
-            this.tb_lastname.Size = new System.Drawing.Size(231, 20);
-            this.tb_lastname.TabIndex = 3;
+            tb_lastname.Location = new System.Drawing.Point(210, 362);
+            tb_lastname.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            tb_lastname.Name = "tb_lastname";
+            tb_lastname.Size = new System.Drawing.Size(269, 23);
+            tb_lastname.TabIndex = 3;
             // 
             // label_email
             // 
-            this.label_email.AutoSize = true;
-            this.label_email.Location = new System.Drawing.Point(112, 164);
-            this.label_email.Name = "label_email";
-            this.label_email.Size = new System.Drawing.Size(32, 13);
-            this.label_email.TabIndex = 6;
-            this.label_email.Text = "Email";
+            label_email.AutoSize = true;
+            label_email.Location = new System.Drawing.Point(131, 189);
+            label_email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_email.Name = "label_email";
+            label_email.Size = new System.Drawing.Size(36, 15);
+            label_email.TabIndex = 6;
+            label_email.Text = "Email";
             // 
             // label_password
             // 
-            this.label_password.AutoSize = true;
-            this.label_password.Location = new System.Drawing.Point(91, 216);
-            this.label_password.Name = "label_password";
-            this.label_password.Size = new System.Drawing.Size(53, 13);
-            this.label_password.TabIndex = 7;
-            this.label_password.Text = "Password";
+            label_password.AutoSize = true;
+            label_password.Location = new System.Drawing.Point(106, 249);
+            label_password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_password.Name = "label_password";
+            label_password.Size = new System.Drawing.Size(57, 15);
+            label_password.TabIndex = 7;
+            label_password.Text = "Password";
             // 
             // label_firstname
             // 
-            this.label_firstname.AutoSize = true;
-            this.label_firstname.Location = new System.Drawing.Point(87, 264);
-            this.label_firstname.Name = "label_firstname";
-            this.label_firstname.Size = new System.Drawing.Size(57, 13);
-            this.label_firstname.TabIndex = 8;
-            this.label_firstname.Text = "First Name";
+            label_firstname.AutoSize = true;
+            label_firstname.Location = new System.Drawing.Point(102, 305);
+            label_firstname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_firstname.Name = "label_firstname";
+            label_firstname.Size = new System.Drawing.Size(64, 15);
+            label_firstname.TabIndex = 8;
+            label_firstname.Text = "First Name";
             // 
             // label_lastname
             // 
-            this.label_lastname.AutoSize = true;
-            this.label_lastname.Location = new System.Drawing.Point(86, 314);
-            this.label_lastname.Name = "label_lastname";
-            this.label_lastname.Size = new System.Drawing.Size(58, 13);
-            this.label_lastname.TabIndex = 9;
-            this.label_lastname.Text = "Last Name";
+            label_lastname.AutoSize = true;
+            label_lastname.Location = new System.Drawing.Point(100, 362);
+            label_lastname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_lastname.Name = "label_lastname";
+            label_lastname.Size = new System.Drawing.Size(63, 15);
+            label_lastname.TabIndex = 9;
+            label_lastname.Text = "Last Name";
             // 
             // label_phonenumber
             // 
-            this.label_phonenumber.AutoSize = true;
-            this.label_phonenumber.Location = new System.Drawing.Point(66, 368);
-            this.label_phonenumber.Name = "label_phonenumber";
-            this.label_phonenumber.Size = new System.Drawing.Size(78, 13);
-            this.label_phonenumber.TabIndex = 10;
-            this.label_phonenumber.Text = "Phone Number";
+            label_phonenumber.AutoSize = true;
+            label_phonenumber.Location = new System.Drawing.Point(77, 425);
+            label_phonenumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_phonenumber.Name = "label_phonenumber";
+            label_phonenumber.Size = new System.Drawing.Size(88, 15);
+            label_phonenumber.TabIndex = 10;
+            label_phonenumber.Text = "Phone Number";
             // 
             // label_streetaddress
             // 
-            this.label_streetaddress.AutoSize = true;
-            this.label_streetaddress.Location = new System.Drawing.Point(68, 423);
-            this.label_streetaddress.Name = "label_streetaddress";
-            this.label_streetaddress.Size = new System.Drawing.Size(76, 13);
-            this.label_streetaddress.TabIndex = 11;
-            this.label_streetaddress.Text = "Street Address";
+            label_streetaddress.AutoSize = true;
+            label_streetaddress.Location = new System.Drawing.Point(79, 488);
+            label_streetaddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_streetaddress.Name = "label_streetaddress";
+            label_streetaddress.Size = new System.Drawing.Size(82, 15);
+            label_streetaddress.TabIndex = 11;
+            label_streetaddress.Text = "Street Address";
             // 
             // tb_suburb
             // 
-            this.tb_suburb.Location = new System.Drawing.Point(180, 476);
-            this.tb_suburb.Name = "tb_suburb";
-            this.tb_suburb.Size = new System.Drawing.Size(231, 20);
-            this.tb_suburb.TabIndex = 12;
+            tb_suburb.Location = new System.Drawing.Point(210, 549);
+            tb_suburb.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            tb_suburb.Name = "tb_suburb";
+            tb_suburb.Size = new System.Drawing.Size(269, 23);
+            tb_suburb.TabIndex = 12;
             // 
             // label_suburb
             // 
-            this.label_suburb.AutoSize = true;
-            this.label_suburb.Location = new System.Drawing.Point(103, 476);
-            this.label_suburb.Name = "label_suburb";
-            this.label_suburb.Size = new System.Drawing.Size(41, 13);
-            this.label_suburb.TabIndex = 13;
-            this.label_suburb.Text = "Suburb";
+            label_suburb.AutoSize = true;
+            label_suburb.Location = new System.Drawing.Point(120, 549);
+            label_suburb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_suburb.Name = "label_suburb";
+            label_suburb.Size = new System.Drawing.Size(45, 15);
+            label_suburb.TabIndex = 13;
+            label_suburb.Text = "Suburb";
             // 
             // tb_postcode
             // 
-            this.tb_postcode.Location = new System.Drawing.Point(180, 523);
-            this.tb_postcode.Name = "tb_postcode";
-            this.tb_postcode.Size = new System.Drawing.Size(121, 20);
-            this.tb_postcode.TabIndex = 14;
-            this.tb_postcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.postcode_keypress);
+            tb_postcode.Location = new System.Drawing.Point(210, 603);
+            tb_postcode.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            tb_postcode.Name = "tb_postcode";
+            tb_postcode.Size = new System.Drawing.Size(140, 23);
+            tb_postcode.TabIndex = 14;
+            tb_postcode.KeyPress += postcode_keypress;
             // 
             // label_postcode
             // 
-            this.label_postcode.AutoSize = true;
-            this.label_postcode.Location = new System.Drawing.Point(92, 523);
-            this.label_postcode.Name = "label_postcode";
-            this.label_postcode.Size = new System.Drawing.Size(52, 13);
-            this.label_postcode.TabIndex = 15;
-            this.label_postcode.Text = "Postcode";
+            label_postcode.AutoSize = true;
+            label_postcode.Location = new System.Drawing.Point(107, 603);
+            label_postcode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_postcode.Name = "label_postcode";
+            label_postcode.Size = new System.Drawing.Size(56, 15);
+            label_postcode.TabIndex = 15;
+            label_postcode.Text = "Postcode";
             // 
             // cb_state
             // 
-            this.cb_state.FormattingEnabled = true;
-            this.cb_state.Location = new System.Drawing.Point(180, 574);
-            this.cb_state.Name = "cb_state";
-            this.cb_state.Size = new System.Drawing.Size(121, 21);
-            this.cb_state.TabIndex = 16;
+            cb_state.FormattingEnabled = true;
+            cb_state.Location = new System.Drawing.Point(210, 662);
+            cb_state.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cb_state.Name = "cb_state";
+            cb_state.Size = new System.Drawing.Size(140, 23);
+            cb_state.TabIndex = 16;
             // 
             // label_state
             // 
-            this.label_state.AutoSize = true;
-            this.label_state.Location = new System.Drawing.Point(112, 574);
-            this.label_state.Name = "label_state";
-            this.label_state.Size = new System.Drawing.Size(32, 13);
-            this.label_state.TabIndex = 17;
-            this.label_state.Text = "State";
+            label_state.AutoSize = true;
+            label_state.Location = new System.Drawing.Point(131, 662);
+            label_state.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_state.Name = "label_state";
+            label_state.Size = new System.Drawing.Size(33, 15);
+            label_state.TabIndex = 17;
+            label_state.Text = "State";
             // 
             // button_register
             // 
-            this.button_register.Location = new System.Drawing.Point(272, 668);
-            this.button_register.Name = "button_register";
-            this.button_register.Size = new System.Drawing.Size(75, 23);
-            this.button_register.TabIndex = 18;
-            this.button_register.Text = "Register";
-            this.button_register.UseVisualStyleBackColor = true;
-            this.button_register.Click += new System.EventHandler(this.register_click);
+            button_register.Location = new System.Drawing.Point(317, 771);
+            button_register.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            button_register.Name = "button_register";
+            button_register.Size = new System.Drawing.Size(88, 27);
+            button_register.TabIndex = 18;
+            button_register.Text = "Register";
+            button_register.UseVisualStyleBackColor = true;
+            button_register.Click += register_click;
             // 
             // button_cancel
             // 
-            this.button_cancel.Location = new System.Drawing.Point(161, 668);
-            this.button_cancel.Name = "button_cancel";
-            this.button_cancel.Size = new System.Drawing.Size(75, 23);
-            this.button_cancel.TabIndex = 19;
-            this.button_cancel.Text = "Cancel";
-            this.button_cancel.UseVisualStyleBackColor = true;
-            this.button_cancel.Click += new System.EventHandler(this.cancel_click);
+            button_cancel.Location = new System.Drawing.Point(188, 771);
+            button_cancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            button_cancel.Name = "button_cancel";
+            button_cancel.Size = new System.Drawing.Size(88, 27);
+            button_cancel.TabIndex = 19;
+            button_cancel.Text = "Cancel";
+            button_cancel.UseVisualStyleBackColor = true;
+            button_cancel.Click += cancel_click;
             // 
             // label_errormessage
             // 
-            this.label_errormessage.AutoSize = true;
-            this.label_errormessage.Location = new System.Drawing.Point(144, 119);
-            this.label_errormessage.Name = "label_errormessage";
-            this.label_errormessage.Size = new System.Drawing.Size(0, 13);
-            this.label_errormessage.TabIndex = 20;
+            label_errormessage.AutoSize = true;
+            label_errormessage.Location = new System.Drawing.Point(168, 137);
+            label_errormessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_errormessage.Name = "label_errormessage";
+            label_errormessage.Size = new System.Drawing.Size(0, 15);
+            label_errormessage.TabIndex = 20;
             // 
             // label_title
             // 
-            this.label_title.AutoSize = true;
-            this.label_title.Location = new System.Drawing.Point(198, 119);
-            this.label_title.Name = "label_title";
-            this.label_title.Size = new System.Drawing.Size(89, 13);
-            this.label_title.TabIndex = 21;
-            this.label_title.Text = "Registration Form";
+            label_title.AutoSize = true;
+            label_title.Location = new System.Drawing.Point(231, 137);
+            label_title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_title.Name = "label_title";
+            label_title.Size = new System.Drawing.Size(101, 15);
+            label_title.TabIndex = 21;
+            label_title.Text = "Registration Form";
             // 
             // Register
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 763);
-            this.Controls.Add(this.label_title);
-            this.Controls.Add(this.label_errormessage);
-            this.Controls.Add(this.button_cancel);
-            this.Controls.Add(this.button_register);
-            this.Controls.Add(this.label_state);
-            this.Controls.Add(this.cb_state);
-            this.Controls.Add(this.label_postcode);
-            this.Controls.Add(this.tb_postcode);
-            this.Controls.Add(this.label_suburb);
-            this.Controls.Add(this.tb_suburb);
-            this.Controls.Add(this.label_streetaddress);
-            this.Controls.Add(this.label_phonenumber);
-            this.Controls.Add(this.label_lastname);
-            this.Controls.Add(this.label_firstname);
-            this.Controls.Add(this.label_password);
-            this.Controls.Add(this.label_email);
-            this.Controls.Add(this.tb_streetaddress);
-            this.Controls.Add(this.tb_phonenumber);
-            this.Controls.Add(this.tb_lastname);
-            this.Controls.Add(this.tb_firstname);
-            this.Controls.Add(this.tb_password);
-            this.Controls.Add(this.tb_email);
-            this.Name = "Register";
-            this.Text = "Register";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(607, 880);
+            Controls.Add(label_title);
+            Controls.Add(label_errormessage);
+            Controls.Add(button_cancel);
+            Controls.Add(button_register);
+            Controls.Add(label_state);
+            Controls.Add(cb_state);
+            Controls.Add(label_postcode);
+            Controls.Add(tb_postcode);
+            Controls.Add(label_suburb);
+            Controls.Add(tb_suburb);
+            Controls.Add(label_streetaddress);
+            Controls.Add(label_phonenumber);
+            Controls.Add(label_lastname);
+            Controls.Add(label_firstname);
+            Controls.Add(label_password);
+            Controls.Add(label_email);
+            Controls.Add(tb_streetaddress);
+            Controls.Add(tb_phonenumber);
+            Controls.Add(tb_lastname);
+            Controls.Add(tb_firstname);
+            Controls.Add(tb_password);
+            Controls.Add(tb_email);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "Register";
+            Text = "Register";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

@@ -18,19 +18,19 @@ namespace Booking.com
         {
             InitializeComponent();
             this.admin = admin;            
-            listHotels();
+            AddAllHotelsToListbox();
         }
 
-        private void back()
+        private void CloseForm()
         {
             AdminView adminView = new AdminView(admin);
             adminView.Show();
             this.Close();
         }
 
-        private void listHotels()
+        private void AddAllHotelsToListbox()
         {
-            List<Hotel> hotels = HotelFileManager.getHotelList();
+            List<Hotel> hotels = Hotel.FileManager.GetListOfEntities();
 
             foreach (Hotel hotel in hotels)
             {
@@ -40,7 +40,7 @@ namespace Booking.com
 
         private void button_cancel_Click(object sender, EventArgs e)
         {
-            back();
+            CloseForm();
         }
 
         private void button_view_Click(object sender, EventArgs e)

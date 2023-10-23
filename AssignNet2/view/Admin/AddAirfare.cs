@@ -35,11 +35,14 @@ namespace Booking.com
                 {"Destination", tb_location.Text},
                 {"Price", tb_price.Text}
             };
-
-            bool airfareAdded = AirfareFileManager.addAirfare(properties);
-            if (airfareAdded)
+            try
             {
+                Airfare.FileManager.AddNewEntity(properties);
                 back();
+            }
+            catch
+            {
+                // MessageBox handled in deeper exception level
             }
         }
 

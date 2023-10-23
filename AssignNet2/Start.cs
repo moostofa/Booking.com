@@ -20,10 +20,9 @@ namespace Booking.com
             string email = tb_email.Text;
             string password = tb_password.Text;
 
-            User user = UserFileManager.checkLoginValidDetails(email, password);
+            User user = User.FileManager.GetUserWithLoginDetails(email, password);
             if (user == null)
             {
-                MessageBox.Show("Incorrect Email or Password. Try Again");
                 tb_password.Text = string.Empty;
                 return;
             }

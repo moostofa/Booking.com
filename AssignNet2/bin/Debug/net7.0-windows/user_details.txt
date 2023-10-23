@@ -16,5 +16,14 @@
     "Phone": "0412312312",
     "Address": "123 sample st sydney nsw",
     "Type": 0
+  },
+  {
+    "Email": "ming@vuong.com",
+    "Password": "12345678",
+    "FirstName": "ming",
+    "LastName": "vuong",
+    "Phone": "0412345678",
+    "Address": "58 Hamilton Rd FairField NSW 2165",
+    "Type": 1
   }
 ]

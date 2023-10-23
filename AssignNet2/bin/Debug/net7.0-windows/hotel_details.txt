@@ -2,7 +2,7 @@
   {
     "Id": 1,
     "Name": "Hilton",
-    "Location": "Sydney",
+    "Location": "Sydneys",
     "PricePerNight": 1234.56
   },
   {
@@ -10,5 +10,11 @@
     "Name": "Family Inn",
     "Location": "Brisbane",
     "PricePerNight": 123.34
+  },
+  {
+    "Id": 3,
+    "Name": "DonNai",
+    "Location": "HerVag",
+    "PricePerNight": 0.01
   }
 ]

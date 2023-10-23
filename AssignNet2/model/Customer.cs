@@ -19,18 +19,18 @@ public class Customer : User
     }
 
 
-    public bool changeAccountDetails(Dictionary<string, string> properties)
+    public bool ChangeAccountDetails(Dictionary<string, string> customerDetails)
     {
-        if (FormValidation.AreCustomerDetailsValid(properties)) 
+        if (FormValidation.AreCustomerDetailsValid(customerDetails)) 
         {
-            UserFileManager.UpdateCustomerDetails(this, properties);
-            this.Email = properties["Email"];
-            this.Password = properties["Password"];
-            this.FirstName = properties["FirstName"];
-            this.LastName = properties["LastName"];
-            this.Phone = properties["Phone"];
-            this.Address = properties["Address"];
-            MessageBox.Show("Successfully Changed Details");
+            FileManager.UpdateDetails(this, customerDetails);
+            this.Email = customerDetails["Email"];
+            this.Password = customerDetails["Password"];
+            this.FirstName = customerDetails["FirstName"];
+            this.LastName = customerDetails["LastName"];
+            this.Phone = customerDetails["Phone"];
+            this.Address = customerDetails["Address"];
+            MessageBox.Show("Account details for this customer were successfully changed and saved.");
             return true;
         }
         return false; 

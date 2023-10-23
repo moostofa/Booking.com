@@ -38,7 +38,7 @@ namespace Booking.com
                 { "Phone", tb_phonenumber.Text },
                 { "Address", tb_address.Text }
             };
-            bool detailsChanged = customer.changeAccountDetails(properties);
+            bool detailsChanged = customer.ChangeAccountDetails(properties);
             if (detailsChanged)
             {
                 this.Close();

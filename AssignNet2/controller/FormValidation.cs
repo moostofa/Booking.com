@@ -50,7 +50,7 @@ namespace Booking.com
             return true;
         }
 
-        public static bool AreLoginDetailsValid(string email, string password)
+        public static bool AreLoginInputsValid(string email, string password)
         {
             if (string.IsNullOrEmpty(email))
             {
@@ -65,7 +65,7 @@ namespace Booking.com
             return true;
         }
 
-        public static bool IsNewOrModifiedHotelValid(Dictionary<string, string> properties)
+        public static bool AreHotelInputsValid(Dictionary<string, string> properties)
         {
             if (string.IsNullOrEmpty(properties["Name"]))
             {

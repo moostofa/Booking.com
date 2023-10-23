@@ -1,23 +1,21 @@
-﻿namespace Booking.com
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Windows.Forms;
+
+namespace Booking.com.controller
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.IO;
-    using System.Text.Json;
-    using System.Text.Json.Serialization;
-    using System.Windows.Forms;
-
-
-    // This class manages serialization and deserialization of airfare details (name,  etc.) to a txt file
-    // We will eventually need another class that communicates with an actual DB such as Postgres (for bonus marks by introducing external DB with LINQ) for bookings.
-    public class AirfareFileManager
+    using exceptions;
+    // This class manages serialization and deserialization of airfare details to a txt file
+    public class AirfareFileManager : IFileManager<Airfare>
     {
         private static string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "airline_details.txt");
-        private static List<Airfare> airfareList = new List<Airfare>();
+        private List<Airfare> airfareList = new List<Airfare>();
 
-        // Deserializes the JSON txt file of hotel details as a list of User objects
-        private static List<Airfare> readAirfaresFromFile()
+        // Reads and deserializes the JSON txt file of hotel details as a list of Airfare objects
+        public List<Airfare> DeserializeEntitiesFromFile()
         {
             string airfareData = File.ReadAllText(filePath);
 
@@ -36,39 +34,51 @@
                 Console.WriteLine("List Empty");
             }
             return null;
-        }  
-        public static bool addAirfare(Dictionary<string, string> properties)
+        }
+
+        public void AddToFile(Airfare airfare)
         {
-            bool validAirfare = FormValidation.IsNewOrModifiedAirfareValid(properties);
+            airfareList = DeserializeEntitiesFromFile();
+            airfareList.Add(airfare);
+            WriteEntitiestoFile();
+        }
+        public List<Airfare> GetListOfEntities()
+        {
+            airfareList = DeserializeEntitiesFromFile();
+            return airfareList;
+        }
+        public void AddNewEntity(Dictionary<string, string> airfareProperties)
+        {
+            bool validAirfare = FormValidation.IsNewOrModifiedAirfareValid(airfareProperties);
             double price;
             if (validAirfare)
             {
                 try
                 {
-                    price = Convert.ToDouble(properties["Price"]);
+                    price = Convert.ToDouble(airfareProperties["Price"]);
                 }
                 catch (FormatException)
                 {
-                    MessageBox.Show("Invalid Price Format");
-                    return false;
+                    string errorMessage = "Error: Invalid price format";
+                    MessageBox.Show(errorMessage);
+                    throw new UnableToAddException(errorMessage);
                 }
                 catch (OverflowException)
                 {
-                    MessageBox.Show("Price too large");
-                    return false;
+                    string errorMessage = "Error: Invalid price format";
+                    MessageBox.Show(errorMessage);
+                    throw new UnableToAddException(errorMessage);
                 }
 
-                airfareList = readAirfaresFromFile();
-                Airfare airfare = new Airfare(properties["Name"], properties["Location"], generateAirlineId(), properties["Destination"], price);
+                airfareList = DeserializeEntitiesFromFile();
+                Airfare airfare = new Airfare(airfareProperties["Name"], airfareProperties["Location"], GenerateNewId(), airfareProperties["Destination"], price);
                 airfareList.Add(airfare);
-                writeAirfaresToFile();
-                MessageBox.Show("Airfare Added Successfully");
-                return true;
+                WriteEntitiestoFile();
+                MessageBox.Show("Success! The airfare has been added to the system!");
             }
-            return false;    
         }
 
-        public static int generateAirlineId()
+        public int GenerateNewId()
         {
             if (airfareList.Count == 0)
             {
@@ -80,20 +90,35 @@
             }
         }
 
-        private static void writeAirfaresToFile()
+        public void WriteEntitiestoFile()
         {
             JsonSerializerOptions options = new JsonSerializerOptions
             {
                 WriteIndented = true,
-                Converters = { new AirlineConverter() },
+                Converters = { new AirfareConverter() },
             };
             string writeAirlines = JsonSerializer.Serialize(airfareList, options);
             File.WriteAllText(filePath, writeAirlines);
         }
+
+        void IFileManager<Airfare>.UpdateDetails(Airfare t, Dictionary<string, string> properties)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IFileManager<Airfare>.DeleteFromFile(Airfare t)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IFileManager<Airfare>.WriteEntitiesToFile()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 
-    public class AirlineConverter : JsonConverter<Airfare>
+    public class AirfareConverter : JsonConverter<Airfare>
     {
         public override Airfare Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
@@ -154,9 +179,4 @@
             writer.WriteEndObject();
         }
     }
-
-
-
-
-
 }

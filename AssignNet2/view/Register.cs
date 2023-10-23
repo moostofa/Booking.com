@@ -37,15 +37,17 @@ namespace Booking.com
                 {"StreetAddress", tb_streetaddress.Text },
                 {"Suburb", tb_suburb.Text },
                 {"Postcode", tb_postcode.Text },
-                {"State", cb_state.SelectedText }
+                {"State", cb_state.SelectedItem.ToString() }
             };
-
-            bool userAdded = UserFileManager.addUser(properties);
-
-            if (userAdded)
+            try
             {
+                User.FileManager.AddNewEntity(properties);
                 MessageBox.Show("Successfully added User. Welcome, " + properties["FirstName"]);
                 this.Close();
+            }
+            catch
+            {
+                // MessageBox handled in deeper exception level
             }
         }
 
