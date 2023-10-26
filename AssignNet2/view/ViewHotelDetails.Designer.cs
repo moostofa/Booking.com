@@ -28,114 +28,123 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label_name = new System.Windows.Forms.Label();
-            this.text_name = new System.Windows.Forms.Label();
-            this.label_location = new System.Windows.Forms.Label();
-            this.text_location = new System.Windows.Forms.Label();
-            this.label_price = new System.Windows.Forms.Label();
-            this.text_pricepernight = new System.Windows.Forms.Label();
-            this.label_id = new System.Windows.Forms.Label();
-            this.text_id = new System.Windows.Forms.Label();
-            this.button_close = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            label_name = new System.Windows.Forms.Label();
+            text_name = new System.Windows.Forms.Label();
+            label_location = new System.Windows.Forms.Label();
+            text_location = new System.Windows.Forms.Label();
+            label_price = new System.Windows.Forms.Label();
+            text_pricepernight = new System.Windows.Forms.Label();
+            label_id = new System.Windows.Forms.Label();
+            text_id = new System.Windows.Forms.Label();
+            button_close = new System.Windows.Forms.Button();
+            SuspendLayout();
             // 
             // label_name
             // 
-            this.label_name.AutoSize = true;
-            this.label_name.Location = new System.Drawing.Point(62, 66);
-            this.label_name.Name = "label_name";
-            this.label_name.Size = new System.Drawing.Size(35, 13);
-            this.label_name.TabIndex = 0;
-            this.label_name.Text = "Name";
+            label_name.AutoSize = true;
+            label_name.Location = new System.Drawing.Point(72, 76);
+            label_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_name.Name = "label_name";
+            label_name.Size = new System.Drawing.Size(39, 15);
+            label_name.TabIndex = 0;
+            label_name.Text = "Name";
             // 
             // text_name
             // 
-            this.text_name.AutoSize = true;
-            this.text_name.Location = new System.Drawing.Point(127, 66);
-            this.text_name.Name = "text_name";
-            this.text_name.Size = new System.Drawing.Size(0, 13);
-            this.text_name.TabIndex = 1;
+            text_name.AutoSize = true;
+            text_name.Location = new System.Drawing.Point(148, 76);
+            text_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            text_name.Name = "text_name";
+            text_name.Size = new System.Drawing.Size(0, 15);
+            text_name.TabIndex = 1;
             // 
             // label_location
             // 
-            this.label_location.AutoSize = true;
-            this.label_location.Location = new System.Drawing.Point(49, 100);
-            this.label_location.Name = "label_location";
-            this.label_location.Size = new System.Drawing.Size(48, 13);
-            this.label_location.TabIndex = 2;
-            this.label_location.Text = "Location";
+            label_location.AutoSize = true;
+            label_location.Location = new System.Drawing.Point(57, 115);
+            label_location.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_location.Name = "label_location";
+            label_location.Size = new System.Drawing.Size(53, 15);
+            label_location.TabIndex = 2;
+            label_location.Text = "Location";
             // 
             // text_location
             // 
-            this.text_location.AutoSize = true;
-            this.text_location.Location = new System.Drawing.Point(127, 100);
-            this.text_location.Name = "text_location";
-            this.text_location.Size = new System.Drawing.Size(0, 13);
-            this.text_location.TabIndex = 3;
+            text_location.AutoSize = true;
+            text_location.Location = new System.Drawing.Point(148, 115);
+            text_location.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            text_location.Name = "text_location";
+            text_location.Size = new System.Drawing.Size(0, 15);
+            text_location.TabIndex = 3;
             // 
             // label_price
             // 
-            this.label_price.AutoSize = true;
-            this.label_price.Location = new System.Drawing.Point(19, 133);
-            this.label_price.Name = "label_price";
-            this.label_price.Size = new System.Drawing.Size(78, 13);
-            this.label_price.TabIndex = 4;
-            this.label_price.Text = "Price Per Night";
+            label_price.AutoSize = true;
+            label_price.Location = new System.Drawing.Point(22, 153);
+            label_price.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_price.Name = "label_price";
+            label_price.Size = new System.Drawing.Size(86, 15);
+            label_price.TabIndex = 4;
+            label_price.Text = "Price Per Night";
             // 
             // text_pricepernight
             // 
-            this.text_pricepernight.AutoSize = true;
-            this.text_pricepernight.Location = new System.Drawing.Point(127, 133);
-            this.text_pricepernight.Name = "text_pricepernight";
-            this.text_pricepernight.Size = new System.Drawing.Size(0, 13);
-            this.text_pricepernight.TabIndex = 5;
+            text_pricepernight.AutoSize = true;
+            text_pricepernight.Location = new System.Drawing.Point(148, 153);
+            text_pricepernight.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            text_pricepernight.Name = "text_pricepernight";
+            text_pricepernight.Size = new System.Drawing.Size(0, 15);
+            text_pricepernight.TabIndex = 5;
             // 
             // label_id
             // 
-            this.label_id.AutoSize = true;
-            this.label_id.Location = new System.Drawing.Point(79, 173);
-            this.label_id.Name = "label_id";
-            this.label_id.Size = new System.Drawing.Size(18, 13);
-            this.label_id.TabIndex = 6;
-            this.label_id.Text = "ID";
+            label_id.AutoSize = true;
+            label_id.Location = new System.Drawing.Point(92, 200);
+            label_id.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label_id.Name = "label_id";
+            label_id.Size = new System.Drawing.Size(18, 15);
+            label_id.TabIndex = 6;
+            label_id.Text = "ID";
             // 
             // text_id
             // 
-            this.text_id.AutoSize = true;
-            this.text_id.Location = new System.Drawing.Point(127, 173);
-            this.text_id.Name = "text_id";
-            this.text_id.Size = new System.Drawing.Size(0, 13);
-            this.text_id.TabIndex = 7;
+            text_id.AutoSize = true;
+            text_id.Location = new System.Drawing.Point(148, 200);
+            text_id.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            text_id.Name = "text_id";
+            text_id.Size = new System.Drawing.Size(0, 15);
+            text_id.TabIndex = 7;
             // 
             // button_close
             // 
-            this.button_close.Location = new System.Drawing.Point(87, 224);
-            this.button_close.Name = "button_close";
-            this.button_close.Size = new System.Drawing.Size(75, 23);
-            this.button_close.TabIndex = 8;
-            this.button_close.Text = "Close";
-            this.button_close.UseVisualStyleBackColor = true;
-            this.button_close.Click += new System.EventHandler(this.button_close_Click);
+            button_close.Location = new System.Drawing.Point(102, 258);
+            button_close.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            button_close.Name = "button_close";
+            button_close.Size = new System.Drawing.Size(88, 27);
+            button_close.TabIndex = 8;
+            button_close.Text = "Close";
+            button_close.UseVisualStyleBackColor = true;
+            button_close.Click += button_close_Click;
             // 
-            // ViewHotel
+            // ViewHotelDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(287, 309);
-            this.Controls.Add(this.button_close);
-            this.Controls.Add(this.text_id);
-            this.Controls.Add(this.label_id);
-            this.Controls.Add(this.text_pricepernight);
-            this.Controls.Add(this.label_price);
-            this.Controls.Add(this.text_location);
-            this.Controls.Add(this.label_location);
-            this.Controls.Add(this.text_name);
-            this.Controls.Add(this.label_name);
-            this.Name = "ViewHotel";
-            this.Text = "BookHotel";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(335, 357);
+            Controls.Add(button_close);
+            Controls.Add(text_id);
+            Controls.Add(label_id);
+            Controls.Add(text_pricepernight);
+            Controls.Add(label_price);
+            Controls.Add(text_location);
+            Controls.Add(label_location);
+            Controls.Add(text_name);
+            Controls.Add(label_name);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "ViewHotelDetails";
+            Text = "View Hotel Details";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

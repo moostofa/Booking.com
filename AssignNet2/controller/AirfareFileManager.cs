@@ -8,16 +8,16 @@ using System.Windows.Forms;
 namespace Booking.com.controller
 {
     using exceptions;
-    // This class manages serialization and deserialization of airfare details to a txt file
+    using validation;
+
     public class AirfareFileManager : IFileManager<Airfare>
     {
-        private static string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "airline_details.txt");
+        public static readonly string FilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "airline_details.txt");
         private List<Airfare> airfareList = new List<Airfare>();
 
-        // Reads and deserializes the JSON txt file of hotel details as a list of Airfare objects
         public List<Airfare> DeserializeEntitiesFromFile()
         {
-            string airfareData = File.ReadAllText(filePath);
+            string airfareData = File.ReadAllText(FilePath);
 
             JsonSerializerOptions options = new JsonSerializerOptions
             {
@@ -35,21 +35,20 @@ namespace Booking.com.controller
             }
             return null;
         }
-
-        public void AddToFile(Airfare airfare)
+        public List<Airfare> FilterEntities()
+        {
+            airfareList = DeserializeEntitiesFromFile();
+            return airfareList;
+        }
+        public void AddNewEntity(Airfare airfare)
         {
             airfareList = DeserializeEntitiesFromFile();
             airfareList.Add(airfare);
             WriteEntitiestoFile();
         }
-        public List<Airfare> GetListOfEntities()
-        {
-            airfareList = DeserializeEntitiesFromFile();
-            return airfareList;
-        }
         public void AddNewEntity(Dictionary<string, string> airfareProperties)
         {
-            bool validAirfare = FormValidation.IsNewOrModifiedAirfareValid(airfareProperties);
+            bool validAirfare = AirfareFormValidation.IsAirfareValid(airfareProperties);
             double price;
             if (validAirfare)
             {
@@ -70,11 +69,8 @@ namespace Booking.com.controller
                     throw new UnableToAddException(errorMessage);
                 }
 
-                airfareList = DeserializeEntitiesFromFile();
                 Airfare airfare = new Airfare(airfareProperties["Name"], airfareProperties["Location"], GenerateNewId(), airfareProperties["Destination"], price);
-                airfareList.Add(airfare);
-                WriteEntitiestoFile();
-                MessageBox.Show("Success! The airfare has been added to the system!");
+                AddNewEntity(airfare);
             }
         }
 
@@ -98,7 +94,7 @@ namespace Booking.com.controller
                 Converters = { new AirfareConverter() },
             };
             string writeAirlines = JsonSerializer.Serialize(airfareList, options);
-            File.WriteAllText(filePath, writeAirlines);
+            File.WriteAllText(FilePath, writeAirlines);
         }
 
         void IFileManager<Airfare>.UpdateDetails(Airfare t, Dictionary<string, string> properties)
@@ -106,12 +102,31 @@ namespace Booking.com.controller
             throw new NotImplementedException();
         }
 
-        void IFileManager<Airfare>.DeleteFromFile(Airfare t)
+        void IFileManager<Airfare>.DeleteEntity(Airfare airfareToDelete)
         {
-            throw new NotImplementedException();
+            airfareList = DeserializeEntitiesFromFile();
+            int index = airfareList.FindIndex(airfare => airfare.Name == airfareToDelete.Name && airfare.Location == airfareToDelete.Location);
+            if (index == -1)
+            {
+                string errorMessage = "Error: Airfare not found in file";
+                MessageBox.Show(errorMessage);
+                throw new InvalidDeletionException(errorMessage);
+            }
+
+            try
+            {
+                airfareList.RemoveAt(index);
+                WriteEntitiestoFile();
+                MessageBox.Show("Sucesss! The airfare has been deleted");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while trying to delete the airfare from the file: {ex.Message}");
+                throw new InvalidDeletionException(ex.Message, ex);
+            }
         }
 
-        void IFileManager<Airfare>.WriteEntitiesToFile()
+        void IFileManager<Airfare>.SerializeEntitiesToFile()
         {
             throw new NotImplementedException();
         }
@@ -127,7 +142,6 @@ namespace Booking.com.controller
             string location = null;
             string destination = null;
             double price = 0;
-
 
             while (reader.Read())
             {

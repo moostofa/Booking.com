@@ -41,6 +41,7 @@ namespace Booking.com
             bool detailsChanged = customer.ChangeAccountDetails(properties);
             if (detailsChanged)
             {
+                MessageBox.Show("Your customer details were successfully updated.", "Account Update Successful");
                 this.Close();
             }
         }

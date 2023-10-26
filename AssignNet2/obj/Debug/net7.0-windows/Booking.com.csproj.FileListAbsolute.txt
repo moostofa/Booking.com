@@ -52,9 +52,6 @@ C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-win
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.AddAirfare.resources
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.AddHotel.resources
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.AdminView.resources
-C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.EditDeleteCustomer.resources
-C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.EditDeleteHotelDetails.resources
-C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.EditViewHotel.resources
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.SearchCustomer.resources
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.ViewAllCustomers.resources
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.ViewCustomer.resources
@@ -76,3 +73,6 @@ C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-win
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.Test.resources
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.ViewBookings.resources
 C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.BookAirfare.resources
+C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.EditCustomer.resources
+C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.EditHotel.resources
+C:\Users\LeonnaMyers\Desktop\gitrpos\Booking.com\AssignNet2\obj\Debug\net7.0-windows\Booking.com.ViewAllHotels.resources

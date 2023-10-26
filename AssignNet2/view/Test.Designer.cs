@@ -82,8 +82,8 @@
             // 
             // companyTypeDataGridViewTextBoxColumn
             // 
-            companyTypeDataGridViewTextBoxColumn.DataPropertyName = "CompanyType";
-            companyTypeDataGridViewTextBoxColumn.HeaderText = "CompanyType";
+            companyTypeDataGridViewTextBoxColumn.DataPropertyName = "BookingType";
+            companyTypeDataGridViewTextBoxColumn.HeaderText = "BookingType";
             companyTypeDataGridViewTextBoxColumn.Name = "companyTypeDataGridViewTextBoxColumn";
             // 
             // companyIdDataGridViewTextBoxColumn

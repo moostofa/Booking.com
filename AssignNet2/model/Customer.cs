@@ -1,14 +1,14 @@
-﻿using Booking.com;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using System.Collections;
+using Booking.com.controller.validation;
+using Booking.com.model;
 
 public class Customer : User
 {
-    // key, booking id; value, type (hotel, airline) 
-    public Customer(string email, string password, string firstName, string lastName, string phone, string address) : base(email, password, firstName, lastName, phone, address, USER_TYPE.Customer)
+    public Customer(string email, string password, string firstName, string lastName, string phone, string address) : base(email, password, firstName, lastName, phone, address, UserType.Customer)
     {
 
     }
@@ -21,7 +21,7 @@ public class Customer : User
 
     public bool ChangeAccountDetails(Dictionary<string, string> customerDetails)
     {
-        if (FormValidation.AreCustomerDetailsValid(customerDetails)) 
+        if (UserFormValidation.AreCustomerDetailsValid(customerDetails))
         {
             FileManager.UpdateDetails(this, customerDetails);
             this.Email = customerDetails["Email"];
@@ -30,11 +30,11 @@ public class Customer : User
             this.LastName = customerDetails["LastName"];
             this.Phone = customerDetails["Phone"];
             this.Address = customerDetails["Address"];
-            MessageBox.Show("Account details for this customer were successfully changed and saved.");
             return true;
         }
-        return false; 
-        }
+        return false;
     }
+}
+
 
 

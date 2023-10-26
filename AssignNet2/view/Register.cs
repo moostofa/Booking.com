@@ -37,17 +37,17 @@ namespace Booking.com
                 {"StreetAddress", tb_streetaddress.Text },
                 {"Suburb", tb_suburb.Text },
                 {"Postcode", tb_postcode.Text },
-                {"State", cb_state.SelectedItem.ToString() }
+                {"State", cb_state.SelectedItem != null ? cb_state.SelectedItem.ToString() : ""}
             };
             try
             {
                 User.FileManager.AddNewEntity(properties);
-                MessageBox.Show("Successfully added User. Welcome, " + properties["FirstName"]);
+                MessageBox.Show("Your registration was successful! Welcome, " + properties["FirstName"], "Registration Successful");
                 this.Close();
             }
             catch
             {
-                // MessageBox handled in deeper exception level
+                // no need to do anything here, as a detailed MessageBox error is already shown at a deeper exception level. let the user continue to try add again.
             }
         }
 
@@ -70,6 +70,13 @@ namespace Booking.com
         private void cancel_click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cb_state_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // prevents user typing in this dropdown box. could also set the DropDownStyle property of this ComboBox to 'DropDownList',
+            // but that has a weird side effect of turning the box grey 
+            e.Handled = true;
         }
     }
 }

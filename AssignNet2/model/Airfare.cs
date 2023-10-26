@@ -9,7 +9,6 @@ namespace Booking.com
 {
     public class Airfare : BookingEntity
     {
-
         public string Destination {  get; set; }
         public double Price { get; set; }
 
@@ -19,6 +18,11 @@ namespace Booking.com
         {
             this.Destination = destination;
             this.Price = price;
+        }
+
+        public static List<Airfare> GetAllEntities()
+        {
+            return FileManager.DeserializeEntitiesFromFile();
         }
     }
 }

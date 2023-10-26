@@ -24,27 +24,24 @@ namespace Booking.com
         {
             AddHotel addHotelView = new AddHotel(admin);
             addHotelView.Show();
-            this.Close();
         }
 
-        private void button_editviewhotel_Click(object sender, EventArgs e)
+        private void button_viewallhotels_Click(object sender, EventArgs e)
         {
-            EditViewHotel editHotelView = new EditViewHotel(admin);
-            editHotelView.Show();
-            this.Close();
+            ViewAllHotels viewAllHotelsView = new ViewAllHotels(admin);
+            viewAllHotelsView.Show();
         }
 
         private void button_addairline_Click(object sender, EventArgs e)
         {
             AddAirfare addAirfareView = new AddAirfare(admin);
-            this.Close();
             addAirfareView.Show();
         }
 
         private void button_registercustomer_Click(object sender, EventArgs e)
         {
-            Register register = new Register();
-            register.ShowDialog();
+            Register registerView = new Register();
+            registerView.ShowDialog();
         }
 
         private void button_searchcustomerbookings_Click(object sender, EventArgs e)
@@ -55,8 +52,8 @@ namespace Booking.com
 
         private void button_viewallcustomers_Click(object sender, EventArgs e)
         {
-            ViewAllCustomers viewAllCustomers = new ViewAllCustomers(admin);
-            viewAllCustomers.ShowDialog();
+            ViewAllCustomers viewAllCustomersView = new ViewAllCustomers(admin);
+            viewAllCustomersView.Show();
         }
 
         private void button_searchbookings_Click(object sender, EventArgs e)

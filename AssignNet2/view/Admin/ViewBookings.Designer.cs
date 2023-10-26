@@ -61,7 +61,7 @@
             button_view.Location = new System.Drawing.Point(580, 82);
             button_view.Name = "button_view";
             button_view.Size = new System.Drawing.Size(112, 23);
-            button_view.TabIndex = 2;
+            button_view.TabIndex = 1;
             button_view.Text = "View Booking";
             button_view.UseVisualStyleBackColor = true;
             // 
@@ -70,7 +70,7 @@
             button_edit.Location = new System.Drawing.Point(580, 111);
             button_edit.Name = "button_edit";
             button_edit.Size = new System.Drawing.Size(112, 23);
-            button_edit.TabIndex = 3;
+            button_edit.TabIndex = 2;
             button_edit.Text = "Edit Booking";
             button_edit.UseVisualStyleBackColor = true;
             // 
@@ -89,7 +89,7 @@
             button_back.Location = new System.Drawing.Point(617, 402);
             button_back.Name = "button_back";
             button_back.Size = new System.Drawing.Size(75, 23);
-            button_back.TabIndex = 5;
+            button_back.TabIndex = 3;
             button_back.Text = "Back";
             button_back.UseVisualStyleBackColor = true;
             button_back.Click += button_back_Click;
@@ -106,7 +106,7 @@
             Controls.Add(label_title);
             Controls.Add(dtg_bookings);
             Name = "ViewBookings";
-            Text = "Form1";
+            Text = "View All Bookings";
             ((System.ComponentModel.ISupportInitialize)dtg_bookings).EndInit();
             ResumeLayout(false);
             PerformLayout();

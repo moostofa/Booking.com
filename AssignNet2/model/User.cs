@@ -1,5 +1,6 @@
 ﻿using Booking.com.controller;
-using System;
+using Booking.com.model;
+using System.Collections.Generic;
 
 public abstract class User
 {
@@ -9,11 +10,11 @@ public abstract class User
     public string LastName { get; set; }
     public string Phone { get; set; }
     public string Address { get; set; }
-    public USER_TYPE Type { get; }
+    public UserType Type { get; set; }
 
     public static readonly UserFileManager FileManager = new UserFileManager();
 
-    public User(string email, string password, string firstName, string lastName, string phone, string address, USER_TYPE type)
+    public User(string email, string password, string firstName, string lastName, string phone, string address, UserType type)
     {
         Email = email;
         Password = password;
@@ -23,10 +24,9 @@ public abstract class User
         Address = address;
         Type = type;
     }
-}
 
-public enum USER_TYPE
-{
-    Admin,
-    Customer
+    public static List<User> GetAllEntities()
+    {
+        return FileManager.DeserializeEntitiesFromFile();
+    }
 }

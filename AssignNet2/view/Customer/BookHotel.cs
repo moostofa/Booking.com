@@ -45,7 +45,7 @@ namespace Booking.com
                 {"CheckOut", dtp_checkout.Value },
                 {"CompanyId", hotel.Id }
             };
-            bool bookingSuccess = BookingsManager.createHotelBooking(properties);
+            bool bookingSuccess = BookingManager.CreateHotelBooking(properties);
             if (bookingSuccess)
             {
                 MessageBox.Show("Booking Successful");
@@ -76,7 +76,7 @@ namespace Booking.com
 
         private void updatePriceAndNights()
         {
-            int nights = BookingsManager.calculateHotelNights(dtp_checkin.Value, dtp_checkout.Value);
+            int nights = BookingManager.CalculateNumberOfNights(dtp_checkin.Value, dtp_checkout.Value);
             text_nights.Text = nights.ToString();
             text_price.Text = (nights * hotel.PricePerNight).ToString("F2");
         }

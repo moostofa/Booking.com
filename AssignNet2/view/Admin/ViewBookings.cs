@@ -18,7 +18,7 @@ namespace Booking.com
             InitializeComponent();
         }
 
-        public void back()
+        public void ReturnToPreviousForm()
         {
             AdminView adminView = new AdminView(admin);
             adminView.Show();
@@ -34,7 +34,7 @@ namespace Booking.com
 
         private void button_back_Click(object sender, EventArgs e)
         {
-            back();
+            ReturnToPreviousForm();
         }
 
 

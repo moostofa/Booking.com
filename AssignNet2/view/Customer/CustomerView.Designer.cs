@@ -39,7 +39,7 @@
             button_changecustomerdetails.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             button_changecustomerdetails.Name = "button_changecustomerdetails";
             button_changecustomerdetails.Size = new System.Drawing.Size(150, 36);
-            button_changecustomerdetails.TabIndex = 0;
+            button_changecustomerdetails.TabIndex = 2;
             button_changecustomerdetails.Text = "Change My Details";
             button_changecustomerdetails.UseVisualStyleBackColor = true;
             button_changecustomerdetails.Click += changedetails_click;
@@ -50,7 +50,7 @@
             button_logout.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             button_logout.Name = "button_logout";
             button_logout.Size = new System.Drawing.Size(100, 36);
-            button_logout.TabIndex = 1;
+            button_logout.TabIndex = 3;
             button_logout.Text = "Logout";
             button_logout.UseVisualStyleBackColor = true;
             button_logout.Click += logout_click;
@@ -60,7 +60,7 @@
             button_bookHotel.Location = new System.Drawing.Point(41, 415);
             button_bookHotel.Name = "button_bookHotel";
             button_bookHotel.Size = new System.Drawing.Size(150, 35);
-            button_bookHotel.TabIndex = 2;
+            button_bookHotel.TabIndex = 1;
             button_bookHotel.Text = "Book Hotel";
             button_bookHotel.UseVisualStyleBackColor = true;
             button_bookHotel.Click += button_bookHotel_Click;
@@ -75,7 +75,7 @@
             Controls.Add(button_changecustomerdetails);
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Name = "CustomerView";
-            Text = "BookHotel";
+            Text = "Customer";
             ResumeLayout(false);
         }
 

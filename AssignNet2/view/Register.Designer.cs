@@ -54,7 +54,7 @@
             // 
             // tb_email
             // 
-            tb_email.Location = new System.Drawing.Point(210, 186);
+            tb_email.Location = new System.Drawing.Point(426, 202);
             tb_email.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tb_email.Name = "tb_email";
             tb_email.Size = new System.Drawing.Size(269, 23);
@@ -62,7 +62,7 @@
             // 
             // tb_password
             // 
-            tb_password.Location = new System.Drawing.Point(210, 241);
+            tb_password.Location = new System.Drawing.Point(426, 257);
             tb_password.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tb_password.Name = "tb_password";
             tb_password.Size = new System.Drawing.Size(269, 23);
@@ -71,7 +71,7 @@
             // 
             // tb_firstname
             // 
-            tb_firstname.Location = new System.Drawing.Point(210, 305);
+            tb_firstname.Location = new System.Drawing.Point(426, 321);
             tb_firstname.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tb_firstname.Name = "tb_firstname";
             tb_firstname.Size = new System.Drawing.Size(269, 23);
@@ -79,7 +79,7 @@
             // 
             // tb_streetaddress
             // 
-            tb_streetaddress.Location = new System.Drawing.Point(210, 485);
+            tb_streetaddress.Location = new System.Drawing.Point(426, 501);
             tb_streetaddress.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tb_streetaddress.Name = "tb_streetaddress";
             tb_streetaddress.Size = new System.Drawing.Size(269, 23);
@@ -87,7 +87,7 @@
             // 
             // tb_phonenumber
             // 
-            tb_phonenumber.Location = new System.Drawing.Point(210, 425);
+            tb_phonenumber.Location = new System.Drawing.Point(426, 441);
             tb_phonenumber.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tb_phonenumber.Name = "tb_phonenumber";
             tb_phonenumber.Size = new System.Drawing.Size(269, 23);
@@ -96,7 +96,7 @@
             // 
             // tb_lastname
             // 
-            tb_lastname.Location = new System.Drawing.Point(210, 362);
+            tb_lastname.Location = new System.Drawing.Point(426, 378);
             tb_lastname.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tb_lastname.Name = "tb_lastname";
             tb_lastname.Size = new System.Drawing.Size(269, 23);
@@ -105,7 +105,7 @@
             // label_email
             // 
             label_email.AutoSize = true;
-            label_email.Location = new System.Drawing.Point(131, 189);
+            label_email.Location = new System.Drawing.Point(347, 205);
             label_email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_email.Name = "label_email";
             label_email.Size = new System.Drawing.Size(36, 15);
@@ -115,7 +115,7 @@
             // label_password
             // 
             label_password.AutoSize = true;
-            label_password.Location = new System.Drawing.Point(106, 249);
+            label_password.Location = new System.Drawing.Point(322, 265);
             label_password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_password.Name = "label_password";
             label_password.Size = new System.Drawing.Size(57, 15);
@@ -125,7 +125,7 @@
             // label_firstname
             // 
             label_firstname.AutoSize = true;
-            label_firstname.Location = new System.Drawing.Point(102, 305);
+            label_firstname.Location = new System.Drawing.Point(318, 321);
             label_firstname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_firstname.Name = "label_firstname";
             label_firstname.Size = new System.Drawing.Size(64, 15);
@@ -135,7 +135,7 @@
             // label_lastname
             // 
             label_lastname.AutoSize = true;
-            label_lastname.Location = new System.Drawing.Point(100, 362);
+            label_lastname.Location = new System.Drawing.Point(316, 378);
             label_lastname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_lastname.Name = "label_lastname";
             label_lastname.Size = new System.Drawing.Size(63, 15);
@@ -145,7 +145,7 @@
             // label_phonenumber
             // 
             label_phonenumber.AutoSize = true;
-            label_phonenumber.Location = new System.Drawing.Point(77, 425);
+            label_phonenumber.Location = new System.Drawing.Point(293, 441);
             label_phonenumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_phonenumber.Name = "label_phonenumber";
             label_phonenumber.Size = new System.Drawing.Size(88, 15);
@@ -155,7 +155,7 @@
             // label_streetaddress
             // 
             label_streetaddress.AutoSize = true;
-            label_streetaddress.Location = new System.Drawing.Point(79, 488);
+            label_streetaddress.Location = new System.Drawing.Point(295, 504);
             label_streetaddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_streetaddress.Name = "label_streetaddress";
             label_streetaddress.Size = new System.Drawing.Size(82, 15);
@@ -164,7 +164,7 @@
             // 
             // tb_suburb
             // 
-            tb_suburb.Location = new System.Drawing.Point(210, 549);
+            tb_suburb.Location = new System.Drawing.Point(426, 565);
             tb_suburb.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tb_suburb.Name = "tb_suburb";
             tb_suburb.Size = new System.Drawing.Size(269, 23);
@@ -173,7 +173,7 @@
             // label_suburb
             // 
             label_suburb.AutoSize = true;
-            label_suburb.Location = new System.Drawing.Point(120, 549);
+            label_suburb.Location = new System.Drawing.Point(336, 565);
             label_suburb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_suburb.Name = "label_suburb";
             label_suburb.Size = new System.Drawing.Size(45, 15);
@@ -182,7 +182,7 @@
             // 
             // tb_postcode
             // 
-            tb_postcode.Location = new System.Drawing.Point(210, 603);
+            tb_postcode.Location = new System.Drawing.Point(426, 619);
             tb_postcode.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tb_postcode.Name = "tb_postcode";
             tb_postcode.Size = new System.Drawing.Size(140, 23);
@@ -192,7 +192,7 @@
             // label_postcode
             // 
             label_postcode.AutoSize = true;
-            label_postcode.Location = new System.Drawing.Point(107, 603);
+            label_postcode.Location = new System.Drawing.Point(323, 619);
             label_postcode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_postcode.Name = "label_postcode";
             label_postcode.Size = new System.Drawing.Size(56, 15);
@@ -201,17 +201,20 @@
             // 
             // cb_state
             // 
+            cb_state.BackColor = System.Drawing.SystemColors.Window;
+            cb_state.ForeColor = System.Drawing.SystemColors.WindowText;
             cb_state.FormattingEnabled = true;
-            cb_state.Location = new System.Drawing.Point(210, 662);
+            cb_state.Location = new System.Drawing.Point(426, 678);
             cb_state.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             cb_state.Name = "cb_state";
             cb_state.Size = new System.Drawing.Size(140, 23);
             cb_state.TabIndex = 16;
+            cb_state.KeyPress += cb_state_KeyPress;
             // 
             // label_state
             // 
             label_state.AutoSize = true;
-            label_state.Location = new System.Drawing.Point(131, 662);
+            label_state.Location = new System.Drawing.Point(347, 678);
             label_state.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_state.Name = "label_state";
             label_state.Size = new System.Drawing.Size(33, 15);
@@ -220,7 +223,7 @@
             // 
             // button_register
             // 
-            button_register.Location = new System.Drawing.Point(317, 771);
+            button_register.Location = new System.Drawing.Point(533, 787);
             button_register.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             button_register.Name = "button_register";
             button_register.Size = new System.Drawing.Size(88, 27);
@@ -231,7 +234,7 @@
             // 
             // button_cancel
             // 
-            button_cancel.Location = new System.Drawing.Point(188, 771);
+            button_cancel.Location = new System.Drawing.Point(404, 787);
             button_cancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             button_cancel.Name = "button_cancel";
             button_cancel.Size = new System.Drawing.Size(88, 27);
@@ -243,7 +246,7 @@
             // label_errormessage
             // 
             label_errormessage.AutoSize = true;
-            label_errormessage.Location = new System.Drawing.Point(168, 137);
+            label_errormessage.Location = new System.Drawing.Point(384, 153);
             label_errormessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_errormessage.Name = "label_errormessage";
             label_errormessage.Size = new System.Drawing.Size(0, 15);
@@ -252,7 +255,7 @@
             // label_title
             // 
             label_title.AutoSize = true;
-            label_title.Location = new System.Drawing.Point(231, 137);
+            label_title.Location = new System.Drawing.Point(447, 153);
             label_title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_title.Name = "label_title";
             label_title.Size = new System.Drawing.Size(101, 15);
@@ -263,7 +266,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(607, 880);
+            ClientSize = new System.Drawing.Size(1038, 895);
             Controls.Add(label_title);
             Controls.Add(label_errormessage);
             Controls.Add(button_cancel);

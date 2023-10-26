@@ -17,19 +17,19 @@ namespace Booking.com
         {
             InitializeComponent();
             this.customer = customer;
-            listDetails();
-            listBookings();
+            DisplayAllDetails();
+            DisplayAllBookings();
         }
 
-        private void listDetails()
+        private void DisplayAllDetails()
         {
             text_name.Text = customer.ToString();
             text_email.Text = customer.Email;
             text_phone.Text = customer.Phone;
-            text_address.Text = customer.Address;            
+            text_address.Text = customer.Address;
         }
 
-        private void listBookings()
+        private void DisplayAllBookings()
         {
             //implement after LINQ
         }

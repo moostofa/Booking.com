@@ -26,5 +26,12 @@
     "Location": "HerVag",
     "Destination": "HerVag",
     "Price": 1
+  },
+  {
+    "Id": 1,
+    "Name": "Qantas",
+    "Location": "Hawaii",
+    "Destination": "Hawaii",
+    "Price": 4.63
   }
 ]

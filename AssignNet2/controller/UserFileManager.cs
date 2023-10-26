@@ -8,15 +8,14 @@ using System.Windows.Forms;
 namespace Booking.com.controller
 {
     using exceptions;
+    using System.Linq;
+    using validation;
 
-    // This class manages serialization and deserialization of x account details (name, email, password etc.) to a txt file
-    // We will eventually need another class that communicates with an actual DB such as Postgres (for bonus marks by introducing external DB with LINQ).
     public class UserFileManager : IFileManager<User>
     {
-        private static string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "user_details.txt");
+        public static readonly string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "user_details.txt");
         private List<User> users = new List<User>();
 
-        // Deserializes the JSON txt file of x account details as a list of User objects
         public List<User> DeserializeEntitiesFromFile()
         {
             string userData = File.ReadAllText(filePath);
@@ -37,35 +36,46 @@ namespace Booking.com.controller
             }
             return null;
         }
-        public List<User> GetListOfEntities()
+
+        public void SerializeEntitiesToFile()
         {
-            List<User> userList = DeserializeEntitiesFromFile();
-            return userList;
+            JsonSerializerOptions options = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                Converters = { new UserConverter() },
+            };
+            string writeUsers = JsonSerializer.Serialize(users, options);
+            File.WriteAllText(filePath, writeUsers);
         }
 
-        public void AddToFile(User user)
+        public void AddNewEntity(User newUser)
         {
             users = DeserializeEntitiesFromFile();
-            users.Add(user);
-            WriteEntitiesToFile();
+            if (users.Any(user => user.Email == newUser.Email))
+            {
+                MessageBox.Show("There is already an existing user registered with that email. Please login or choose another email address", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw new DuplicateUserException();
+            }
+            users.Add(newUser);
+            SerializeEntitiesToFile();
         }
 
         public void AddNewEntity(Dictionary<string, string> userProperties)
         {
-            // the form validation for users already displays message boxes for the x input field that is causing issues, so no need to display again here.
-            bool validUserDetailInputs = FormValidation.AreCustomerRegistrationDetailsValid(userProperties);
+            // the UserFormValidation already displays message boxes for the x input field that is causing issues, so no need to display again here.
+            bool validUserDetailInputs = UserFormValidation.AreCustomerRegistrationDetailsValid(userProperties);
             if (!validUserDetailInputs)
             {
                 throw new InvalidInputException();
             }
-            string address = userProperties["StreetAddress"] + " " + userProperties["Suburb"] + " " + userProperties["State"] + " " + userProperties["Postcode"];
+            string address = $"{userProperties["StreetAddress"]} {userProperties["Suburb"]} {userProperties["State"]} {userProperties["Postcode"]}";
             User customer = new Customer(userProperties["Email"], userProperties["Password"], userProperties["FirstName"], userProperties["LastName"], userProperties["Phone"], address);
-            AddToFile(customer);
+            AddNewEntity(customer);
         }
 
         // for changing account details of a customer e.g 'First Name' or 'Address'
-        // NOT for updating bookings for a customer; that logic is in BookingManager.UpdateBooking(...)
-        public void UpdateDetails(User userToUpdate, Dictionary<string, string> userProperties)
+        // NOT for updating bookings made by customers; that logic is in BookingManager.UpdateBooking(...)
+        public void UpdateDetails(User userToUpdate, Dictionary<string, string> modifiedUserProperties)
         {
             users = DeserializeEntitiesFromFile();
             int index = users.FindIndex(user => user.Email == userToUpdate.Email);
@@ -77,31 +87,26 @@ namespace Booking.com.controller
             }
             else
             {
-                users[index].Email = userProperties["Email"];
-                users[index].Password = userProperties["Password"];
-                users[index].FirstName = userProperties["FirstName"];
-                users[index].LastName = userProperties["LastName"];
-                users[index].Phone = userProperties["Phone"];
-                users[index].Address = userProperties["Address"];
-                WriteEntitiesToFile();
-                MessageBox.Show("Success! The details of the user were changed in the system");
+                // its okay if the user leaves their new email as their original email (no change), but it is not okay if they try to change to an existing users email
+                if (users.Any(user => user.Email != userToUpdate.Email && user.Email == modifiedUserProperties["Email"]))
+                {
+                    MessageBox.Show("There is already an existing user registered with that email. Please login or choose another email address", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw new DuplicateUserException();
+                }
+                users[index].Email = modifiedUserProperties["Email"];
+                users[index].Password = modifiedUserProperties["Password"];
+                users[index].FirstName = modifiedUserProperties["FirstName"];
+                users[index].LastName = modifiedUserProperties["LastName"];
+                users[index].Phone = modifiedUserProperties["Phone"];
+                users[index].Address = modifiedUserProperties["Address"];
+                SerializeEntitiesToFile();
             }
         }
 
-        public void WriteEntitiesToFile()
-        {
-            JsonSerializerOptions options = new JsonSerializerOptions
-            {
-                WriteIndented = true,
-                Converters = { new UserConverter() },
-            };
-            string writeUsers = JsonSerializer.Serialize(users, options);
-            File.WriteAllText(filePath, writeUsers);
-        }
         public User GetUserWithLoginDetails(string email, string password)
         {
             User user = null;
-            if (FormValidation.AreLoginInputsValid(email, password))
+            if (UserFormValidation.AreLoginInputsValid(email, password))
             {
                 user = SearchForUserWithCredentials(email, password);
             }
@@ -130,19 +135,19 @@ namespace Booking.com.controller
             return null;
         }
 
-        public void DeleteFromFile(User userToDelete)
+        public void DeleteEntity(User userToDelete)
         {
             users = DeserializeEntitiesFromFile();
             try
             {
                 int index = users.FindIndex(user => user.Email == userToDelete.Email);
                 users.RemoveAt(index);
-                WriteEntitiesToFile();
-                MessageBox.Show("Success! The user was deleted from the system");
+                SerializeEntitiesToFile();
+                MessageBox.Show($"Success! The customer '{userToDelete.Email}' was deleted from the system");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

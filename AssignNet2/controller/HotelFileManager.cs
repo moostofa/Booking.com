@@ -9,13 +9,13 @@ using static System.Windows.Forms.DataFormats;
 namespace Booking.com.controller
 {
     using exceptions;
-    // This class manages serialization and deserialization of hotel details to text files
+    using validation;
+
     public class HotelFileManager : IFileManager<Hotel>
     {
-        private static string FilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "hotel_details.txt");
+        public static readonly string FilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "hotel_details.txt");
         private List<Hotel> hotelList = new List<Hotel>();
 
-        // Reads and deserializes the JSON text file of hotel details as a list of Hotel objects
         public List<Hotel> DeserializeEntitiesFromFile()
         {
             string hotelData = File.ReadAllText(FilePath);
@@ -71,17 +71,17 @@ namespace Booking.com.controller
             return null;
         }
 
-        public void AddToFile(Hotel hotel)
+        public void AddNewEntity(Hotel hotel)
         {
             hotelList = DeserializeEntitiesFromFile();
             hotelList.Add(hotel);
-            WriteEntitiesToFile();
+            SerializeEntitiesToFile();
         }
 
         public void AddNewEntity(Dictionary<string, string> hotelProperties)
         {
-            bool areHotelDetailsValid = FormValidation.AreHotelInputsValid(hotelProperties);
-            if (areHotelDetailsValid)
+            bool areHotelInputsValid = HotelFormValidation.IsHotelValid(hotelProperties);
+            if (areHotelInputsValid)
             {
                 double price;
                 try
@@ -98,9 +98,23 @@ namespace Booking.com.controller
                     MessageBox.Show("Error: Price too large");
                     return;
                 }
-                Hotel hotel = new Hotel(hotelProperties["Name"], hotelProperties["Location"], GenerateNewId(), price);
-                AddToFile(hotel);
-                MessageBox.Show("Success! The hotel has been added to the system!");
+                int numberOfFloors;
+                try
+                {
+                    numberOfFloors = Convert.ToInt32(hotelProperties["NumberOfFloors"]);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Error: Invalid Number Of Floors Format");
+                    return;
+                }
+                catch (OverflowException)
+                {
+                    MessageBox.Show("Error: Number Of Floors Too Large");
+                    return;
+                }
+                Hotel hotel = new Hotel(hotelProperties["Name"], hotelProperties["Location"], GenerateNewId(), price, numberOfFloors);
+                AddNewEntity(hotel);
             }
             return;
         }
@@ -117,15 +131,9 @@ namespace Booking.com.controller
             }
         }
 
-        public List<Hotel> GetListOfEntities()
-        {
-            hotelList = DeserializeEntitiesFromFile();
-            return hotelList;
-        }
-
         public void UpdateDetails(Hotel hotel, Dictionary<string, string> hotelProperties)
         {
-            bool areHotelInputsValid = FormValidation.AreHotelInputsValid(hotelProperties);
+            bool areHotelInputsValid = HotelFormValidation.IsHotelValid(hotelProperties);
             if (!areHotelInputsValid)
             {
                 throw new InvalidUpdateException();
@@ -159,12 +167,12 @@ namespace Booking.com.controller
                 }
                 hotelList[index].Name = hotelProperties["Name"];
                 hotelList[index].Location = hotelProperties["Location"];
-                WriteEntitiesToFile();
+                SerializeEntitiesToFile();
                 MessageBox.Show("Success! The hotel details were successfully changed");
             }
         }
 
-        public void DeleteFromFile(Hotel hotel)
+        public void DeleteEntity(Hotel hotel)
         {
             hotelList = DeserializeEntitiesFromFile();
             int index = hotelList.FindIndex(x => x.Name == hotel.Name && x.Location == hotel.Location);
@@ -179,7 +187,7 @@ namespace Booking.com.controller
                 try
                 {
                     hotelList.RemoveAt(index);
-                    WriteEntitiesToFile();
+                    SerializeEntitiesToFile();
                     MessageBox.Show("Sucesss! The hotel has been deleted");
                 }
                 catch (Exception ex)
@@ -190,7 +198,7 @@ namespace Booking.com.controller
             }
         }
 
-        public void WriteEntitiesToFile()
+        public void SerializeEntitiesToFile()
         {
             JsonSerializerOptions options = new JsonSerializerOptions
             {
@@ -211,12 +219,13 @@ namespace Booking.com.controller
             string name = null;
             string location = null;
             double pricePerNight = 0;
+            int numberOfFloors = 0;
 
             while (reader.Read())
             {
                 if (reader.TokenType == JsonTokenType.EndObject)
                 {
-                    return new Hotel(name, location, id, pricePerNight);
+                    return new Hotel(name, location, id, pricePerNight, numberOfFloors);
                 }
 
                 if (reader.TokenType != JsonTokenType.PropertyName)

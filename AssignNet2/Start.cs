@@ -1,4 +1,5 @@
 ﻿
+using Booking.com.model;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -10,12 +11,13 @@ namespace Booking.com
         public Start()
         {
             InitializeComponent();
-            BookingsManager.createBookingsDbContext();
+            BookingManager.CreateBookingsDbContext();
+            this.AcceptButton = btn_login;
             Test test = new Test();
             test.Show();
         }
 
-        private void login_Click(object sender, EventArgs e)
+        private void loginBtn_Click(object sender, EventArgs e)
         {
             string email = tb_email.Text;
             string password = tb_password.Text;
@@ -26,7 +28,7 @@ namespace Booking.com
                 tb_password.Text = string.Empty;
                 return;
             }
-            if (user.Type == USER_TYPE.Admin)
+            if (user.Type == UserType.Admin)
             {
                 AdminView adminView = new AdminView((Admin)user);
                 adminView.Show();
@@ -40,7 +42,7 @@ namespace Booking.com
             }
         }
 
-        private void register_click(object sender, EventArgs e)
+        private void registerBtn_click(object sender, EventArgs e)
         {
             Register register = new Register();
             register.ShowDialog();

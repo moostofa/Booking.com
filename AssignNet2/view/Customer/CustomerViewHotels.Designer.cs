@@ -80,7 +80,7 @@
             button_logout.Location = new System.Drawing.Point(483, 12);
             button_logout.Name = "button_logout";
             button_logout.Size = new System.Drawing.Size(75, 23);
-            button_logout.TabIndex = 4;
+            button_logout.TabIndex = 5;
             button_logout.Text = "Logout";
             button_logout.UseVisualStyleBackColor = true;
             // 
@@ -89,7 +89,7 @@
             button_back.Location = new System.Drawing.Point(434, 437);
             button_back.Name = "button_back";
             button_back.Size = new System.Drawing.Size(75, 23);
-            button_back.TabIndex = 5;
+            button_back.TabIndex = 4;
             button_back.Text = "Back";
             button_back.UseVisualStyleBackColor = true;
             button_back.Click += button_back_Click;
@@ -116,7 +116,7 @@
             Controls.Add(lb_hotellist);
             Controls.Add(label_select);
             Name = "CustomerViewHotels";
-            Text = "BookHotel";
+            Text = "View Available Hotels";
             ResumeLayout(false);
             PerformLayout();
         }

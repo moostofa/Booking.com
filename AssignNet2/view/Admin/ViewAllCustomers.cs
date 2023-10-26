@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Booking.com.model;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -10,46 +11,57 @@ namespace Booking.com
         public ViewAllCustomers(Admin admin)
         {
             InitializeComponent();
-            listCustomers();
+            DisplayCustomers();
             this.admin = admin;
         }
 
-        private void listCustomers()
+        private void DisplayCustomers()
         {
-            List<User> users = User.FileManager.GetListOfEntities();
+            List<User> users = User.FileManager.DeserializeEntitiesFromFile();
             foreach (User user in users)
             {
-                if (user.Type == USER_TYPE.Customer)
+                if (user.Type == UserType.Customer)
                 {
                     lb_customers.Items.Add(user);
                 }
             }
         }
 
-        private void back()
+        private void ReturnToPreviousForm()
         {
-            AdminView adminView = new AdminView(admin);
-            adminView.Show();
             this.Close();
         }
+
         private void button_viewdetails_Click(object sender, EventArgs e)
         {
-            Customer customer = (Customer)lb_customers.SelectedItem;
-            ViewCustomer viewCustomerWindow = new ViewCustomer(customer);
-            viewCustomerWindow.ShowDialog();
+            if (lb_customers.SelectedItem != null)
+            {
+                Customer customer = (Customer)lb_customers.SelectedItem;
+                ViewCustomer viewCustomerWindow = new ViewCustomer(customer);
+                viewCustomerWindow.ShowDialog();
+            }
         }
 
-        private void button_editdeletecustomer_Click(object sender, EventArgs e)
+        private void button_editcustomer_Click(object sender, EventArgs e)
         {
-            Customer customer = (Customer)lb_customers.SelectedItem;
-            EditDeleteCustomer editDeleteCustomerView = new EditDeleteCustomer(customer, admin);
-            editDeleteCustomerView.Show();
-            this.Hide();
+            if (lb_customers.SelectedItem != null)
+            {
+                Customer customer = (Customer)lb_customers.SelectedItem;
+                EditCustomer editCustomerView = new EditCustomer(customer, admin);
+                editCustomerView.Show();
+                this.Close();
+            }
         }
 
         private void button_close_Click(object sender, EventArgs e)
         {
-            back();
+            ReturnToPreviousForm();
+        }
+
+        private void lb_customers_SelectedValueChanged(object sender, EventArgs e)
+        {
+            button_viewdetails.Enabled = true;
+            button_editdeletecustomer.Enabled = true;
         }
     }
 }

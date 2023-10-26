@@ -1,29 +1,20 @@
 [
   {
-    "Email": "test@sample.com",
-    "Password": "12345678",
-    "FirstName": "test",
-    "LastName": "sample",
-    "Phone": "0412312312",
-    "Address": "123 sample st sydney nsw",
-    "Type": 1
-  },
-  {
     "Email": "admin@booking.com",
     "Password": "12345678",
-    "FirstName": "admin",
-    "LastName": "test",
-    "Phone": "0412312312",
-    "Address": "123 sample st sydney nsw",
+    "FirstName": "Testy",
+    "LastName": "Test",
+    "Phone": "041296323",
+    "Address": "123 Fake St Fakeburb NT 123455",
     "Type": 0
   },
   {
-    "Email": "ming@vuong.com",
-    "Password": "12345678",
-    "FirstName": "ming",
-    "LastName": "vuong",
-    "Phone": "0412345678",
-    "Address": "58 Hamilton Rd FairField NSW 2165",
+    "Email": "test@booking.com",
+    "Password": "123456789",
+    "FirstName": "Testy",
+    "LastName": "Test",
+    "Phone": "0412963232323",
+    "Address": "123 Fake St ",
     "Type": 1
   }
 ]

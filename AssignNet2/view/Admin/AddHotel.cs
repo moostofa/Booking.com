@@ -18,11 +18,9 @@ namespace Booking.com
             InitializeComponent();
             this.admin = admin;
         }
-        private void back()
+        private void ReturnToPreviousForm()
         {
             this.Close();
-            AdminView adminView = new AdminView(admin);
-            adminView.Show();
         }
 
         private void buttonadd_Click(object sender, EventArgs e)
@@ -36,13 +34,14 @@ namespace Booking.com
             try
             {
                 Hotel.FileManager.AddNewEntity(properties);
-                back();
+                MessageBox.Show("Success! The hotel has been added to the system.");
+                ReturnToPreviousForm();
             }
             catch
             {
-                // MessageBox handled in deeper exception level
+                // no need to do anything here, as a detailed MessageBox error is already shown at a deeper exception level. let the user continue to try add again.
             }
-        }  
+        }
 
         private void tb_price_keypress(object sender, KeyPressEventArgs e)
         {
@@ -59,9 +58,15 @@ namespace Booking.com
 
         private void button_cancel_Click(object sender, EventArgs e)
         {
-            back();
+            ReturnToPreviousForm();
         }
 
-
+        private void tb_floors_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
