@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Booking.com.controller.exceptions;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,10 +12,10 @@ using System.Windows.Forms;
 
 namespace Booking.com
 {
-    public partial class CustomerChangeDetails : Form
+    public partial class ChangeAccountDetails : Form
     {
         Customer customer;
-        public CustomerChangeDetails(Customer customer)
+        public ChangeAccountDetails(Customer customer)
         {
             InitializeComponent();
             this.customer = customer;
@@ -27,7 +28,7 @@ namespace Booking.com
             tb_address.Text = customer.Address;
         }
 
-        private void changedetails_click(object sender, EventArgs e)
+        private void changedetails_Click(object sender, EventArgs e)
         {
             Dictionary<string, string> properties = new Dictionary<string, string>
             {
@@ -38,15 +39,22 @@ namespace Booking.com
                 { "Phone", tb_phonenumber.Text },
                 { "Address", tb_address.Text }
             };
-            bool detailsChanged = customer.ChangeAccountDetails(properties);
-            if (detailsChanged)
+            try
             {
-                MessageBox.Show("Your customer details were successfully updated.", "Account Update Successful");
-                this.Close();
+                bool detailsChanged = customer.ChangeAccountDetails(properties);
+                if (detailsChanged)
+                {
+                    MessageBox.Show("Your customer details were successfully updated.", "Account Update Successful");
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                // do nothing and let the user try again. detailed error messages are already displayed in a deeper level exception.
             }
         }
 
-        private void phone_keypress(object sender, KeyPressEventArgs e)
+        private void phone_Keypress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -54,7 +62,7 @@ namespace Booking.com
             }
         }
 
-        private void postcode_keypress(object sender, KeyPressEventArgs e)
+        private void postcode_Keypress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -62,9 +70,9 @@ namespace Booking.com
             }
         }
 
-        private void cancel_click(object sender, EventArgs e)
+        private void cancel_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
     }
 }

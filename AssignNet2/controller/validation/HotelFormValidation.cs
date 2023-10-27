@@ -10,7 +10,7 @@ namespace Booking.com.controller.validation
 {
     public class HotelFormValidation
     {
-        public static bool IsHotelValid(Dictionary<string, string> properties)
+        public static bool AreHotelInputsValid(Dictionary<string, string> properties)
         {
             if (string.IsNullOrEmpty(properties["Name"]))
             {
@@ -32,14 +32,9 @@ namespace Booking.com.controller.validation
 
         public static bool IsHotelBookingValid(Hashtable properties)
         {
-            if (!((DateTime)properties["CheckIn"] == (DateTime)properties["CheckOut"]))
+            if (DateTime.Compare((DateTime)properties["CheckOut"], (DateTime)properties["CheckIn"]) < 0)
             {
-                MessageBox.Show("Check in date can not be the same as check out date. Please contact the hotel directly for dayroom bookings.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            else if (!((DateTime)properties["CheckIn"] < (DateTime)properties["CheckOut"]))
-            {
-                MessageBox.Show("Check out date can not be before check in date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Check out date can not be before check in date.", "Error - Dates Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;

@@ -25,7 +25,7 @@ public abstract class User
         Type = type;
     }
 
-    public static List<User> GetAllEntities()
+    public static List<User> GetAllUsers()
     {
         return FileManager.DeserializeEntitiesFromFile();
     }

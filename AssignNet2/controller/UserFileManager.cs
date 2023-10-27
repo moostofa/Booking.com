@@ -63,7 +63,7 @@ namespace Booking.com.controller
         public void AddNewEntity(Dictionary<string, string> userProperties)
         {
             // the UserFormValidation already displays message boxes for the x input field that is causing issues, so no need to display again here.
-            bool validUserDetailInputs = UserFormValidation.AreCustomerRegistrationDetailsValid(userProperties);
+            bool validUserDetailInputs = UserFormValidation.AreCustomerRegistrationInputsValid(userProperties);
             if (!validUserDetailInputs)
             {
                 throw new InvalidInputException();
@@ -149,11 +149,6 @@ namespace Booking.com.controller
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        int IFileManager<User>.GenerateNewId()
-        {
-            throw new NotImplementedException();
         }
     }
 

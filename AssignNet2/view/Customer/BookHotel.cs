@@ -21,19 +21,19 @@ namespace Booking.com
             InitializeComponent();
             this.customer = customer;
             this.hotel = hotel;
-            fillDetails();
+            DisplayHotelName();
         }
 
-        private void back()
+        private void ReturnToPreviousForm()
         {
-            CustomerViewHotels customerViewHotels = new CustomerViewHotels(customer);
+            SelectHotelToBook customerViewHotels = new SelectHotelToBook(customer);
             customerViewHotels.Show();
             this.Close();
         }
 
-        private void fillDetails()
+        private void DisplayHotelName()
         {
-            text_bookhotel.Text = "Book Hotel : " + hotel;
+            text_bookhotel.Text = $"Book Hotel: {hotel} for ${hotel.PricePerNight} per night.";
         }
 
         private void button_confirm_Click(object sender, EventArgs e)
@@ -49,36 +49,30 @@ namespace Booking.com
             if (bookingSuccess)
             {
                 MessageBox.Show("Booking Successful");
-                back();
+                ReturnToPreviousForm();
             }
         }
 
-        private void button_cancel_Click(object sender, EventArgs e)
-        {
-            back();
-        }
-
-        private void dtp_checkin_value_changed(object sender, EventArgs e)
-        {
-            if (dtp_checkin.Value < dtp_checkout.Value)
-            {
-                updatePriceAndNights();
-            }
-        }
-
-        private void dtp_checkout_value_changed(object sender, EventArgs e)
-        {
-            if (dtp_checkin.Value < dtp_checkout.Value)
-            {
-                updatePriceAndNights();
-            }
-        }
-
-        private void updatePriceAndNights()
+        private void DisplayTotalPriceAndNights()
         {
             int nights = BookingManager.CalculateNumberOfNights(dtp_checkin.Value, dtp_checkout.Value);
             text_nights.Text = nights.ToString();
             text_price.Text = (nights * hotel.PricePerNight).ToString("F2");
+        }
+
+        private void button_cancel_Click(object sender, EventArgs e)
+        {
+            ReturnToPreviousForm();
+        }
+
+        private void dtp_checkin_value_changed(object sender, EventArgs e)
+        {
+            DisplayTotalPriceAndNights();
+        }
+
+        private void dtp_checkout_value_changed(object sender, EventArgs e)
+        {
+            DisplayTotalPriceAndNights();
         }
     }
 }

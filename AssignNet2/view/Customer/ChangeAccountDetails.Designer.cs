@@ -1,6 +1,6 @@
 ﻿namespace Booking.com
 {
-    partial class CustomerChangeDetails
+    partial class ChangeAccountDetails
     {
         /// <summary>
         /// Required designer variable.
@@ -100,9 +100,9 @@
             label_email.Location = new System.Drawing.Point(118, 134);
             label_email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_email.Name = "label_email";
-            label_email.Size = new System.Drawing.Size(36, 15);
+            label_email.Size = new System.Drawing.Size(39, 15);
             label_email.TabIndex = 9;
-            label_email.Text = "Email";
+            label_email.Text = "Email:";
             // 
             // label_password
             // 
@@ -110,9 +110,9 @@
             label_password.Location = new System.Drawing.Point(93, 186);
             label_password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_password.Name = "label_password";
-            label_password.Size = new System.Drawing.Size(57, 15);
+            label_password.Size = new System.Drawing.Size(60, 15);
             label_password.TabIndex = 10;
-            label_password.Text = "Password";
+            label_password.Text = "Password:";
             // 
             // label_firstname
             // 
@@ -120,9 +120,9 @@
             label_firstname.Location = new System.Drawing.Point(89, 245);
             label_firstname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_firstname.Name = "label_firstname";
-            label_firstname.Size = new System.Drawing.Size(64, 15);
+            label_firstname.Size = new System.Drawing.Size(67, 15);
             label_firstname.TabIndex = 11;
-            label_firstname.Text = "First Name";
+            label_firstname.Text = "First Name:";
             // 
             // label_lastname
             // 
@@ -130,9 +130,9 @@
             label_lastname.Location = new System.Drawing.Point(88, 302);
             label_lastname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_lastname.Name = "label_lastname";
-            label_lastname.Size = new System.Drawing.Size(63, 15);
+            label_lastname.Size = new System.Drawing.Size(66, 15);
             label_lastname.TabIndex = 12;
-            label_lastname.Text = "Last Name";
+            label_lastname.Text = "Last Name:";
             // 
             // label_phonenumber
             // 
@@ -140,9 +140,9 @@
             label_phonenumber.Location = new System.Drawing.Point(64, 359);
             label_phonenumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_phonenumber.Name = "label_phonenumber";
-            label_phonenumber.Size = new System.Drawing.Size(88, 15);
+            label_phonenumber.Size = new System.Drawing.Size(91, 15);
             label_phonenumber.TabIndex = 13;
-            label_phonenumber.Text = "Phone Number";
+            label_phonenumber.Text = "Phone Number:";
             // 
             // label_address
             // 
@@ -150,9 +150,9 @@
             label_address.Location = new System.Drawing.Point(103, 419);
             label_address.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_address.Name = "label_address";
-            label_address.Size = new System.Drawing.Size(49, 15);
+            label_address.Size = new System.Drawing.Size(52, 15);
             label_address.TabIndex = 14;
-            label_address.Text = "Address";
+            label_address.Text = "Address:";
             // 
             // button_cancel
             // 
@@ -163,7 +163,7 @@
             button_cancel.TabIndex = 6;
             button_cancel.Text = "Cancel";
             button_cancel.UseVisualStyleBackColor = true;
-            button_cancel.Click += cancel_click;
+            button_cancel.Click += cancel_Click;
             // 
             // button_register
             // 
@@ -174,7 +174,7 @@
             button_register.TabIndex = 7;
             button_register.Text = "Change Details";
             button_register.UseVisualStyleBackColor = true;
-            button_register.Click += changedetails_click;
+            button_register.Click += changedetails_Click;
             // 
             // label_errormessage
             // 

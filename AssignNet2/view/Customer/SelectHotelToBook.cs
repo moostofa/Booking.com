@@ -10,19 +10,18 @@ using System.Windows.Forms;
 
 namespace Booking.com
 {
-    public partial class CustomerViewHotels : Form
+    public partial class SelectHotelToBook : Form
     {
         Customer customer;
-        public CustomerViewHotels(Customer customer)
+        public SelectHotelToBook(Customer customer)
         {
             InitializeComponent();
             this.customer = customer;
             listHotels();
         }
 
-        private void back()
+        private void ReturnToPreviousForm()
         {
-            CustomerView customerView = new CustomerView(customer);
             this.Close();
         }
 
@@ -38,7 +37,7 @@ namespace Booking.com
 
         private void button_book_Click(object sender, EventArgs e)
         {
-            if (lb_hotellist.SelectedItems[0] != null)
+            if (lb_hotellist.SelectedIndex != -1 && lb_hotellist.SelectedItems[0] != null)
             {
                 BookHotel bookHotel = new BookHotel(customer, (Hotel)lb_hotellist.SelectedItems[0]);
                 bookHotel.Show();
@@ -52,20 +51,26 @@ namespace Booking.com
 
         private void button_back_Click(object sender, EventArgs e)
         {
-            back();
+            ReturnToPreviousForm();
         }
 
         private void button_view_Click(object sender, EventArgs e)
         {
-            if (lb_hotellist.SelectedItems[0] != null)
+            if (lb_hotellist.SelectedIndex != -1 && lb_hotellist.SelectedItems[0] != null)
             {
-                ViewHotelDetails viewHotelDetails = new ViewHotelDetails((Hotel)lb_hotellist.SelectedItems[0]);
+                ViewHotel viewHotelDetails = new ViewHotel((Hotel)lb_hotellist.SelectedItems[0]);
                 viewHotelDetails.ShowDialog();
             }
             else
             {
                 MessageBox.Show("Please select a hotel from the list");
             }
+        }
+
+        private void lb_hotellist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            button_view.Enabled = true;
+            button_book.Enabled = true;
         }
     }
 }

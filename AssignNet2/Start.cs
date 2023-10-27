@@ -30,13 +30,13 @@ namespace Booking.com
             }
             if (user.Type == UserType.Admin)
             {
-                AdminView adminView = new AdminView((Admin)user);
+                AdminMain adminView = new AdminMain((Admin)user);
                 adminView.Show();
                 this.Hide();
             }
             else
             {
-                CustomerView customerView = new CustomerView((Customer)user);
+                CustomerMain customerView = new CustomerMain((Customer)user);
                 customerView.Show();
                 this.Hide();
             }

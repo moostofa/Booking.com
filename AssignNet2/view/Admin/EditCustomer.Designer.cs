@@ -73,7 +73,7 @@
             // 
             // tb_phone
             // 
-            tb_phone.Location = new System.Drawing.Point(186, 238);
+            tb_phone.Location = new System.Drawing.Point(186, 228);
             tb_phone.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tb_phone.Name = "tb_phone";
             tb_phone.Size = new System.Drawing.Size(174, 23);
@@ -82,7 +82,7 @@
             // 
             // tb_address
             // 
-            tb_address.Location = new System.Drawing.Point(186, 278);
+            tb_address.Location = new System.Drawing.Point(186, 268);
             tb_address.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tb_address.Name = "tb_address";
             tb_address.Size = new System.Drawing.Size(174, 23);
@@ -94,49 +94,49 @@
             label_firstname.Location = new System.Drawing.Point(80, 104);
             label_firstname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_firstname.Name = "label_firstname";
-            label_firstname.Size = new System.Drawing.Size(64, 15);
+            label_firstname.Size = new System.Drawing.Size(67, 15);
             label_firstname.TabIndex = 5;
-            label_firstname.Text = "First Name";
+            label_firstname.Text = "First Name:";
             // 
             // label_lastname
             // 
             label_lastname.AutoSize = true;
-            label_lastname.Location = new System.Drawing.Point(79, 150);
+            label_lastname.Location = new System.Drawing.Point(81, 145);
             label_lastname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_lastname.Name = "label_lastname";
-            label_lastname.Size = new System.Drawing.Size(63, 15);
+            label_lastname.Size = new System.Drawing.Size(66, 15);
             label_lastname.TabIndex = 6;
-            label_lastname.Text = "Last Name";
+            label_lastname.Text = "Last Name:";
             // 
             // label_email
             // 
             label_email.AutoSize = true;
-            label_email.Location = new System.Drawing.Point(110, 195);
+            label_email.Location = new System.Drawing.Point(103, 187);
             label_email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_email.Name = "label_email";
-            label_email.Size = new System.Drawing.Size(36, 15);
+            label_email.Size = new System.Drawing.Size(39, 15);
             label_email.TabIndex = 7;
-            label_email.Text = "Email";
+            label_email.Text = "Email:";
             // 
             // label_phone
             // 
             label_phone.AutoSize = true;
-            label_phone.Location = new System.Drawing.Point(103, 241);
+            label_phone.Location = new System.Drawing.Point(103, 231);
             label_phone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_phone.Name = "label_phone";
-            label_phone.Size = new System.Drawing.Size(41, 15);
+            label_phone.Size = new System.Drawing.Size(44, 15);
             label_phone.TabIndex = 8;
-            label_phone.Text = "Phone";
+            label_phone.Text = "Phone:";
             // 
             // label_address
             // 
             label_address.AutoSize = true;
-            label_address.Location = new System.Drawing.Point(94, 282);
+            label_address.Location = new System.Drawing.Point(94, 272);
             label_address.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_address.Name = "label_address";
-            label_address.Size = new System.Drawing.Size(49, 15);
+            label_address.Size = new System.Drawing.Size(52, 15);
             label_address.TabIndex = 9;
-            label_address.Text = "Address";
+            label_address.Text = "Address:";
             // 
             // button_save
             // 
@@ -184,16 +184,16 @@
             // label_password
             // 
             label_password.AutoSize = true;
-            label_password.Location = new System.Drawing.Point(85, 321);
+            label_password.Location = new System.Drawing.Point(85, 311);
             label_password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_password.Name = "label_password";
-            label_password.Size = new System.Drawing.Size(57, 15);
+            label_password.Size = new System.Drawing.Size(60, 15);
             label_password.TabIndex = 14;
-            label_password.Text = "Password";
+            label_password.Text = "Password:";
             // 
             // tb_password
             // 
-            tb_password.Location = new System.Drawing.Point(186, 321);
+            tb_password.Location = new System.Drawing.Point(186, 311);
             tb_password.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tb_password.Name = "tb_password";
             tb_password.Size = new System.Drawing.Size(174, 23);

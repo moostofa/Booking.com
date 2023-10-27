@@ -48,7 +48,7 @@ namespace Booking.com.controller
         }
         public void AddNewEntity(Dictionary<string, string> airfareProperties)
         {
-            bool validAirfare = AirfareFormValidation.IsAirfareValid(airfareProperties);
+            bool validAirfare = AirfareFormValidation.AreAirfareInputsValid(airfareProperties);
             double price;
             if (validAirfare)
             {

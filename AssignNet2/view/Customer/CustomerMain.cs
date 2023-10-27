@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace Booking.com
 {
-    public partial class CustomerView : Form
+    public partial class CustomerMain : Form
     {
         Customer customer;
-        public CustomerView(Customer customer)
+        public CustomerMain(Customer customer)
         {
             InitializeComponent();
             this.customer = customer;
@@ -30,15 +30,14 @@ namespace Booking.com
 
         private void changedetails_click(object sender, EventArgs e)
         {
-            CustomerChangeDetails customerChangeDetailsView = new CustomerChangeDetails(customer);
+            ChangeAccountDetails customerChangeDetailsView = new ChangeAccountDetails(customer);
             customerChangeDetailsView.ShowDialog();
         }
 
         private void button_bookHotel_Click(object sender, EventArgs e)
         {
-            CustomerViewHotels customerViewHotels = new CustomerViewHotels(customer);
+            SelectHotelToBook customerViewHotels = new SelectHotelToBook(customer);
             customerViewHotels.Show();
-            this.Close();
         }
     }
 }

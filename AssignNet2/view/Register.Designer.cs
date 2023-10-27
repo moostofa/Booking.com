@@ -92,7 +92,7 @@
             tb_phonenumber.Name = "tb_phonenumber";
             tb_phonenumber.Size = new System.Drawing.Size(269, 23);
             tb_phonenumber.TabIndex = 4;
-            tb_phonenumber.KeyPress += phone_keypress;
+            tb_phonenumber.KeyPress += phone_Keypress;
             // 
             // tb_lastname
             // 
@@ -187,7 +187,7 @@
             tb_postcode.Name = "tb_postcode";
             tb_postcode.Size = new System.Drawing.Size(140, 23);
             tb_postcode.TabIndex = 14;
-            tb_postcode.KeyPress += postcode_keypress;
+            tb_postcode.KeyPress += postcode_Keypress;
             // 
             // label_postcode
             // 
@@ -230,7 +230,7 @@
             button_register.TabIndex = 18;
             button_register.Text = "Register";
             button_register.UseVisualStyleBackColor = true;
-            button_register.Click += register_click;
+            button_register.Click += register_Click;
             // 
             // button_cancel
             // 
@@ -241,7 +241,7 @@
             button_cancel.TabIndex = 19;
             button_cancel.Text = "Cancel";
             button_cancel.UseVisualStyleBackColor = true;
-            button_cancel.Click += cancel_click;
+            button_cancel.Click += cancel_Click;
             // 
             // label_errormessage
             // 

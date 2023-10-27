@@ -1,6 +1,6 @@
 ﻿namespace Booking.com
 {
-    partial class AdminView
+    partial class AdminMain
     {
         /// <summary>
         /// Required designer variable.
@@ -34,14 +34,12 @@
             button_addairline = new System.Windows.Forms.Button();
             button_vieweditairfare = new System.Windows.Forms.Button();
             button_registercustomer = new System.Windows.Forms.Button();
-            button_searchcustomerbookings = new System.Windows.Forms.Button();
             button_viewallcustomers = new System.Windows.Forms.Button();
-            button_searchbookings = new System.Windows.Forms.Button();
             SuspendLayout();
             // 
             // button_addhotel
             // 
-            button_addhotel.Location = new System.Drawing.Point(259, 283);
+            button_addhotel.Location = new System.Drawing.Point(380, 252);
             button_addhotel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             button_addhotel.Name = "button_addhotel";
             button_addhotel.Size = new System.Drawing.Size(167, 27);
@@ -52,7 +50,7 @@
             // 
             // button_editviewhotel
             // 
-            button_editviewhotel.Location = new System.Drawing.Point(259, 331);
+            button_editviewhotel.Location = new System.Drawing.Point(380, 300);
             button_editviewhotel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             button_editviewhotel.Name = "button_editviewhotel";
             button_editviewhotel.Size = new System.Drawing.Size(167, 27);
@@ -74,7 +72,7 @@
             // 
             // button_addairline
             // 
-            button_addairline.Location = new System.Drawing.Point(48, 283);
+            button_addairline.Location = new System.Drawing.Point(169, 252);
             button_addairline.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             button_addairline.Name = "button_addairline";
             button_addairline.Size = new System.Drawing.Size(167, 27);
@@ -85,7 +83,7 @@
             // 
             // button_vieweditairfare
             // 
-            button_vieweditairfare.Location = new System.Drawing.Point(48, 331);
+            button_vieweditairfare.Location = new System.Drawing.Point(169, 300);
             button_vieweditairfare.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             button_vieweditairfare.Name = "button_vieweditairfare";
             button_vieweditairfare.Size = new System.Drawing.Size(167, 27);
@@ -95,7 +93,7 @@
             // 
             // button_registercustomer
             // 
-            button_registercustomer.Location = new System.Drawing.Point(471, 283);
+            button_registercustomer.Location = new System.Drawing.Point(592, 252);
             button_registercustomer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             button_registercustomer.Name = "button_registercustomer";
             button_registercustomer.Size = new System.Drawing.Size(167, 27);
@@ -104,20 +102,9 @@
             button_registercustomer.UseVisualStyleBackColor = true;
             button_registercustomer.Click += button_registercustomer_Click;
             // 
-            // button_searchcustomerbookings
-            // 
-            button_searchcustomerbookings.Location = new System.Drawing.Point(684, 331);
-            button_searchcustomerbookings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            button_searchcustomerbookings.Name = "button_searchcustomerbookings";
-            button_searchcustomerbookings.Size = new System.Drawing.Size(167, 27);
-            button_searchcustomerbookings.TabIndex = 8;
-            button_searchcustomerbookings.Text = " Search Customer Bookings";
-            button_searchcustomerbookings.UseVisualStyleBackColor = true;
-            button_searchcustomerbookings.Click += button_searchcustomerbookings_Click;
-            // 
             // button_viewallcustomers
             // 
-            button_viewallcustomers.Location = new System.Drawing.Point(471, 331);
+            button_viewallcustomers.Location = new System.Drawing.Point(592, 300);
             button_viewallcustomers.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             button_viewallcustomers.Name = "button_viewallcustomers";
             button_viewallcustomers.Size = new System.Drawing.Size(167, 27);
@@ -126,24 +113,12 @@
             button_viewallcustomers.UseVisualStyleBackColor = true;
             button_viewallcustomers.Click += button_viewallcustomers_Click;
             // 
-            // button_searchbookings
-            // 
-            button_searchbookings.Location = new System.Drawing.Point(684, 283);
-            button_searchbookings.Name = "button_searchbookings";
-            button_searchbookings.Size = new System.Drawing.Size(167, 27);
-            button_searchbookings.TabIndex = 4;
-            button_searchbookings.Text = "Search Bookings";
-            button_searchbookings.UseVisualStyleBackColor = true;
-            button_searchbookings.Click += button_searchbookings_Click;
-            // 
             // AdminView
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(896, 416);
-            Controls.Add(button_searchbookings);
             Controls.Add(button_viewallcustomers);
-            Controls.Add(button_searchcustomerbookings);
             Controls.Add(button_registercustomer);
             Controls.Add(button_vieweditairfare);
             Controls.Add(button_addairline);
@@ -164,8 +139,6 @@
         private System.Windows.Forms.Button button_addairline;
         private System.Windows.Forms.Button button_vieweditairfare;
         private System.Windows.Forms.Button button_registercustomer;
-        private System.Windows.Forms.Button button_searchcustomerbookings;
         private System.Windows.Forms.Button button_viewallcustomers;
-        private System.Windows.Forms.Button button_searchbookings;
     }
 }

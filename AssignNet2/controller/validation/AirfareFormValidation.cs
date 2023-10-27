@@ -9,7 +9,7 @@ namespace Booking.com.controller.validation
 {
     public class AirfareFormValidation
     {
-        public static bool IsAirfareValid(Dictionary<string, string> properties)
+        public static bool AreAirfareInputsValid(Dictionary<string, string> properties)
         {
             if (string.IsNullOrEmpty(properties["Name"]))
             {

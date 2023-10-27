@@ -25,7 +25,7 @@ namespace Booking.com
             cb_state.Items.Add("WA");
         }
 
-        private void register_click(object sender, EventArgs e)
+        private void register_Click(object sender, EventArgs e)
         {
             Dictionary<string, string> properties = new Dictionary<string, string>
             {
@@ -51,7 +51,7 @@ namespace Booking.com
             }
         }
 
-        private void phone_keypress(object sender, KeyPressEventArgs e)
+        private void phone_Keypress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -59,7 +59,7 @@ namespace Booking.com
             }
         }
 
-        private void postcode_keypress(object sender, KeyPressEventArgs e)
+        private void postcode_Keypress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -67,7 +67,7 @@ namespace Booking.com
             }
         }
 
-        private void cancel_click(object sender, EventArgs e)
+        private void cancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }

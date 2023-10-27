@@ -20,7 +20,7 @@ namespace Booking.com
 
         public void ReturnToPreviousForm()
         {
-            AdminView adminView = new AdminView(admin);
+            AdminMain adminView = new AdminMain(admin);
             adminView.Show();
             this.Close();
         }

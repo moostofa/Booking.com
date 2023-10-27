@@ -38,41 +38,45 @@
             button_delete = new System.Windows.Forms.Button();
             button_save = new System.Windows.Forms.Button();
             label_title = new System.Windows.Forms.Label();
+            label_floors = new System.Windows.Forms.Label();
+            tb_floors = new System.Windows.Forms.TextBox();
+            label_amenities = new System.Windows.Forms.Label();
+            clb_amenities = new System.Windows.Forms.CheckedListBox();
             SuspendLayout();
             // 
             // label_name
             // 
             label_name.AutoSize = true;
-            label_name.Location = new System.Drawing.Point(106, 166);
+            label_name.Location = new System.Drawing.Point(105, 79);
             label_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_name.Name = "label_name";
-            label_name.Size = new System.Drawing.Size(39, 15);
+            label_name.Size = new System.Drawing.Size(42, 15);
             label_name.TabIndex = 0;
-            label_name.Text = "Name";
+            label_name.Text = "Name:";
             // 
             // label_location
             // 
             label_location.AutoSize = true;
-            label_location.Location = new System.Drawing.Point(91, 217);
+            label_location.Location = new System.Drawing.Point(90, 130);
             label_location.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_location.Name = "label_location";
-            label_location.Size = new System.Drawing.Size(53, 15);
+            label_location.Size = new System.Drawing.Size(56, 15);
             label_location.TabIndex = 1;
-            label_location.Text = "Location";
+            label_location.Text = "Location:";
             // 
             // label_pricepernight
             // 
             label_pricepernight.AutoSize = true;
-            label_pricepernight.Location = new System.Drawing.Point(56, 268);
+            label_pricepernight.Location = new System.Drawing.Point(55, 181);
             label_pricepernight.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_pricepernight.Name = "label_pricepernight";
-            label_pricepernight.Size = new System.Drawing.Size(86, 15);
+            label_pricepernight.Size = new System.Drawing.Size(89, 15);
             label_pricepernight.TabIndex = 2;
-            label_pricepernight.Text = "Price Per Night";
+            label_pricepernight.Text = "Price Per Night:";
             // 
             // tb_name
             // 
-            tb_name.Location = new System.Drawing.Point(184, 163);
+            tb_name.Location = new System.Drawing.Point(183, 76);
             tb_name.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tb_name.Name = "tb_name";
             tb_name.Size = new System.Drawing.Size(151, 23);
@@ -80,7 +84,7 @@
             // 
             // tb_location
             // 
-            tb_location.Location = new System.Drawing.Point(184, 217);
+            tb_location.Location = new System.Drawing.Point(183, 130);
             tb_location.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tb_location.Name = "tb_location";
             tb_location.Size = new System.Drawing.Size(151, 23);
@@ -88,7 +92,7 @@
             // 
             // tb_price
             // 
-            tb_price.Location = new System.Drawing.Point(184, 268);
+            tb_price.Location = new System.Drawing.Point(183, 181);
             tb_price.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tb_price.Name = "tb_price";
             tb_price.Size = new System.Drawing.Size(151, 23);
@@ -96,7 +100,7 @@
             // 
             // button_back
             // 
-            button_back.Location = new System.Drawing.Point(94, 340);
+            button_back.Location = new System.Drawing.Point(105, 591);
             button_back.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             button_back.Name = "button_back";
             button_back.Size = new System.Drawing.Size(88, 27);
@@ -107,7 +111,7 @@
             // 
             // button_delete
             // 
-            button_delete.Location = new System.Drawing.Point(14, 452);
+            button_delete.Location = new System.Drawing.Point(25, 703);
             button_delete.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             button_delete.Name = "button_delete";
             button_delete.Size = new System.Drawing.Size(88, 27);
@@ -118,7 +122,7 @@
             // 
             // button_save
             // 
-            button_save.Location = new System.Drawing.Point(204, 340);
+            button_save.Location = new System.Drawing.Point(215, 591);
             button_save.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             button_save.Name = "button_save";
             button_save.Size = new System.Drawing.Size(88, 27);
@@ -130,18 +134,57 @@
             // label_title
             // 
             label_title.AutoSize = true;
-            label_title.Location = new System.Drawing.Point(164, 93);
+            label_title.Location = new System.Drawing.Point(164, 41);
             label_title.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_title.Name = "label_title";
             label_title.Size = new System.Drawing.Size(59, 15);
             label_title.TabIndex = 9;
             label_title.Text = "Edit Hotel";
             // 
+            // label_floors
+            // 
+            label_floors.AutoSize = true;
+            label_floors.Location = new System.Drawing.Point(39, 231);
+            label_floors.Name = "label_floors";
+            label_floors.Size = new System.Drawing.Size(105, 15);
+            label_floors.TabIndex = 10;
+            label_floors.Text = "Number Of Floors:";
+            // 
+            // tb_floors
+            // 
+            tb_floors.Location = new System.Drawing.Point(183, 231);
+            tb_floors.Name = "tb_floors";
+            tb_floors.Size = new System.Drawing.Size(151, 23);
+            tb_floors.TabIndex = 11;
+            // 
+            // label_amenities
+            // 
+            label_amenities.AutoSize = true;
+            label_amenities.Location = new System.Drawing.Point(81, 287);
+            label_amenities.Name = "label_amenities";
+            label_amenities.Size = new System.Drawing.Size(63, 15);
+            label_amenities.TabIndex = 12;
+            label_amenities.Text = "Amenities:";
+            // 
+            // clb_amenities
+            // 
+            clb_amenities.CheckOnClick = true;
+            clb_amenities.FormattingEnabled = true;
+            clb_amenities.Items.AddRange(new object[] { "Pool", "Restaurant", "Bar", "Executive Lounge", "Rooftop", "Continental Breakfast", "Breakfast Buffet", "Room Service", "Housekeeping", "Parking", "Spa", "Minibar" });
+            clb_amenities.Location = new System.Drawing.Point(183, 287);
+            clb_amenities.Name = "clb_amenities";
+            clb_amenities.Size = new System.Drawing.Size(151, 238);
+            clb_amenities.TabIndex = 13;
+            // 
             // EditHotel
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(411, 493);
+            ClientSize = new System.Drawing.Size(491, 787);
+            Controls.Add(clb_amenities);
+            Controls.Add(label_amenities);
+            Controls.Add(tb_floors);
+            Controls.Add(label_floors);
             Controls.Add(label_title);
             Controls.Add(button_save);
             Controls.Add(button_delete);
@@ -171,5 +214,9 @@
         private System.Windows.Forms.Button button_delete;
         private System.Windows.Forms.Button button_save;
         private System.Windows.Forms.Label label_title;
+        private System.Windows.Forms.Label label_floors;
+        private System.Windows.Forms.TextBox tb_floors;
+        private System.Windows.Forms.Label label_amenities;
+        private System.Windows.Forms.CheckedListBox clb_amenities;
     }
 }

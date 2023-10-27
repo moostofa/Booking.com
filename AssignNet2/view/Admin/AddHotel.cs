@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Booking.com
@@ -29,16 +23,37 @@ namespace Booking.com
             {
                 { "Name", tb_name.Text },
                 { "Location", tb_location.Text },
-                { "Price", tb_price.Text }
+                { "Price", tb_price.Text },
+                { "NumberOfFloors", tb_floors.Text }
             };
+
+            // construct a comma separated string with the enum values of the HotelAmenity list that this hotel provides
+            // e.g. "0,2" might indicate that the hotel has both a Pool and a Bar
+            string amenities = "";
+            for (int i = 0; i < clb_amenities.Items.Count; i++)
+            {
+                if (!clb_amenities.CheckedItems.Contains(clb_amenities.Items[i]))
+                {
+                    continue;
+                }
+
+                if (amenities != "")
+                {
+                    amenities += ",";
+                }
+                amenities += i.ToString();
+            }
+            properties.Add("Amenities", amenities);
+
             try
             {
                 Hotel.FileManager.AddNewEntity(properties);
                 MessageBox.Show("Success! The hotel has been added to the system.");
                 ReturnToPreviousForm();
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString());
                 // no need to do anything here, as a detailed MessageBox error is already shown at a deeper exception level. let the user continue to try add again.
             }
         }
@@ -56,17 +71,17 @@ namespace Booking.com
             }
         }
 
-        private void button_cancel_Click(object sender, EventArgs e)
-        {
-            ReturnToPreviousForm();
-        }
-
         private void tb_floors_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
+        }
+
+        private void button_cancel_Click(object sender, EventArgs e)
+        {
+            ReturnToPreviousForm();
         }
     }
 }

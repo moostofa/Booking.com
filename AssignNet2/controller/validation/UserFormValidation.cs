@@ -16,7 +16,7 @@ namespace Booking.com.controller.validation
     // The error MessageBoxes are shown directly from this class to reduce complexity, as opposed to all other classes having to parse, handle and display their own error messages.
     public class UserFormValidation
     {
-        public static bool AreCustomerDetailsValid(Dictionary<string, string> properties)
+        public static bool AreModifiedCustomerInputsValid(Dictionary<string, string> properties)
         {
             if (string.IsNullOrEmpty(properties["Email"]) || !properties["Email"].Contains('@'))
             {
@@ -38,7 +38,7 @@ namespace Booking.com.controller.validation
                 MessageBox.Show("Please enter a Last Name");
                 return false;
             }
-            else if (string.IsNullOrEmpty(properties["Password"]) || properties["Password"].Count() < 8)
+            else if (string.IsNullOrEmpty(properties["Phone"]) || properties["Phone"].Count() < 8)
             {
                 MessageBox.Show("Please enter a valid phone number (must be at least 8 digits)");
                 return false;
@@ -66,7 +66,7 @@ namespace Booking.com.controller.validation
             return true;
         }
 
-        public static bool AreCustomerRegistrationDetailsValid(Dictionary<string, string> properties)
+        public static bool AreCustomerRegistrationInputsValid(Dictionary<string, string> properties)
         {
             if (string.IsNullOrEmpty(properties["Email"]) || !properties["Email"].Contains('@'))
             {

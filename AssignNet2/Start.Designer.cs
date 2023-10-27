@@ -34,6 +34,7 @@
             tb_email = new System.Windows.Forms.TextBox();
             label_email = new System.Windows.Forms.Label();
             label_password = new System.Windows.Forms.Label();
+            label_welcome = new System.Windows.Forms.Label();
             SuspendLayout();
             // 
             // btn_login
@@ -98,11 +99,21 @@
             label_password.TabIndex = 5;
             label_password.Text = "Password";
             // 
+            // label_welcome
+            // 
+            label_welcome.AutoSize = true;
+            label_welcome.Location = new System.Drawing.Point(421, 255);
+            label_welcome.Name = "label_welcome";
+            label_welcome.Size = new System.Drawing.Size(381, 15);
+            label_welcome.TabIndex = 6;
+            label_welcome.Text = "Welcome to the Booking.com App. Please Login or Register to contine.";
+            // 
             // Start
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1181, 703);
+            Controls.Add(label_welcome);
             Controls.Add(label_password);
             Controls.Add(label_email);
             Controls.Add(tb_email);
@@ -124,6 +135,7 @@
         private System.Windows.Forms.TextBox tb_email;
         private System.Windows.Forms.Label label_email;
         private System.Windows.Forms.Label label_password;
+        private System.Windows.Forms.Label label_welcome;
     }
 }
 

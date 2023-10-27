@@ -4,10 +4,10 @@ using System.Windows.Forms;
 
 namespace Booking.com
 {
-    public partial class AdminView : Form
+    public partial class AdminMain : Form
     {
         Admin admin;
-        public AdminView(Admin admin)
+        public AdminMain(Admin admin)
         {
             InitializeComponent();
             this.admin = admin;

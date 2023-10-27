@@ -1,6 +1,6 @@
 ﻿namespace Booking.com
 {
-    partial class CustomerViewHotels
+    partial class SelectHotelToBook
     {
         /// <summary>
         /// Required designer variable.
@@ -54,9 +54,11 @@
             lb_hotellist.Name = "lb_hotellist";
             lb_hotellist.Size = new System.Drawing.Size(292, 319);
             lb_hotellist.TabIndex = 1;
+            lb_hotellist.SelectedIndexChanged += lb_hotellist_SelectedIndexChanged;
             // 
             // button_book
             // 
+            button_book.Enabled = false;
             button_book.Location = new System.Drawing.Point(391, 141);
             button_book.Name = "button_book";
             button_book.Size = new System.Drawing.Size(118, 23);
@@ -67,6 +69,7 @@
             // 
             // button_view
             // 
+            button_view.Enabled = false;
             button_view.Location = new System.Drawing.Point(391, 179);
             button_view.Name = "button_view";
             button_view.Size = new System.Drawing.Size(118, 23);
@@ -103,7 +106,7 @@
             label_title.TabIndex = 6;
             label_title.Text = "View Available Hotels";
             // 
-            // CustomerViewHotels
+            // SelectHotelToBook
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -115,7 +118,7 @@
             Controls.Add(button_book);
             Controls.Add(lb_hotellist);
             Controls.Add(label_select);
-            Name = "CustomerViewHotels";
+            Name = "SelectHotelToBook";
             Text = "View Available Hotels";
             ResumeLayout(false);
             PerformLayout();

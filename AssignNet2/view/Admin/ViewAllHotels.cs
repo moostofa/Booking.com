@@ -28,7 +28,7 @@ namespace Booking.com
 
         private void AddAllHotelsToListbox()
         {
-            List<Hotel> hotels = Hotel.GetAllEntities();
+            List<Hotel> hotels = Hotel.GetAllHotels();
 
             foreach (Hotel hotel in hotels)
             {
@@ -46,7 +46,7 @@ namespace Booking.com
             Hotel hotel = (Hotel)lb_hotellist.SelectedItem;
             if (hotel != null)
             {
-                ViewHotelDetails viewHotelDetailsView = new ViewHotelDetails(hotel);
+                ViewHotel viewHotelDetailsView = new ViewHotel(hotel);
                 viewHotelDetailsView.ShowDialog();
             }
         }

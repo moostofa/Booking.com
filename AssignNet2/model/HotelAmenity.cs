@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Booking.com.model
 {
-    public enum HotelAmenities
+    public enum HotelAmenity
     {
         Pool, Restaurant, Bar, ExecutiveLounge, Rooftop, ContinentalBreakfast, BreakfastBuffet, RoomService, Housekeeping, Parking, Spa, Minibar
     }

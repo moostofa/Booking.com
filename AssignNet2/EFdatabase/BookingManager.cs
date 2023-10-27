@@ -46,7 +46,7 @@ namespace Booking.com
         public static int CalculateNumberOfNights(DateTime checkIn, DateTime checkOut)
         {
             TimeSpan nights = checkOut.Subtract(checkIn);
-            return nights.Days;
+            return nights.Days >= 1 ? nights.Days : 0;
         }
 
         // for testing

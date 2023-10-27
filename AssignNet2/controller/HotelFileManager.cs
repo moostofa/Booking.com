@@ -9,6 +9,8 @@ using static System.Windows.Forms.DataFormats;
 namespace Booking.com.controller
 {
     using exceptions;
+    using global::Booking.com.model;
+    using System.Linq;
     using validation;
 
     public class HotelFileManager : IFileManager<Hotel>
@@ -23,7 +25,7 @@ namespace Booking.com.controller
             JsonSerializerOptions options = new JsonSerializerOptions
             {
                 WriteIndented = true,
-                Converters = { new UserConverter() },
+                Converters = { new HotelConverter() },
             };
             try
             {
@@ -80,60 +82,56 @@ namespace Booking.com.controller
 
         public void AddNewEntity(Dictionary<string, string> hotelProperties)
         {
-            bool areHotelInputsValid = HotelFormValidation.IsHotelValid(hotelProperties);
-            if (areHotelInputsValid)
+            bool areHotelInputsValid = HotelFormValidation.AreHotelInputsValid(hotelProperties);
+            if (!areHotelInputsValid)
             {
-                double price;
-                try
-                {
-                    price = Convert.ToDouble(hotelProperties["Price"]);
-                }
-                catch (FormatException)
-                {
-                    MessageBox.Show("Error: Invalid Price Format");
-                    return;
-                }
-                catch (OverflowException)
-                {
-                    MessageBox.Show("Error: Price too large");
-                    return;
-                }
-                int numberOfFloors;
-                try
-                {
-                    numberOfFloors = Convert.ToInt32(hotelProperties["NumberOfFloors"]);
-                }
-                catch (FormatException)
-                {
-                    MessageBox.Show("Error: Invalid Number Of Floors Format");
-                    return;
-                }
-                catch (OverflowException)
-                {
-                    MessageBox.Show("Error: Number Of Floors Too Large");
-                    return;
-                }
-                Hotel hotel = new Hotel(hotelProperties["Name"], hotelProperties["Location"], GenerateNewId(), price, numberOfFloors);
-                AddNewEntity(hotel);
+                throw new InvalidInputException();
             }
-            return;
-        }
 
-        public int GenerateNewId()
-        {
-            if (hotelList.Count == 0)
+            double price;
+            try
             {
-                return 1;
+                price = Convert.ToDouble(hotelProperties["Price"]);
             }
-            else
+            catch (FormatException)
             {
-                return hotelList.Count + 1;
+                MessageBox.Show("Error: Invalid Price Format");
+                return;
             }
+            catch (OverflowException)
+            {
+                MessageBox.Show("Error: Price too large");
+                return;
+            }
+            int numberOfFloors;
+            try
+            {
+                numberOfFloors = Convert.ToInt32(hotelProperties["NumberOfFloors"]);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Error: Invalid Number Of Floors Format");
+                return;
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("Error: Number Of Floors Too Large");
+                return;
+            }
+
+            List<string> amenityEnums = hotelProperties["Amenities"].Split(',').ToList();
+            List<HotelAmenity> availableAmenities = new List<HotelAmenity>();
+            foreach (string amenityEnum in amenityEnums)
+            {
+                availableAmenities.Add(Enum.Parse<HotelAmenity>(amenityEnum));
+            }
+            Hotel hotel = new Hotel(hotelProperties["Name"], hotelProperties["Location"], GenerateNewId(), price, numberOfFloors, availableAmenities);
+            AddNewEntity(hotel);
         }
 
         public void UpdateDetails(Hotel hotel, Dictionary<string, string> hotelProperties)
         {
-            bool areHotelInputsValid = HotelFormValidation.IsHotelValid(hotelProperties);
+            bool areHotelInputsValid = HotelFormValidation.AreHotelInputsValid(hotelProperties);
             if (!areHotelInputsValid)
             {
                 throw new InvalidUpdateException();
@@ -155,18 +153,41 @@ namespace Booking.com.controller
                 }
                 catch (FormatException)
                 {
-                    string errorMessage = "Erorr: Invalid PricePerNight Format";
+                    string errorMessage = "Erorr: Invalid Price Per Night Format";
                     MessageBox.Show(errorMessage);
                     throw new InvalidUpdateException(errorMessage);
                 }
                 catch (OverflowException)
                 {
-                    string errorMessage = "Error: PricePerNight too large";
+                    string errorMessage = "Error: Price Per Night too large";
+                    MessageBox.Show(errorMessage);
+                    throw new InvalidUpdateException(errorMessage);
+                }
+                try
+                {
+                    hotelList[index].NumberOfFloors = int.Parse(hotelProperties["NumberOfFloors"]);
+                }
+                catch (FormatException)
+                {
+                    string errorMessage = "Erorr: Invalid Number Of Floors Format";
+                    MessageBox.Show(errorMessage);
+                    throw new InvalidUpdateException(errorMessage);
+                }
+                catch (OverflowException)
+                {
+                    string errorMessage = "Error: Number Of Floors too large";
                     MessageBox.Show(errorMessage);
                     throw new InvalidUpdateException(errorMessage);
                 }
                 hotelList[index].Name = hotelProperties["Name"];
                 hotelList[index].Location = hotelProperties["Location"];
+                List<string> amenityEnums = hotelProperties["Amenities"].Split(',').ToList();
+                List<HotelAmenity> availableAmenities = new List<HotelAmenity>();
+                foreach (string amenityEnum in amenityEnums)
+                {
+                    availableAmenities.Add(Enum.Parse<HotelAmenity>(amenityEnum));
+                }
+                hotelList[index].AvailableAmenities = availableAmenities;
                 SerializeEntitiesToFile();
                 MessageBox.Show("Success! The hotel details were successfully changed");
             }
@@ -208,6 +229,41 @@ namespace Booking.com.controller
             string writeHotels = JsonSerializer.Serialize(hotelList, options);
             File.WriteAllText(FilePath, writeHotels);
         }
+
+        private int GenerateNewId()
+        {
+            while (true)
+            {
+                Random random = new Random();
+                int minDigits = 2;
+                int maxDigits = 8;
+                int minValue = (int)Math.Pow(10, minDigits - 1);
+                int maxValue = (int)Math.Pow(10, maxDigits) - 1;
+                int id = random.Next(minValue, maxValue + 1);
+                // id cannot Start with a 0
+                while (id.ToString()[0] == '0')
+                {
+                    id = random.Next(minValue, maxValue + 1);
+                }
+
+                if (!IsDuplicateID(id))
+                {
+                    return id;
+                }
+            }
+        }
+
+        private bool IsDuplicateID(int id)
+        {
+            foreach (Hotel hotel in DeserializeEntitiesFromFile())
+            {
+                if (hotel.Id == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 
 
@@ -220,12 +276,13 @@ namespace Booking.com.controller
             string location = null;
             double pricePerNight = 0;
             int numberOfFloors = 0;
+            List<HotelAmenity> amenities = new List<HotelAmenity>();
 
             while (reader.Read())
             {
                 if (reader.TokenType == JsonTokenType.EndObject)
                 {
-                    return new Hotel(name, location, id, pricePerNight, numberOfFloors);
+                    return new Hotel(name, location, id, pricePerNight, numberOfFloors, amenities);
                 }
 
                 if (reader.TokenType != JsonTokenType.PropertyName)
@@ -250,6 +307,15 @@ namespace Booking.com.controller
                     case "PricePerNight":
                         pricePerNight = reader.GetDouble();
                         break;
+                    case "NumberOfFloors":
+                        numberOfFloors = reader.GetInt32();
+                        break;
+                    case "Amenities":
+                        foreach (string amenityEnum in reader.GetString().Split(',').ToList())
+                        {
+                            amenities.Add((HotelAmenity)int.Parse(amenityEnum));
+                        }
+                        break;
                     default:
                         throw new JsonException($"Unrecognized property: {propertyName}");
                 }
@@ -264,6 +330,8 @@ namespace Booking.com.controller
             writer.WriteString("Name", value.Name);
             writer.WriteString("Location", value.Location);
             writer.WriteNumber("PricePerNight", value.PricePerNight);
+            writer.WriteNumber("NumberOfFloors", value.NumberOfFloors);
+            writer.WriteString("Amenities", string.Join(',', value.AvailableAmenities.ConvertAll(i => (int)i)));
             writer.WriteEndObject();
         }
     }

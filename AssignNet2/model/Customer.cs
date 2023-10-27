@@ -21,7 +21,7 @@ public class Customer : User
 
     public bool ChangeAccountDetails(Dictionary<string, string> customerDetails)
     {
-        if (UserFormValidation.AreCustomerDetailsValid(customerDetails))
+        if (UserFormValidation.AreModifiedCustomerInputsValid(customerDetails))
         {
             FileManager.UpdateDetails(this, customerDetails);
             this.Email = customerDetails["Email"];

@@ -1,6 +1,6 @@
 ﻿namespace Booking.com
 {
-    partial class CustomerView
+    partial class CustomerMain
     {
         /// <summary>
         /// Required designer variable.

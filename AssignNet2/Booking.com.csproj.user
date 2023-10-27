@@ -10,7 +10,7 @@
     <Compile Update="view\Customer\BookAirfare.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="view\Customer\CustomerViewHotels.cs">
+    <Compile Update="view\Customer\SelectHotelToBook.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Start.cs">
@@ -22,7 +22,7 @@
     <Compile Update="view\Admin\AddHotel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="view\Admin\AdminView.cs">
+    <Compile Update="view\Admin\AdminMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="view\Admin\EditCustomer.cs">
@@ -46,13 +46,13 @@
     <Compile Update="view\Test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="view\ViewHotelDetails.cs">
+    <Compile Update="view\ViewHotel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="view\Customer\CustomerChangeDetails.cs">
+    <Compile Update="view\Customer\ChangeAccountDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="view\Customer\CustomerView.cs">
+    <Compile Update="view\Customer\CustomerMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="view\Customer\BookHotel.cs">

@@ -30,6 +30,13 @@ namespace Booking.com
             tb_location.Text = hotel.Location;
             string price = hotel.PricePerNight.ToString();
             tb_price.Text = price;
+            string floors = hotel.NumberOfFloors.ToString();
+            tb_floors.Text = floors;
+            List<int> amenityEnums = hotel.AvailableAmenities.ConvertAll(i => (int)i);
+            foreach (int amenityEnum in amenityEnums)
+            {
+                clb_amenities.SetItemChecked(amenityEnum, true);
+            }
         }
 
         private void ReturnToPreviousForm()
@@ -45,8 +52,28 @@ namespace Booking.com
             {
                 { "Name", tb_name.Text },
                 { "Location", tb_location.Text },
-                { "Price", tb_price.Text }
+                { "Price", tb_price.Text },
+                { "NumberOfFloors", tb_floors.Text }
             };
+
+
+            // construct a comma separated string with the enum values of the HotelAmenity list that this hotel provides
+            // e.g. "0,2" might indicate that the hotel has both a Pool and a Bar
+            string amenities = "";
+            for (int i = 0; i < clb_amenities.Items.Count; i++)
+            {
+                if (!clb_amenities.CheckedItems.Contains(clb_amenities.Items[i]))
+                {
+                    continue;
+                }
+
+                if (amenities != "")
+                {
+                    amenities += ",";
+                }
+                amenities += i.ToString();
+            }
+            properties.Add("Amenities", amenities);
 
             try
             {

@@ -48,9 +48,9 @@
             label_name.Location = new System.Drawing.Point(88, 104);
             label_name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_name.Name = "label_name";
-            label_name.Size = new System.Drawing.Size(39, 15);
+            label_name.Size = new System.Drawing.Size(42, 15);
             label_name.TabIndex = 0;
-            label_name.Text = "Name";
+            label_name.Text = "Name:";
             // 
             // label_email
             // 
@@ -58,9 +58,9 @@
             label_email.Location = new System.Drawing.Point(91, 142);
             label_email.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_email.Name = "label_email";
-            label_email.Size = new System.Drawing.Size(36, 15);
+            label_email.Size = new System.Drawing.Size(39, 15);
             label_email.TabIndex = 1;
-            label_email.Text = "Email";
+            label_email.Text = "Email:";
             // 
             // label_phone
             // 
@@ -68,9 +68,9 @@
             label_phone.Location = new System.Drawing.Point(84, 178);
             label_phone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_phone.Name = "label_phone";
-            label_phone.Size = new System.Drawing.Size(41, 15);
+            label_phone.Size = new System.Drawing.Size(44, 15);
             label_phone.TabIndex = 2;
-            label_phone.Text = "Phone";
+            label_phone.Text = "Phone:";
             // 
             // label_address
             // 
@@ -78,9 +78,9 @@
             label_address.Location = new System.Drawing.Point(76, 215);
             label_address.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label_address.Name = "label_address";
-            label_address.Size = new System.Drawing.Size(49, 15);
+            label_address.Size = new System.Drawing.Size(52, 15);
             label_address.TabIndex = 3;
-            label_address.Text = "Address";
+            label_address.Text = "Address:";
             // 
             // listBox1
             // 

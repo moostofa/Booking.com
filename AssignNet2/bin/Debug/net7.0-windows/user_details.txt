@@ -9,12 +9,12 @@
     "Type": 0
   },
   {
-    "Email": "test@booking.com",
-    "Password": "123456789",
-    "FirstName": "Testy",
-    "LastName": "Test",
-    "Phone": "0412963232323",
-    "Address": "123 Fake St ",
+    "Email": "test@test.com",
+    "Password": "12345678",
+    "FirstName": "Test",
+    "LastName": "abcasdasd",
+    "Phone": "12345678",
+    "Address": "123 Fake St Fakerton NSW 12345",
     "Type": 1
   }
 ]

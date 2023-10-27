@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "Id": 94501295,
+    "Name": "The Hotel",
+    "Location": "Sydney",
+    "PricePerNight": 942.63,
+    "NumberOfFloors": 32,
+    "Amenities": "1,2,4,6,8,10"
+  }
+]

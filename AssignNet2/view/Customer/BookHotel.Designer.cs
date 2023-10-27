@@ -98,7 +98,7 @@
             // text_bookhotel
             // 
             text_bookhotel.AutoSize = true;
-            text_bookhotel.Location = new System.Drawing.Point(323, 237);
+            text_bookhotel.Location = new System.Drawing.Point(361, 243);
             text_bookhotel.Name = "text_bookhotel";
             text_bookhotel.Size = new System.Drawing.Size(72, 15);
             text_bookhotel.TabIndex = 6;
@@ -107,11 +107,11 @@
             // label_price
             // 
             label_price.AutoSize = true;
-            label_price.Location = new System.Drawing.Point(445, 422);
+            label_price.Location = new System.Drawing.Point(428, 422);
             label_price.Name = "label_price";
-            label_price.Size = new System.Drawing.Size(67, 15);
+            label_price.Size = new System.Drawing.Size(84, 15);
             label_price.TabIndex = 8;
-            label_price.Text = "Total Price :";
+            label_price.Text = "Total Price ($) :";
             // 
             // text_price
             // 

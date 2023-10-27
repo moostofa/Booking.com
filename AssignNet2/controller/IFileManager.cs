@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Booking.com.controller
 {
-    internal interface IFileManager<T>
+    public interface IFileManager<T>
     {
         // read a boooking entity (hotel, airfare, users etc.) json text file and turn it into a list of objects of that entity type
         List<T> DeserializeEntitiesFromFile();
@@ -22,7 +22,5 @@ namespace Booking.com.controller
 
         // this method deletes from both the in-memory Object list AND the text file
         void DeleteEntity(T t);
-
-        int GenerateNewId();
     }
 }
