@@ -4,7 +4,7 @@
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="view\Admin\ViewBookings.cs">
+    <Compile Update="view\Customer\ViewHotelBookings.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="view\Customer\BookAirfare.cs">
@@ -43,7 +43,7 @@
     <Compile Update="view\Admin\ViewCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="view\Test.cs">
+    <Compile Update="view\Customer\ViewMyHotelBookings.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="view\ViewHotel.cs">

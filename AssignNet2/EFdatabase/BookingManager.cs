@@ -2,10 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections;
-using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Booking.com
@@ -13,6 +11,7 @@ namespace Booking.com
     public class BookingManager
     {
         public static BookingContext context;
+
         public static void CreateBookingsDbContext()
         {
             if (context == null)
@@ -33,8 +32,10 @@ namespace Booking.com
                     Email = (string)properties["Email"],
                     CheckIn = (DateTime)properties["CheckIn"],
                     CheckOut = (DateTime)properties["CheckOut"],
-                    CompanyType = 1,
-                    CompanyId = (int)properties["CompanyId"]
+                    BookingType = (BookingType)properties["BookingType"],
+                    EntityId = (int)properties["EntityId"],
+                    NumberOfNights = (int)properties["NumberOfNights"],
+                    TotalPrice = (double)properties["TotalPrice"]
                 };
                 context.Bookings.Add(booking);
                 context.SaveChanges();
@@ -45,11 +46,21 @@ namespace Booking.com
 
         public static int CalculateNumberOfNights(DateTime checkIn, DateTime checkOut)
         {
-            TimeSpan nights = checkOut.Subtract(checkIn);
-            return nights.Days >= 1 ? nights.Days : 0;
+            int numberOfNights = (int)Math.Ceiling((checkOut - checkIn).TotalDays);
+            return numberOfNights;
         }
 
-        // for testing
+        public static void DeleteBooking(int bookingId)
+        {
+            var bookingToRemove = context.Bookings.Where(b => b.BookingId == bookingId).FirstOrDefault();
+            if (bookingToRemove != null)
+            {
+                context.Bookings.Remove(bookingToRemove);
+                context.SaveChanges();
+                MessageBox.Show("Your booking was successfully cancelled.", "Cancellation Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
         public static void DeleteAllBookings()
         {
             context.Bookings.RemoveRange(context.Bookings);

@@ -13,12 +13,17 @@ namespace Booking.com.controller
 
     public class UserFileManager : IFileManager<User>
     {
-        public static readonly string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "user_details.txt");
+        public static readonly string FilePath = Path.Combine(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName, "user_details.txt");
         private List<User> users = new List<User>();
+
+        public UserFileManager()
+        {
+            DeserializeEntitiesFromFile();
+        }
 
         public List<User> DeserializeEntitiesFromFile()
         {
-            string userData = File.ReadAllText(filePath);
+            string userData = File.ReadAllText(FilePath);
 
             JsonSerializerOptions options = new JsonSerializerOptions
             {
@@ -45,7 +50,7 @@ namespace Booking.com.controller
                 Converters = { new UserConverter() },
             };
             string writeUsers = JsonSerializer.Serialize(users, options);
-            File.WriteAllText(filePath, writeUsers);
+            File.WriteAllText(FilePath, writeUsers);
         }
 
         public void AddNewEntity(User newUser)

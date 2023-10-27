@@ -2,7 +2,6 @@
 using Booking.com.controller;
 using Booking.com.model;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 public class Hotel : BookingEntity
 {
@@ -22,6 +21,11 @@ public class Hotel : BookingEntity
     public static List<Hotel> GetAllHotels()
     {
         return FileManager.DeserializeEntitiesFromFile();
+    }
+
+    public static string getNameById(int id)
+    {
+        return FileManager.getNameById(id);
     }
 
     public override string ToString()

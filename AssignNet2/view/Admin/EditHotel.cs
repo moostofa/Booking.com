@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -80,11 +81,11 @@ namespace Booking.com
                 Hotel.FileManager.UpdateDetails(hotel, properties);
                 ReturnToPreviousForm();
             }
-            catch
+            catch (Exception ex)
             {
-                // no need to do anything here. any MessageBox errors to do with updating are handled in a deeper level exception. allow the user to try again.
+                Debug.WriteLine(ex.ToString());
+                // do nothing and let the user try again. detailed error message boxes are already displayed in a deeper level exception.
             }
-
         }
 
         private void button_back_Click(object sender, EventArgs e)

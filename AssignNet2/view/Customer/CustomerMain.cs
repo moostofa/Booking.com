@@ -18,6 +18,8 @@ namespace Booking.com
         {
             InitializeComponent();
             this.customer = customer;
+            label_welcome.Text = $"Welcome to your customer booking portal, {customer.FirstName}!";
+            label_loggedinuser.Text = $"You are logged in as '{customer.FirstName} {customer.LastName}' ({customer.Email})";
             this.Show();
         }
 
@@ -28,7 +30,7 @@ namespace Booking.com
             this.Close();
         }
 
-        private void changedetails_click(object sender, EventArgs e)
+        private void changedetails_Click(object sender, EventArgs e)
         {
             ChangeAccountDetails customerChangeDetailsView = new ChangeAccountDetails(customer);
             customerChangeDetailsView.ShowDialog();
@@ -38,6 +40,12 @@ namespace Booking.com
         {
             SelectHotelToBook customerViewHotels = new SelectHotelToBook(customer);
             customerViewHotels.Show();
+        }
+
+        private void button_viewhotelbookings_Click(object sender, EventArgs e)
+        {
+            ViewHotelBookings test = new ViewHotelBookings(customer, this);
+            test.Show();
         }
     }
 }

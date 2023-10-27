@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
@@ -50,7 +51,8 @@ namespace Booking.com
             }
             catch (Exception ex)
             {
-                // do nothing and let the user try again. detailed error messages are already displayed in a deeper level exception.
+                Debug.WriteLine(ex.ToString());
+                // do nothing and let the user try again. detailed error message boxes are already displayed in a deeper level exception.
             }
         }
 

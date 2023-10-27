@@ -10,7 +10,6 @@ public class Customer : User
 {
     public Customer(string email, string password, string firstName, string lastName, string phone, string address) : base(email, password, firstName, lastName, phone, address, UserType.Customer)
     {
-
     }
 
     public override string ToString()

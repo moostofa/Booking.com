@@ -24,7 +24,7 @@ namespace Booking.com
         {
             text_name.Text = hotel.Name;
             text_location.Text = hotel.Location;
-            text_pricepernight.Text = hotel.PricePerNight.ToString();
+            text_pricepernight.Text = hotel.PricePerNight.ToString("C2");
             text_id.Text = hotel.Id.ToString();
             text_floors.Text = hotel.NumberOfFloors.ToString();
             text_amenities.Text = string.Join(", ", hotel.AvailableAmenities);

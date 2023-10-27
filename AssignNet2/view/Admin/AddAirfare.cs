@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -39,13 +40,14 @@ namespace Booking.com
                 MessageBox.Show("Success! The airfare has been added to the system.");
                 ReturnToPreviousForm();
             }
-            catch
+            catch (Exception ex)
             {
-                // no need to do anything here, as a detailed MessageBox error is already shown at a deeper exception level. let the user continue to try add again.
+                Debug.WriteLine(ex.ToString());
+                // do nothing and let the user try again. detailed error message boxes are already displayed in a deeper level exception.            }
             }
         }
 
-        private void button_cancel_Click(object sender, EventArgs e)
+            private void button_cancel_Click(object sender, EventArgs e)
         {
             ReturnToPreviousForm();
         }

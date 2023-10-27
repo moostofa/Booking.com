@@ -4,19 +4,24 @@ using System.IO;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Windows.Forms;
-using static System.Windows.Forms.DataFormats;
+using Booking.com.model;
+using System.Linq;
+using System.Diagnostics;
 
 namespace Booking.com.controller
 {
     using exceptions;
-    using global::Booking.com.model;
-    using System.Linq;
     using validation;
 
     public class HotelFileManager : IFileManager<Hotel>
     {
-        public static readonly string FilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "hotel_details.txt");
+        public static readonly string FilePath = Path.Combine(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName, "hotel_details.txt");
         private List<Hotel> hotelList = new List<Hotel>();
+
+        public HotelFileManager()
+        {
+            DeserializeEntitiesFromFile();
+        }
 
         public List<Hotel> DeserializeEntitiesFromFile()
         {
@@ -29,12 +34,12 @@ namespace Booking.com.controller
             };
             try
             {
-                List<Hotel> hotelList = JsonSerializer.Deserialize<List<Hotel>>(hotelData, options);
+                hotelList = JsonSerializer.Deserialize<List<Hotel>>(hotelData, options);
                 return hotelList;
             }
-            catch (JsonException)
+            catch (JsonException ex)
             {
-                Console.WriteLine("List Empty");
+                Debug.WriteLine("Json Deserialization Error:", ex);
             }
             return null;
         }
@@ -71,6 +76,12 @@ namespace Booking.com.controller
                 }
             }
             return null;
+        }
+
+        public string getNameById(int id)
+        {
+            Hotel matchingHotel = hotelList.Find(hotel => hotel.Id == id);
+            return matchingHotel.Name;
         }
 
         public void AddNewEntity(Hotel hotel)

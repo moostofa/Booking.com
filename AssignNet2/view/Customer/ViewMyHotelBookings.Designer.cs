@@ -1,6 +1,6 @@
 ﻿namespace Booking.com
 {
-    partial class Test
+    partial class ViewMyHotelBookings
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             components = new System.ComponentModel.Container();
             dataGridView1 = new System.Windows.Forms.DataGridView();
-            bookingBindingSource = new System.Windows.Forms.BindingSource(components);
             bookingIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             checkInDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             checkOutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             companyTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             companyIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            bookingBindingSource = new System.Windows.Forms.BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bookingBindingSource).BeginInit();
             SuspendLayout();
@@ -51,10 +51,6 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new System.Drawing.Size(681, 119);
             dataGridView1.TabIndex = 0;
-            // 
-            // bookingBindingSource
-            // 
-            bookingBindingSource.DataSource = typeof(Booking);
             // 
             // bookingIdDataGridViewTextBoxColumn
             // 
@@ -88,18 +84,22 @@
             // 
             // companyIdDataGridViewTextBoxColumn
             // 
-            companyIdDataGridViewTextBoxColumn.DataPropertyName = "CompanyId";
-            companyIdDataGridViewTextBoxColumn.HeaderText = "CompanyId";
+            companyIdDataGridViewTextBoxColumn.DataPropertyName = "EntityId";
+            companyIdDataGridViewTextBoxColumn.HeaderText = "EntityId";
             companyIdDataGridViewTextBoxColumn.Name = "companyIdDataGridViewTextBoxColumn";
             // 
-            // Test
+            // bookingBindingSource
+            // 
+            bookingBindingSource.DataSource = typeof(Booking);
+            // 
+            // ViewMyHotelBookings
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(800, 450);
             Controls.Add(dataGridView1);
-            Name = "Test";
-            Text = "Test";
+            Name = "ViewMyHotelBookings";
+            Text = "My Hotel Bookings";
             Load += Test_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)bookingBindingSource).EndInit();

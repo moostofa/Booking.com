@@ -107,11 +107,11 @@
             // label_price
             // 
             label_price.AutoSize = true;
-            label_price.Location = new System.Drawing.Point(428, 422);
+            label_price.Location = new System.Drawing.Point(448, 422);
             label_price.Name = "label_price";
-            label_price.Size = new System.Drawing.Size(84, 15);
+            label_price.Size = new System.Drawing.Size(64, 15);
             label_price.TabIndex = 8;
-            label_price.Text = "Total Price ($) :";
+            label_price.Text = "Total Price:";
             // 
             // text_price
             // 

@@ -12,8 +12,13 @@ namespace Booking.com.controller
 
     public class AirfareFileManager : IFileManager<Airfare>
     {
-        public static readonly string FilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "airline_details.txt");
+        public static readonly string FilePath = Path.Combine(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName, "airline_details.txt");
         private List<Airfare> airfareList = new List<Airfare>();
+
+        public AirfareFileManager()
+        {
+            DeserializeEntitiesFromFile();
+        }
 
         public List<Airfare> DeserializeEntitiesFromFile()
         {
@@ -60,13 +65,13 @@ namespace Booking.com.controller
                 {
                     string errorMessage = "Error: Invalid price format";
                     MessageBox.Show(errorMessage);
-                    throw new UnableToAddException(errorMessage);
+                    throw new InvalidNewEntityException(errorMessage);
                 }
                 catch (OverflowException)
                 {
                     string errorMessage = "Error: Invalid price format";
                     MessageBox.Show(errorMessage);
-                    throw new UnableToAddException(errorMessage);
+                    throw new InvalidNewEntityException(errorMessage);
                 }
 
                 Airfare airfare = new Airfare(airfareProperties["Name"], airfareProperties["Location"], GenerateNewId(), airfareProperties["Destination"], price);

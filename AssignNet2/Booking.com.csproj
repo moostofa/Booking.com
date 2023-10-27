@@ -14,16 +14,13 @@
     <None Remove="bin\**" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\net7.0-windows\airline_details.txt" />
-    <None Include="bin\Debug\net7.0-windows\bookings_details.db" />
-    <None Include="bin\Debug\net7.0-windows\hotel_details.txt" />
-    <None Include="bin\Debug\net7.0-windows\user_details.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Enums.NET" Version="4.0.1" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.12" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\net7.0-windows\" />
   </ItemGroup>
 </Project>

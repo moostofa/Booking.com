@@ -13,8 +13,6 @@ namespace Booking.com
             InitializeComponent();
             BookingManager.CreateBookingsDbContext();
             this.AcceptButton = btn_login;
-            Test test = new Test();
-            test.Show();
         }
 
         private void loginBtn_Click(object sender, EventArgs e)

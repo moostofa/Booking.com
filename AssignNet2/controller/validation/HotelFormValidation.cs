@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Booking.com.controller.validation
@@ -34,7 +31,7 @@ namespace Booking.com.controller.validation
         {
             if (DateTime.Compare((DateTime)properties["CheckOut"], (DateTime)properties["CheckIn"]) < 0)
             {
-                MessageBox.Show("Check out date can not be before check in date.", "Error - Dates Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Check out date cannot be before check in date.", "Error - Dates Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;

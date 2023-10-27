@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Booking.com
 {
@@ -12,7 +8,9 @@ namespace Booking.com
         public string Email { get; set; }
         public DateTime CheckIn { get; set; }
         public DateTime CheckOut { get; set; }
-        public int CompanyType { get; set; }
-        public int CompanyId { get; set; }
+        public BookingType BookingType { get; set; }
+        public int NumberOfNights { get; set; }
+        public double TotalPrice { get; set; }
+        public int EntityId { get; set; }
     }
 }

@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace Booking.com
 {
-    public partial class Test : Form
+    public partial class ViewMyHotelBookings : Form
     {
         BookingContext context;
-        public Test()
+        public ViewMyHotelBookings()
         {
             InitializeComponent();
         }
@@ -32,7 +32,6 @@ namespace Booking.com
         protected override void OnClosing(CancelEventArgs e)
         {
             base.OnClosing(e);
-
             this.context?.Dispose();
             this.context = null;
         }
