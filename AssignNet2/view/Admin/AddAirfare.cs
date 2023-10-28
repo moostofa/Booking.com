@@ -47,7 +47,7 @@ namespace Booking.com
             }
         }
 
-            private void button_cancel_Click(object sender, EventArgs e)
+        private void button_cancel_Click(object sender, EventArgs e)
         {
             ReturnToPreviousForm();
         }

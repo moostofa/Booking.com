@@ -24,5 +24,10 @@ namespace Booking.com
         {
             return FileManager.DeserializeEntitiesFromFile();
         }
+
+        public override string ToString()
+        {
+            return Name + ", " + Location;
+        }
     }
 }
