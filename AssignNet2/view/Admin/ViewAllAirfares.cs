@@ -15,6 +15,40 @@ namespace Booking.com
         public ViewAllAirfares()
         {
             InitializeComponent();
+            AddAllAirfaresToListBox();
+        }
+
+        private void AddAllAirfaresToListBox()
+        {
+            List<Airfare> airfares = Airfare.GetAllEntities();
+            foreach (Airfare airfare in airfares)
+            {
+                lb_airfarelist.Items.Add(airfare);
+            }
+        }
+
+        private void button_view_Click(object sender, EventArgs e)
+        {
+            Airfare airfare = lb_airfarelist.SelectedItem as Airfare;
+            if (airfare != null)
+            {
+                MessageBox.Show("TODO: Show the airfare, not edit");
+            }
+        }
+
+        private void button_editdetails_Click(object sender, EventArgs e)
+        {
+            Airfare airfare = lb_airfarelist.SelectedItem as Airfare;
+            if (airfare != null)
+            {
+                EditAirfare editAirfareView = new EditAirfare(airfare);
+                MessageBox.Show("TODO: Show the airfare, not edit");
+            }
+        }
+
+        private void button_cancel_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

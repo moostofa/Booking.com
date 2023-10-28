@@ -13,14 +13,20 @@ namespace Booking.com
 {
     public partial class EditAirfare : Form
     {
-        public EditAirfare()
+
+        private Airfare Airfare;
+        public EditAirfare(Airfare airfare)
         {
             InitializeComponent();
+            Airfare = airfare;
+            DisplayAirfareDetails();
         }
 
-        private void ReturnToPreviousForm()
-        {
-            this.Close();
+        private void DisplayAirfareDetails() {
+            tb_airlinename.Text = Airfare.Name;
+            tb_location.Text = Airfare.Location;
+            tb_destination.Text = Airfare.Destination;
+            tb_price.Text = Airfare.Price.ToString();
         }
 
         private void button_addairfare_Click(object sender, EventArgs e)
@@ -37,7 +43,7 @@ namespace Booking.com
             {
                 Airfare.FileManager.UpdateDetails(null, properties);
                 MessageBox.Show("TODO: Update Airfare!");
-                ReturnToPreviousForm();
+                Close();
             }
             catch (Exception ex)
             {
@@ -47,7 +53,7 @@ namespace Booking.com
 
         private void button_cancel_Click(object sender, EventArgs e)
         {
-            ReturnToPreviousForm();
+            Close();
         }
 
         private void tb_price_KeyPress(object sender, KeyPressEventArgs e)

@@ -61,6 +61,10 @@ namespace Booking.com
 
         }
 
-
+        private void button_vieweditairfare_Click(object sender, EventArgs e)
+        {
+            ViewAllAirfares viewAllAirfares = new ViewAllAirfares();
+            viewAllAirfares.Show();
+        }
     }
 }
