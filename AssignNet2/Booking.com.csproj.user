@@ -4,6 +4,12 @@
     <ProjectView>ShowAllFiles</ProjectView>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="view\Admin\EditAirfare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\Admin\ViewAllAirfares.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="view\Customer\ViewHotelBookings.cs">
       <SubType>Form</SubType>
     </Compile>

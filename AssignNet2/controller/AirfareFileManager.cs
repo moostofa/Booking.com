@@ -102,7 +102,7 @@ namespace Booking.com.controller
             File.WriteAllText(FilePath, writeAirlines);
         }
 
-        void IFileManager<Airfare>.UpdateDetails(Airfare t, Dictionary<string, string> properties)
+        public void UpdateDetails(Airfare t, Dictionary<string, string> properties)
         {
             throw new NotImplementedException();
         }

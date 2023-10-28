@@ -33,5 +33,12 @@
     "Location": "Hawaii",
     "Destination": "Hawaii",
     "Price": 4.63
+  },
+  {
+    "Id": 1,
+    "Name": "Jetstar",
+    "Location": "Sydney",
+    "Destination": "Sydney",
+    "Price": 500
   }
 ]
