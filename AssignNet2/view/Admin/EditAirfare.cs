@@ -36,7 +36,7 @@ namespace Booking.com
             {
                 {"Name", tb_airlinename.Text},
                 {"Location", tb_location.Text},
-                {"Destination", tb_location.Text},
+                {"Destination", tb_destination.Text},
                 {"Price", tb_price.Text}
             };
 

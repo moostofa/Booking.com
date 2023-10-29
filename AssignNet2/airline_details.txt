@@ -3,7 +3,7 @@
     "Id": 1,
     "Name": "Virgin",
     "Location": "Sydney",
-    "Destination": "Sydney",
+    "Destination": "Zurich",
     "Price": 100
   },
   {
@@ -40,5 +40,12 @@
     "Location": "Sydney",
     "Destination": "Sydney",
     "Price": 500
+  },
+  {
+    "Id": 7,
+    "Name": "Malaysia",
+    "Location": "Sydney",
+    "Destination": "Sydney",
+    "Price": 5000
   }
 ]

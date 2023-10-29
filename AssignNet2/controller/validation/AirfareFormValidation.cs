@@ -22,6 +22,10 @@ namespace Booking.com.controller.validation
                 MessageBox.Show("Please enter a valid airfare destination");
                 return false;
             }
+            else if (properties["Location"] == properties["Destination"]) {
+                MessageBox.Show("Departure Location and Arrival Destination cannot be the same!");
+                return false;
+            }
             else if (string.IsNullOrEmpty(properties["Price"]))
             {
                 MessageBox.Show("Please enter a valid price for the airfare");
