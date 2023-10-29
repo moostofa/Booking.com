@@ -8,6 +8,7 @@ using System.Windows.Forms;
 namespace Booking.com.controller
 {
     using exceptions;
+    using System.Diagnostics;
     using validation;
 
     public class AirfareFileManager : IFileManager<Airfare>
@@ -102,9 +103,48 @@ namespace Booking.com.controller
             File.WriteAllText(FilePath, writeAirlines);
         }
 
-        void IFileManager<Airfare>.UpdateDetails(Airfare t, Dictionary<string, string> properties)
+        public void UpdateDetails(Airfare t, Dictionary<string, string> properties)
         {
-            throw new NotImplementedException();
+            bool areAirfareInputsValid = AirfareFormValidation.AreAirfareInputsValid(properties);
+            if (!areAirfareInputsValid)
+            {
+                throw new InvalidUpdateException();
+            }
+
+            airfareList = DeserializeEntitiesFromFile();
+            int index = airfareList.FindIndex(res => res.Id == t.Id);
+
+            if (index < 0)
+            {
+                string errorMessage = "Failed to update Airfare - please try again";
+                throw new InvalidUpdateException(errorMessage);
+            }
+
+            double price;
+            try
+            {
+                price = Convert.ToDouble(properties["Price"]);
+            }
+            catch (FormatException)
+            {
+                string errorMessage = "Error: Invalid price format";
+                MessageBox.Show(errorMessage);
+                throw new InvalidNewEntityException(errorMessage);
+            }
+            catch (OverflowException)
+            {
+                string errorMessage = "Error: Invalid price format";
+                MessageBox.Show(errorMessage);
+                throw new InvalidNewEntityException(errorMessage);
+            }
+
+            airfareList[index].Name = properties["Name"];
+            airfareList[index].Location = properties["Location"];
+            airfareList[index].Destination = properties["Destination"];
+            airfareList[index].Price = price;
+
+            WriteEntitiestoFile();
+            MessageBox.Show("Success! The airfare details were successfully changed!");
         }
 
         void IFileManager<Airfare>.DeleteEntity(Airfare airfareToDelete)

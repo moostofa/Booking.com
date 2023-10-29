@@ -8,7 +8,7 @@
   },
   {
     "Id": 2,
-    "Name": "Virgin",
+    "Name": "Virginia",
     "Location": "New Zealand",
     "Destination": "New Zealand",
     "Price": 10
@@ -33,5 +33,12 @@
     "Location": "Hawaii",
     "Destination": "Hawaii",
     "Price": 4.63
+  },
+  {
+    "Id": 1,
+    "Name": "Jetstar",
+    "Location": "Sydney",
+    "Destination": "Sydney",
+    "Price": 500
   }
 ]
