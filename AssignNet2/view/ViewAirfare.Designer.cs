@@ -39,6 +39,8 @@
             tb_price = new System.Windows.Forms.TextBox();
             tb_id = new System.Windows.Forms.TextBox();
             close = new System.Windows.Forms.Button();
+            lb_weather = new System.Windows.Forms.ListBox();
+            weatherlabel = new System.Windows.Forms.Label();
             SuspendLayout();
             // 
             // name
@@ -131,11 +133,31 @@
             close.UseVisualStyleBackColor = true;
             close.Click += close_Click;
             // 
+            // lb_weather
+            // 
+            lb_weather.FormattingEnabled = true;
+            lb_weather.ItemHeight = 25;
+            lb_weather.Location = new System.Drawing.Point(554, 143);
+            lb_weather.Name = "lb_weather";
+            lb_weather.Size = new System.Drawing.Size(829, 854);
+            lb_weather.TabIndex = 11;
+            // 
+            // weatherlabel
+            // 
+            weatherlabel.AutoSize = true;
+            weatherlabel.Location = new System.Drawing.Point(554, 81);
+            weatherlabel.Name = "weatherlabel";
+            weatherlabel.Size = new System.Drawing.Size(181, 25);
+            weatherlabel.TabIndex = 12;
+            weatherlabel.Text = "Weather Forecast for ";
+            // 
             // ViewAirfare
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1189, 771);
+            ClientSize = new System.Drawing.Size(1448, 1050);
+            Controls.Add(weatherlabel);
+            Controls.Add(lb_weather);
             Controls.Add(close);
             Controls.Add(tb_id);
             Controls.Add(tb_price);
@@ -166,5 +188,7 @@
         private System.Windows.Forms.TextBox tb_price;
         private System.Windows.Forms.TextBox tb_id;
         private System.Windows.Forms.Button close;
+        private System.Windows.Forms.ListBox lb_weather;
+        private System.Windows.Forms.Label weatherlabel;
     }
 }

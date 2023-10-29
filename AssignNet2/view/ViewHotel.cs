@@ -18,6 +18,7 @@ namespace Booking.com
             InitializeComponent();
             this.hotel = hotel;
             DisplayHotelDetails();
+            FetchWeatherData();
         }
 
         private void DisplayHotelDetails()
@@ -28,6 +29,25 @@ namespace Booking.com
             text_id.Text = hotel.Id.ToString();
             text_floors.Text = hotel.NumberOfFloors.ToString();
             text_amenities.Text = string.Join(", ", hotel.AvailableAmenities);
+            weatherLabel.Text += $" {hotel.Location}";
+        }
+
+        // Get the 3-hour 5-day weather forecast for the destination
+        private async void FetchWeatherData()
+        {
+            string location = hotel.Location;
+            try
+            {
+                List<WeatherData> weatherDataList = await WeatherDataAPIService.GetWeatherData(location);
+                foreach (WeatherData weatherData in weatherDataList)
+                {
+                    lb_weather.Items.Add(weatherData);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Failed to fetch weather data for the location {location}. Error: {e}");
+            }
         }
 
         private void button_close_Click(object sender, EventArgs e)
