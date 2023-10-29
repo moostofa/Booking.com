@@ -10,6 +10,12 @@
     <Compile Update="view\Admin\ViewAllAirfares.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="view\Customer\SelectAirfareToBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\Customer\ViewAirfareBookings.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="view\Customer\ViewHotelBookings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -50,6 +56,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="view\Customer\ViewMyHotelBookings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="view\ViewAirfare.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="view\ViewHotel.cs">

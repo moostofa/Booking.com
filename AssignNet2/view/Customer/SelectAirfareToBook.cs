@@ -11,20 +11,31 @@ using Booking.com.view;
 
 namespace Booking.com
 {
-    public partial class ViewAllAirfares : Form
+    public partial class SelectAirfareToBook : Form
     {
-        public ViewAllAirfares()
+        Customer Customer;
+        public SelectAirfareToBook(Customer customer)
         {
             InitializeComponent();
-            AddAllAirfaresToListBox();
+            Customer = customer;
+            ListAirfares();
         }
 
-        private void AddAllAirfaresToListBox()
+        public void ListAirfares()
         {
-            List<Airfare> airfares = Airfare.GetAllEntities();
+            List<Airfare> airfares = Airfare.FileManager.DeserializeEntitiesFromFile();
             foreach (Airfare airfare in airfares)
             {
                 lb_airfarelist.Items.Add(airfare);
+            }
+        }
+
+        private void button_book_Click(object sender, EventArgs e)
+        {
+            Airfare airfare = lb_airfarelist.SelectedItem as Airfare;
+            if (airfare != null)
+            {
+                MessageBox.Show("Now book the airfare for the customer!");
             }
         }
 
@@ -38,25 +49,19 @@ namespace Booking.com
             }
         }
 
-        private void button_editdetails_Click(object sender, EventArgs e)
-        {
-            Airfare airfare = lb_airfarelist.SelectedItem as Airfare;
-            if (airfare != null)
-            {
-                EditAirfare editAirfareView = new EditAirfare(airfare);
-                editAirfareView.ShowDialog();
-            }
-        }
-
-        private void button_cancel_Click(object sender, EventArgs e)
+        private void button_back_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void button_logout_Click(object sender, EventArgs e)
+        {
         }
 
         private void lb_airfarelist_SelectedValueChanged(object sender, EventArgs e)
         {
             button_view.Enabled = true;
-            button_editdetails.Enabled = true;
+            button_book.Enabled = true;
         }
     }
 }

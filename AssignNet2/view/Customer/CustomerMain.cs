@@ -1,4 +1,5 @@
 ﻿using AssignNet2;
+using Booking.com.view.Customer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,6 +47,18 @@ namespace Booking.com
         {
             ViewHotelBookings test = new ViewHotelBookings(customer, this);
             test.Show();
+        }
+
+        private void button_bookAirfare_Click(object sender, EventArgs e)
+        {
+            SelectAirfareToBook selectAirfareToBook = new SelectAirfareToBook(customer);
+            selectAirfareToBook.ShowDialog();
+        }
+
+        private void button_viewAirfare_Click(object sender, EventArgs e)
+        {
+            ViewAirfareBookings viewAirfareBookings = new();
+            viewAirfareBookings.ShowDialog();
         }
     }
 }
