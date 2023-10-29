@@ -27,7 +27,7 @@ namespace Booking.com
 
         public override string ToString()
         {
-            return Name + ", " + Location;
+            return $"{Name}, {Location} to {Destination}";
         }
     }
 }

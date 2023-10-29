@@ -43,7 +43,7 @@
             lb_airfarelist.Location = new System.Drawing.Point(54, 142);
             lb_airfarelist.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             lb_airfarelist.Name = "lb_airfarelist";
-            lb_airfarelist.Size = new System.Drawing.Size(331, 400);
+            lb_airfarelist.Size = new System.Drawing.Size(331, 379);
             lb_airfarelist.TabIndex = 0;
             lb_airfarelist.SelectedValueChanged += lb_airfarelist_SelectedValueChanged;
             // 
@@ -67,7 +67,7 @@
             button_editdetails.Name = "button_editdetails";
             button_editdetails.Size = new System.Drawing.Size(126, 45);
             button_editdetails.TabIndex = 2;
-            button_editdetails.Text = "Edit Hotel";
+            button_editdetails.Text = "Edit Airfare";
             button_editdetails.UseVisualStyleBackColor = true;
             button_editdetails.Click += button_editdetails_Click;
             // 
@@ -88,9 +88,9 @@
             label_title.Location = new System.Drawing.Point(54, 73);
             label_title.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             label_title.Name = "label_title";
-            label_title.Size = new System.Drawing.Size(130, 25);
+            label_title.Size = new System.Drawing.Size(139, 25);
             label_title.TabIndex = 4;
-            label_title.Text = "View All Hotels";
+            label_title.Text = "View All Airfares";
             // 
             // ViewAllAirfares
             // 
@@ -104,7 +104,7 @@
             Controls.Add(lb_airfarelist);
             Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             Name = "ViewAllAirfares";
-            Text = "View All Hotels";
+            Text = "View All Airfares";
             ResumeLayout(false);
             PerformLayout();
         }

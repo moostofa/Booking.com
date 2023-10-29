@@ -44,9 +44,9 @@ namespace Booking.com
                     lb_weather.Items.Add(weatherData);
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                MessageBox.Show($"Failed to fetch weather data for the location {location}. Error: {e}");
+                MessageBox.Show($"Failed to fetch weather data for the location {location} - City does not exist.");
             }
         }
 

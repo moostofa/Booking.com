@@ -125,7 +125,7 @@
             // 
             // close
             // 
-            close.Location = new System.Drawing.Point(281, 437);
+            close.Location = new System.Drawing.Point(1171, 484);
             close.Name = "close";
             close.Size = new System.Drawing.Size(150, 45);
             close.TabIndex = 10;
@@ -137,15 +137,15 @@
             // 
             lb_weather.FormattingEnabled = true;
             lb_weather.ItemHeight = 25;
-            lb_weather.Location = new System.Drawing.Point(554, 143);
+            lb_weather.Location = new System.Drawing.Point(74, 484);
             lb_weather.Name = "lb_weather";
-            lb_weather.Size = new System.Drawing.Size(829, 854);
+            lb_weather.Size = new System.Drawing.Size(1028, 854);
             lb_weather.TabIndex = 11;
             // 
             // weatherlabel
             // 
             weatherlabel.AutoSize = true;
-            weatherlabel.Location = new System.Drawing.Point(554, 81);
+            weatherlabel.Location = new System.Drawing.Point(74, 430);
             weatherlabel.Name = "weatherlabel";
             weatherlabel.Size = new System.Drawing.Size(181, 25);
             weatherlabel.TabIndex = 12;
